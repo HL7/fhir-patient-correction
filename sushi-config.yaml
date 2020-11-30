@@ -1,0 +1,42 @@
+# ╭─────────────────────────────────ImplementationGuide-fish.json──────────────────────────────────╮
+# │  The properties below are used to create the ImplementationGuide resource. For a list of       │
+# │  supported properties, see:                                                                    │
+# │  https://fshschool.org/docs/sushi/configuration/#full-configuration                            │
+# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+id: hl7.fhir.uv.patient-corrections
+canonical: http://hl7.org/fhir/uv/patient-corrections
+version: 0.1.0
+name: PatientCorrectionsImplementationGuide
+title: "Patient Corrections Implementation Guide"
+status: draft
+publisher:
+  - name: Patient Empowerment Workgroup
+  - url: https://confluence.hl7.org/display/PE/Patient+Empowerment+Home
+contact:
+  - name: John Keyes
+    telecom:
+      - system: email
+        value: john@johnkeyes.com
+        use: work
+description: "The Patient Corrections Implementation Guide provides a method for communicating a patient's request for corrections to their patient data, as well as a way for health care organizations to respond to those requests."
+license: CC0-1.0
+fhirVersion: 4.0.1
+parameters:
+  apply-publisher: true
+  apply-contact: true
+  show-inherited-invariants: false
+copyrightYear: 2020+
+releaseLabel: ci-build
+jurisdiction: http://unstats.un.org/unsd/methods/m49/m49.htm#001 "World"
+
+# ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
+# │  To use a provided input/includes/menu.xml file, delete the "menu" property below.             │
+# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+menu:
+  IG Home: index.html
+  Table of Contents: toc.html
+  Specification: specification.html
+  Artifacts Summary: artifacts.html
+  Other Resources:
+    "FHIR Spec ": new-tab {{site.data.fhir.path}}index.html

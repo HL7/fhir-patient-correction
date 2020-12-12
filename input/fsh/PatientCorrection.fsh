@@ -24,7 +24,8 @@ Description:    "A correction request orginating from a patient."
 * description ^short = "Provide further detail on status. Examples include Extended to represent that the consideration of an amendment request has been extended."
 
 * intent 1..1
-* intent ^short = "\"Order\""
+* intent only code
+* intent = #order (exactly)
 
 * code MS
 * code 1..1
@@ -33,10 +34,6 @@ Description:    "A correction request orginating from a patient."
 * description MS
 * description 1..1
 * description ^short = "Human readable description of what is to be performed.  For example: \"Please correct the Progress Note dated 2/10/20 in which you state that I am a smoke cigarettes. I do not smoke cigarettes but do smoke cigars\"."
-
-* focus MS
-* focus 0..1
-* focus ^short = "Optionally specify the specific resource that is requested to be corrected."
 
 * for MS
 * for 1..1
@@ -50,15 +47,15 @@ Description:    "A correction request orginating from a patient."
 * executionPeriod ^short = "If the requester needs the correction to be done by a specific date, this is specified in ExecutionPeriod.end."
 
 * authoredOn MS
-* authoredOn 1..1
-* authoredOn ^short = "Constrained to 1..1. Date/Time original request was authored."
+* authoredOn 0..1
+* authoredOn ^short = "Date/Time original request was authored."
 
 * lastModified MS
 * lastModified 0..1
 * lastModified ^short = ""
 
 * requester MS
-* requester 1..1
+* requester 0..1
 * requester ^short = "The entity that requests the correction.  Examples - Patient, CareGiver, Clinician."
 
 * owner MS
@@ -138,7 +135,7 @@ Description:    "A disagreement to a patient correction request."
 * lastModified 0..1
 
 * requester MS
-* requester 1..1
+* requester 0..1
 * requester ^short = "The entity that disagrees with the denial. Examples - Patient, CareGiver, Clinician."
 
 * owner MS
@@ -147,6 +144,7 @@ Description:    "A disagreement to a patient correction request."
 
 * reasonReference MS
 * reasonReference 1..1
+* reasonReference only Reference(Task)
 * reasonReference ^short = "The original correction request Task."
 
 * note ^short = "Notes from those that are working on the disagreement on the fulfiller side."
@@ -164,10 +162,7 @@ Description:    "A disagreement to a patient correction request."
 * input.value[x] ^short = "1) Reference (Encounter), 2) Reference (Task), 3) String"
 
 * output 0..*
-* output ^short = "Documentation about the Disagreement, such as noting it will be included with the record. Or documentation of a rebuttal."
-
-* output 0..*
-* output ^short = "Documentation about the Correction from the Fulfiller. For example, an explanation about request is extended 60 days, that patient can ask to have correction sent to third parties, or an explanation of denial and a patient's right to disagree."
+* output ^short = "Additional information for the requester, such as the text of a provider provided rebuttal."
 
 * output.type 1..1
 * output.type ^short = "Type indicating \"Additional Information.\""

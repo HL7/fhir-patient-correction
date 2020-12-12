@@ -1,4 +1,4 @@
-> **NOTE:** For now, the Task resource mappings are being developed in a [Google Sheets spreadsheet](https://docs.google.com/spreadsheets/d/1kPMzWTA8iXRzcra6SMehgIQDb6VxpNp6B_BQpCN3VRQ/edit?usp=sharing). The Task resources in this draft IG are being regularly updated to relfect the latest spreadsheet, but the spreadsheet contains the most recent changes. Soon we'll switch to making changes directly in this IG.
+> **NOTE:** For now, the Task resource mappings are being developed in a [Google Sheets spreadsheet](https://docs.google.com/spreadsheets/d/1kPMzWTA8iXRzcra6SMehgIQDb6VxpNp6B_BQpCN3VRQ/edit?usp=sharing). The Task resources in this draft IG are being regularly updated to relfect the latest spreadsheet (last updated 2020-12-10), but the spreadsheet contains the most recent changes. Soon we'll switch to making changes directly in this IG.
 
 ### Background
 

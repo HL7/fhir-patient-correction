@@ -20,18 +20,6 @@ Canceled | Correction Requester has cancelled the request.
 
 {% include img.html img="restful-interactions.png" %}
 
-### An accepted correction request
-
-The following sequence diagram describes an accepted patient correction request.
-
-{% include img.html img="accepted-request-sequence-diagram.png" %}
-
-### A rejected correction request
-
-The following sequence diagram describes a rejected patient correction request.
-
-{% include img.html img="rejected-request-sequence-diagram.png" %}
-
 ### Patient request state machine
 
 {% include img.html img="patient-request-state-machine.png" %}

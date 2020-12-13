@@ -6,7 +6,7 @@
 
 id: hl7.fhir.uv.patient-corrections
 canonical: http://hl7.org/fhir/uv/patient-corrections
-version: 0.1.0
+version: 0.2.0
 name: PatientCorrectionsImplementationGuide
 title: "Patient Corrections Implementation Guide"
 status: draft
@@ -36,6 +36,7 @@ jurisdiction: http://unstats.un.org/unsd/methods/m49/m49.htm#001 "World"
 menu:
   IG Home: index.html
   Table of Contents: toc.html
+  Actors and Use Cases: actors-and-use-cases.html
   Specification: specification.html
   Artifacts Summary: artifacts.html
   Other Resources:

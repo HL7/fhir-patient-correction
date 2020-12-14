@@ -38,6 +38,6 @@ menu:
   Table of Contents: toc.html
   Actors and Use Cases: actors-and-use-cases.html
   Specification: specification.html
-  Artifacts Summary: artifacts.html
+  Artifacts: artifacts.html
   Other Resources:
     "FHIR Spec ": new-tab {{site.data.fhir.path}}index.html

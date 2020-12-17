@@ -47,7 +47,7 @@ Description:    "A correction request orginating from a patient."
 * executionPeriod ^short = "If the requester needs the correction to be done by a specific date, this is specified in ExecutionPeriod.end."
 
 * authoredOn MS
-* authoredOn 0..1
+* authoredOn 1..1
 * authoredOn ^short = "Date/Time original request was authored."
 
 * lastModified MS

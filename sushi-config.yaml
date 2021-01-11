@@ -12,12 +12,13 @@ title: "Patient Corrections Implementation Guide"
 status: draft
 publisher:
   - name: Patient Empowerment Workgroup
-  - url: https://confluence.hl7.org/display/PE/Patient+Empowerment+Home
+  - url: http://www.hl7.org/Special/committees/patientempowerment/
 contact:
   - name: John Keyes
     telecom:
       - system: email
         value: john@johnkeyes.com
+        url: http://www.hl7.org/Special/committees/patientempowerment/
         use: work
 description: "The Patient Corrections Implementation Guide provides a method for communicating a patient's request for corrections to their patient data, as well as a way for health care organizations to respond to those requests."
 license: CC0-1.0

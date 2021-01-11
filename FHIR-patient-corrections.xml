@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/uv/patient-corrections" ciUrl="http://build.fhir.org/ig/HL7/patient-corrections" defaultVersion="0.2.0" defaultWorkgroup="" gitUrl="https://github.com/HL7/fhir-patient-correction" url="http://hl7.org/fhir/uv/patient-corrections">
+<version code="current" url="http://build.fhir.org/ig/HL7/patient-corrections"/>
+<version code="0.2.0" url="http://hl7.org/fhir/uv/patient-corrections"/>
+<artifactPageExtension value="-definitions"/>
+<artifactPageExtension value="-examples"/>
+<artifactPageExtension value="-mappings"/>
+<artifact id="StructureDefinition/patient-correction-disagreement" key="patient-correction-disagreement" name="Patient Correction Disagreement"/>
+<artifact id="StructureDefinition/patient-correction-request" key="patient-correction-request" name="Patient Correction Request"/>
+<artifact id="CapabilityStatement/patient-correction-server-capability" key="CapabilityStatement-patient-correction-server-capability" name="PatientCorrectionServerCapability"/>
+<artifact id="Task/cfsb1608445649594" key="Task-cfsb1608445649594" name="cfsb1608445649594"/>
+<artifact id="Task/cfsb1608445649595" key="Task-cfsb1608445649595" name="cfsb1608445649595"/>
+<artifact id="Task/cfsb1608445649596" key="Task-cfsb1608445649596" name="cfsb1608445649596"/>
+<artifact id="Task/cfsb1608445649597" key="Task-cfsb1608445649597" name="cfsb1608445649597"/>
+<artifact id="Task/cfsb1608624320317" key="Task-cfsb1608624320317" name="cfsb1608624320317"/>
+<page key="NA" name="(NA)"/>
+<page key="many" name="(many)"/>
+<page key="actors-and-use-cases" name="Actors and Use Cases" url="actors-and-use-cases"/>
+<page key="artifacts" name="Artifacts Summary"/>
+<page key="capability-statements" name="Capability Statements"/>
+<page key="index" name="Home"/>
+<page deprecated="true" key="home" name="IG Home" url="index"/>
+<page key="specification" name="Specification" url="specification"/>
+<page key="toc" name="Table of Contents" url="toc"/>
+</specification>

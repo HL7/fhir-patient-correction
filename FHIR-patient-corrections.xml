@@ -5,6 +5,7 @@
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
+<artifact id="StructureDefinition/patient-correction-communication" key="StructureDefinition-patient-correction-communication" name="Patient Correction Communication"/>
 <artifact id="StructureDefinition/patient-correction-disagreement" key="patient-correction-disagreement" name="Patient Correction Disagreement"/>
 <artifact id="StructureDefinition/patient-correction-request" key="patient-correction-request" name="Patient Correction Request"/>
 <artifact id="CapabilityStatement/patient-correction-server-capability" key="CapabilityStatement-patient-correction-server-capability" name="PatientCorrectionServerCapability"/>

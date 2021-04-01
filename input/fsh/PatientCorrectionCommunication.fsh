@@ -4,16 +4,25 @@ Id:             patient-correction-communication
 Title:          "Patient Correction Communication"
 Description:    "A correction communication between patient and entity."
 
-* partOf MS
-* partOf 0..*
-* partOf ^short = "The PatientCorrectionRequest or PatientCorrectionDisagreement that this Communication is part of"
-* partOf only Reference(PatientCorrectionRequest or PatientCorrectionDisagreement)
+* basedOn MS
+* basedOn 0..*
+* basedOn ^short = "The PatientCorrectionRequest that this Communication is part of"
+* basedOn only Reference(PatientCorrectionRequest)
 
 * inResponseTo ^short = "The previous PatientCorrectionCommunication that this is in reply to"
 * inResponseTo only Reference(PatientCorrectionCommunication)
 
 * subject MS
-* subject ^short = "The Patient that the PatientCorrectionRequest and this PatientCorrectionCommunication are related to"
+* subject ^short = "The Patient that the correction request applies to"
 * subject only Reference(Patient)
 
-* payload ^short = "The text of the communication about the patient correction request"
+* sent MS
+* basedOn 1..*
+* sent ^short = "When this communication about the correction request was sent"
+
+* received MS
+* received ^short = "When this communication about the correction request was received"
+
+* payload MS
+* payload 1..*
+* payload ^short = "The contents of the communication about the patient correction request"

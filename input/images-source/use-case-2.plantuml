@@ -1,0 +1,17 @@
+@startuml
+note left: Notice a problem
+CorrectionRequester->RequestFulfiller : Request a Change
+Activate RequestFulfiller
+RequestFulfiller->RequestFulfiller : Check records
+
+loop
+   RequestFulfiller-->CorrectionRequester : Please clarify
+   CorrectionRequester-->RequestFulfiller : Here is the clarification
+end
+
+RequestFulfiller->RequestFulfiller : Decide to reject the correction
+RequestFulfiller->CorrectionRequester : Change rejected
+Deactivate RequestFulfiller
+
+note left: frown
+@enduml

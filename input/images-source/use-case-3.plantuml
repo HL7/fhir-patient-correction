@@ -1,0 +1,19 @@
+@startuml
+note left: Previously had a Change Rejected
+CorrectionRequester->RequestFulfiller : Send a Disagreement
+Activate RequestFulfiller
+RequestFulfiller->RequestFulfiller : Check records
+
+loop
+   RequestFulfiller-->CorrectionRequester : Please clarify
+   CorrectionRequester-->RequestFulfiller : Here is the clarification
+end
+
+
+RequestFulfiller->RequestFulfiller : Review Disagreement
+note right: Based on the arguments and data decide to change the record
+RequestFulfiller->CorrectionRequester : Change Accepted
+Deactivate RequestFulfiller
+
+note left: smile
+@enduml

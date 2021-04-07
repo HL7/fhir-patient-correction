@@ -1,0 +1,13 @@
+@startuml
+note left: Notice a problem
+CorrectionRequester->RequestFulfiller : Request a Change
+Activate RequestFulfiller
+RequestFulfiller->RequestFulfiller : Check records
+
+== Time goes by ==
+CorrectionRequester->CorrectionRequester: Realise more information is needed
+CorrectionRequester->RequestFulfiller : Update the Change Request
+RequestFulfiller->RequestFulfiller : Check records
+
+== Further processing ==
+@enduml

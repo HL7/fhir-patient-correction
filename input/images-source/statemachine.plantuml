@@ -1,0 +1,17 @@
+@startuml
+[*] --> Requested
+Requested : (BS = New)
+
+Requested -down--> Accepted
+Accepted -down--> InProgress
+
+InProgress: asking for clarifications
+
+InProgress -down-->Completed
+
+Completed -down-->[*]
+
+Requested -down--> Rejected
+Rejected -down--> [*]
+Rejected : (BS=Denied)
+@enduml

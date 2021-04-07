@@ -19,8 +19,11 @@
 <page key="actors-and-use-cases" name="Actors and Use Cases" url="actors-and-use-cases"/>
 <page key="artifacts" name="Artifacts Summary"/>
 <page key="capability-statements" name="Capability Statements"/>
+<page key="communicated-task" name="Communicated Task"/>
+<page key="communication" name="Communication"/>
 <page key="index" name="Home"/>
 <page deprecated="true" key="home" name="IG Home" url="index"/>
 <page key="specification" name="Specification" url="specification"/>
 <page key="toc" name="Table of Contents" url="toc"/>
+<page key="task" name="Task"/>
 </specification>

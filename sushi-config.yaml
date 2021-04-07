@@ -38,7 +38,11 @@ menu:
   IG Home: index.html
   Table of Contents: toc.html
   Actors and Use Cases: actors-and-use-cases.html
-  Specification: specification.html
+  Specification: 
+    Overall: specification.html
+    Communication: communication.html
+    Task: task.html
+    Communicated Task: communicated-task.html
   Artifacts: artifacts.html
   Other Resources:
     "FHIR Spec ": new-tab {{site.data.fhir.path}}index.html

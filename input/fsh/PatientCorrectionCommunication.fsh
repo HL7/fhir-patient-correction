@@ -4,10 +4,10 @@ Id:             patient-correction-communication
 Title:          "Patient Correction Communication"
 Description:    "A correction communication between patient and entity."
 
-* basedOn MS
-* basedOn 0..*
-* basedOn ^short = "The PatientCorrectionRequest that this Communication is part of"
-* basedOn only Reference(PatientCorrectionRequest)
+* about MS
+* about 0..*
+* about ^short = "The PatientCorrectionRequest that this Communication is part of"
+* about only Reference(PatientCorrectionRequest)
 
 * inResponseTo ^short = "The previous PatientCorrectionCommunication that this is in reply to"
 * inResponseTo only Reference(PatientCorrectionCommunication)

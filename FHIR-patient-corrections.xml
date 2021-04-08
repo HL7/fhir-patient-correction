@@ -6,9 +6,8 @@
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
 <artifact id="StructureDefinition/patient-correction-communication" key="StructureDefinition-patient-correction-communication" name="Patient Correction Communication"/>
-<artifact id="StructureDefinition/patient-correction-disagreement" key="patient-correction-disagreement" name="Patient Correction Disagreement"/>
+<artifact deprecated="true" id="StructureDefinition/patient-correction-disagreement" key="patient-correction-disagreement" name="Patient Correction Disagreement"/>
 <artifact id="StructureDefinition/patient-correction-request" key="patient-correction-request" name="Patient Correction Request"/>
-<artifact id="CapabilityStatement/patient-correction-server-capability" key="CapabilityStatement-patient-correction-server-capability" name="PatientCorrectionServerCapability"/>
 <artifact id="Task/cfsb1608445649594" key="Task-cfsb1608445649594" name="cfsb1608445649594"/>
 <artifact id="Task/cfsb1608445649595" key="Task-cfsb1608445649595" name="cfsb1608445649595"/>
 <artifact id="Task/cfsb1608445649596" key="Task-cfsb1608445649596" name="cfsb1608445649596"/>
@@ -18,12 +17,11 @@
 <page key="many" name="(many)"/>
 <page key="actors-and-use-cases" name="Actors and Use Cases" url="actors-and-use-cases"/>
 <page key="artifacts" name="Artifacts Summary"/>
-<page key="capability-statements" name="Capability Statements"/>
-<page key="communicated-task" name="Communicated Task"/>
 <page key="communication" name="Communication"/>
 <page key="index" name="Home"/>
 <page deprecated="true" key="home" name="IG Home" url="index"/>
 <page key="specification" name="Specification" url="specification"/>
 <page key="toc" name="Table of Contents" url="toc"/>
 <page key="task" name="Task"/>
+<page key="task-with-communication" name="Task with Communication"/>
 </specification>

@@ -39,10 +39,10 @@ menu:
   Table of Contents: toc.html
   Actors and Use Cases: actors-and-use-cases.html
   Specification: 
-    Overall: specification.html
-    Communication: communication.html
-    Task: task.html
-    Communicated Task: communicated-task.html
+    Overview: specification.html
+    Task only: task.html
+    Communication only: communication.html
+    Task with Communication: task-with-communication.html
   Artifacts: artifacts.html
   Other Resources:
     "FHIR Spec ": new-tab {{site.data.fhir.path}}index.html

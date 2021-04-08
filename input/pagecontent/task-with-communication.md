@@ -1,6 +1,6 @@
-### Task-only alternative
+### Task with Communication alternative
 
-With the Task-only alternative, a Task resource (PatientCorrectionRequest) is used to convey a patient correction request. The Task is updated as needed to reflect back and forth communication as well as for the various follow-up states that can exist.
+With the Task with Communication alternative, a Task is used to describe the correction request and to track the result. Back and forth communications and conversation regarding the correction request are then done using Communication
 
 ### Task Status
 

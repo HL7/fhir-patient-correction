@@ -11,10 +11,9 @@ RequestFulfiller | The RequestFulfiller represents a provider system – usually
 {%include overall-sequence.svg%}
 </div>
 
-#### old interactions
+#### old interactions (to be removed)
 
 {% include img.html img="restful-interactions.png" %}
-
 
 ### Use cases
 
@@ -29,7 +28,7 @@ A patient reviews the records received from a provider (most likely this review 
 {%include overall-sequence.svg%}
 </div>
 
-##### old sequence
+##### old sequence (to be removed)
 
 {% include img.html img="use-case-1.png" %}
 
@@ -42,7 +41,7 @@ A patient reviews the records received from a provider (most likely this review 
 {%include use-case-2.svg%}
 </div>
 
-##### old sequence
+##### old sequence (to be removed)
 
 {% include img.html img="use-case-2.png" %}
 
@@ -55,7 +54,7 @@ Upon receiving a rejection to their correction request, the patient decides to l
 {%include use-case-3.svg%}
 </div>
 
-##### old sequence
+##### old sequence (to be removed)
 
 {% include img.html img="use-case-3.png" %}
 
@@ -68,6 +67,6 @@ A patient reviews the records received from a provider (most likely this review 
 {%include use-case-4.svg%}
 </div>
 
-##### old sequence
+##### old sequence (to be removed)
 
 {% include img.html img="use-case-4.png" %}

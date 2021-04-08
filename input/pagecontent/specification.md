@@ -1,10 +1,7 @@
-### Overall flow
-
-
 ### Alternatives
 
-There are three alternatives documented here
+This implementation guide describes three alternatives for how patient requests for corrections could be created and managaed, involving the use of Task or Communication resources:
 
-* [Using Communication alone](communication.html)
-* [Using Task alone](task.html)
-* [Using a Communication carrying a Task](communicated-task.html)
+* [Using Task only](task.html)
+* [Using Communication only](communication.html)
+* [Using Task with Communication](task-with-communication.html)

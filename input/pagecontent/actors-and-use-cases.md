@@ -11,10 +11,6 @@ RequestFulfiller | The RequestFulfiller represents a provider system – usually
 {%include overall-sequence.svg%}
 </div>
 
-#### old interactions (to be removed)
-
-{% include img.html img="restful-interactions.png" %}
-
 ### Use cases
 
 > NOTE: The following list of use cases represent common use cases but is not an exhaustive list. These use cases are designed to follow the HIPAA Request for Amendment workflow.

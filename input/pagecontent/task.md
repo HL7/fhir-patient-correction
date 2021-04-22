@@ -2,6 +2,10 @@
 
 With the Task-only alternative, a Task resource (PatientCorrectionRequest) is used to convey a patient correction request. The Task is updated as needed to reflect back and forth communication as well as for the various follow-up states that can exist.
 
+### RESTful interactions
+
+{% include img.html img="restful-interactions.png" %}
+
 ### Task Status
 
 The Task Status is used to convey the the state of the patient correction.

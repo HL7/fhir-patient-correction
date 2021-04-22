@@ -2,6 +2,10 @@
 
 With the Task with Communication alternative, a Task is used to describe the correction request and to track the result. Back and forth communications and conversation regarding the correction request are then done using Communication
 
+### RESTful interactions
+
+{% include img.html img="restful-interactions.png" %}
+
 ### Task Status
 
 The Task Status is used to convey the the state of the patient correction.

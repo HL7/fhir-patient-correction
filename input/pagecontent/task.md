@@ -4,6 +4,12 @@ With the Task-only alternative, a Task resource (PatientCorrectionRequest) is us
 
 ### RESTful interactions
 
+<div>
+{%include task-rest-request.svg%}
+</div>
+
+### old RESTful interactions
+
 {% include img.html img="restful-interactions.png" %}
 
 ### Task Status

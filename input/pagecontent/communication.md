@@ -4,4 +4,17 @@ With the Communication-only alternative, only Communication is used, both for th
 
 ### RESTful interactions
 
+<div>
+{%include comm-rest-request.svg%}
+</div>
+
+### old RESTful interactions
+
 {% include img.html img="restful-interactions.png" %}
+
+### PUSH interactions
+
+<div>
+{%include comm-push-request.svg%}
+</div>
+

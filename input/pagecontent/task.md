@@ -8,10 +8,6 @@ With the Task-only alternative, a Task resource (PatientCorrectionRequest) is us
 {%include task-rest-request.svg%}
 </div>
 
-### old RESTful interactions
-
-{% include img.html img="restful-interactions.png" %}
-
 ### Task Status
 
 The Task Status is used to convey the the state of the patient correction.

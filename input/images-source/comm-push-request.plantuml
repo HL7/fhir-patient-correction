@@ -4,7 +4,7 @@ title PUSH Interactions for Request For Correction Using Communication Alone
 note left of CorrectionRequester
 Send a new Correction Request
 end note
-CorrectionRequester->RequestFulfiller: Create (POST) Communication
+CorrectionRequester->RequestFulfiller: Create (POST) Communication Initial Correction Request
 activate RequestFulfiller
 RequestFulfiller->RequestFulfiller: start internal processing
 RequestFulfiller-->CorrectionRequester: return created Communication (with id)
@@ -15,16 +15,15 @@ When more information is needed
 then a new Communication is sent
 with inResponseTo original
 end note
-RequestFulfiller->RequestFulfiller: new info is needed
-CorrectionRequester<-RequestFulfiller: Create (POST) new Communication in response
+CorrectionRequester<-RequestFulfiller: Create (POST) new Communication Question On Correction Request
 CorrectionRequester -> CorrectionRequester: process and react
 end
 
 alt
 note left of CorrectionRequester
-Correspond with Fulfiller
+Response to a question from the CorrectionFulfiller
 end note
-CorrectionRequester->RequestFulfiller: Create (POST) new Communication in response
+CorrectionRequester->RequestFulfiller: Create (POST) new Communication Response on Question
 end
 
 
@@ -36,7 +35,7 @@ When the request is fulfilled
 a new concluding Communication
 end note
 RequestFulfiller->RequestFulfiller: finish internal processing
-CorrectionRequester<-RequestFulfiller: Create (POST) new Communication in response
+CorrectionRequester<-RequestFulfiller: Create (POST) new Communication Conclusion on Correction Request
 CorrectionRequester -> CorrectionRequester: process and react
 end
 

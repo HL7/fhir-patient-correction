@@ -8,10 +8,6 @@ With the Task with Communication alternative, a Task is used to describe the cor
 {%include task-comm-request.svg%}
 </div>
 
-### old RESTful interactions
-
-{% include img.html img="restful-interactions.png" %}
-
 ### Task Status
 
 The Task Status is used to convey the the state of the patient correction.

@@ -53,5 +53,6 @@ This Communication is used when the Organization or Practitioner has concluded t
 * The [Profiled Communication Resource](StructureDefinition-patient-correction-communication-conclusion.html)
 * An [Example of a Conclusion on a Change Request](Communication-ex-CommunicationConclusion.html)
 
-
+#### Rebuttal
+TODO: Is this just another for of Response? Or do we need a different profile and example for this?
 

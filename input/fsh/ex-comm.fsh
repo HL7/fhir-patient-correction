@@ -18,6 +18,33 @@ Usage: #example
 **I do not smoke.**"
 * sent = "2020-12-12T19:28:17+10:00"
 
+
+
+
+Instance: ex-CommunicationInitial2
+InstanceOf: CommunicationInitial
+Description: "Example of a Initial Request for Correction
+
+* request to correct smoking status
+* sent to the organization
+* with reference to the FHIR Observation indicating smoking"
+Usage: #example
+* category = CommunicationCategory#Initial
+* subject = Reference(ex-patient)
+* sender = Reference(ex-patient)
+* recipient = Reference(ex-organization)
+* status = #in-progress
+* priority = #asap
+* topic.text = "Patient Request for Correction"
+* note.text = "My chart states that I smoke two packs a day.  
+
+**I do not smoke.**"
+* sent = "2020-12-12T19:28:17+10:00"
+* payload.contentReference = Reference(ex-smoking)
+
+
+
+
 Instance: ex-CommunicationQuestion1
 InstanceOf: CommunicationQuestion
 Description: "Example of a practitioner at the organization asking for clarification

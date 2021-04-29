@@ -48,5 +48,14 @@ Description: "Dummy Practitioner example for completeness sake. No actual use of
 * name[=].family = "Schmitt"
 * name[=].given[+] = "John"
 
-
-
+Instance: ex-smoking
+InstanceOf: Observation
+Title: "Dummy Patient is smoking"
+Description: "Dummy Patient is a smoker. No actual use of this resource other than ans an exmaple target"
+* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
+* status = #final
+* category = http://terminology.hl7.org/CodeSystem/observation-category#social-history
+* code = http://loinc.org#72166-2
+* subject = Reference(ex-patient)
+* issued = "1983-12-12T05:27:04Z"
+* valueCodeableConcept = http://snomed.info/sct#428041000124106 "Occasional tobacco smoker"

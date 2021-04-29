@@ -33,7 +33,8 @@ The Communication includes the following profiled Communication resource
 This Communication is the initial communication initiated by the Patient to the Organization or Practitioner that is responsible for the healthcare information that needs a correction. This communication includes the explanation of the request, and may include pointers to the exact records by identifier or reference. When an identifier or reference is not known to the Patient, but where the patient has a copy of the healthcare information in question, this may be included in the Communication. This communication may be sent by the Patient or a RelatedPerson on-behalf of the Patient.
 
 * The [Profiled Communication Resource](StructureDefinition-patient-correction-communication-initial.html)
-* An [Example Initial Change Request](Communication-ex-CommunicationInitial.html)
+* An [Example Simple text based Initial Change Request](Communication-ex-CommunicationInitial.html)
+* An [Example of an Initial Change Request with reference to the smoking observation that is wrong](Communication-ex-CommunicationInitial.html)
 
 ##### Questions on modeling
 

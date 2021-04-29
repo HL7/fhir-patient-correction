@@ -11,7 +11,7 @@ Validate resource against profile http://hl7.org/fhir/StructureDefinition/ValueS
 Validate resource against profile http://hl7.org/fhir/StructureDefinition/Organization
 Validate resource against profile http://hl7.org/fhir/StructureDefinition/Patient
 Validate resource against profile http://hl7.org/fhir/StructureDefinition/Practitioner
-
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/Observation
 
 # profiles defined in this IG
 Validate resource against profile http://hl7.org/fhir/uv/patient-corrections/StructureDefinition/patient-correction-communication-initial

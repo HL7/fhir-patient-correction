@@ -6,7 +6,7 @@ Description:    "A correction request communication between patient and entity."
 * category = CommunicationCategory#Initial
 * about 0..0
 * about ^short = "holds a link to the initial"
-* about ^comment = "The about element will be empty in the initial Correction Request. The about element will point at the intial communication in all other communications. This enables finding all communications related to a Correction Request."
+* about ^comment = "The about element will be empty in the initial Correction Request. The about element will point at the initial communication in all other communications. This enables finding all communications related to a Correction Request."
 * inResponseTo 0..0
 * inResponseTo ^short = "points to other communication this is in response to"
 * inResponseTo ^comment = "The inResponse element is used to point at one or more communication for which this is a response. The inResponseTo does not include the initial communication. This element enables linking questions to answers, and answers to follow-up questions."
@@ -43,13 +43,14 @@ Description:    "A correction request communication between patient and entity."
 
 CodeSystem:  CommunicationCategory 
 Title: "Communication Categories"
-Description:  "To define Communication category code to use in Patient Correction Request"
+Description:  "CodeSystem of codes that define Communication category code for use in Patient Correction Request"
 * #Initial "Correction Request by the Patient or RelatedPerson"
-* #Question "Correction Request clarifying question from the Organization or Practitioner at the Organizatino"
+* #Question "Correction Request clarifying question from the Organization or Practitioner at the Organization"
 * #Response "Correction Response clarification by Patient"
 * #Conclusion "Conclusion of a Correction Request"
 
 ValueSet: CommunicationCategoryVS
+Description: "ValueSet of Communication category codes used in the Patient Correction Request"
 * include codes from system CommunicationCategory
 
 
@@ -119,7 +120,7 @@ Description: "A conclusion of a communication request"
 * category = CommunicationCategory#Conclusion
 * about 1..1
 * about ^short = "The about element will hold a link to the initial"
-* about ^comment = "The about element will be empty in the initial Correction Request. The about element will point at the intial communication in all other communications. This enables finding all communications related to a Correction Request."
+* about ^comment = "The about element will be empty in the initial Correction Request. The about element will point at the initial communication in all other communications. This enables finding all communications related to a Correction Request."
 * about only Reference(CommunicationInitial)
 * inResponseTo 0..0
 * inResponseTo ^short = "The conclusion only references the initial."

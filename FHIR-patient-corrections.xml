@@ -9,6 +9,7 @@
 <artifact id="ValueSet/CommunicationCategoryVS" key="ValueSet-CommunicationCategoryVS" name="CommunicationCategoryVS"/>
 <artifact id="Organization/ex-organization" key="Organization-ex-organization" name="Dummy Organization example"/>
 <artifact id="Patient/ex-patient" key="Patient-ex-patient" name="Dummy Patient example"/>
+<artifact id="Observation/ex-smoking" key="Observation-ex-smoking" name="Dummy Patient is smoking"/>
 <artifact id="Practitioner/ex-practitioner" key="Practitioner-ex-practitioner" name="Dummy Practitioner example"/>
 <artifact id="StructureDefinition/patient-correction-communication-conclusion" key="StructureDefinition-patient-correction-communication-conclusion" name="Patient Correction Communication Conclusion"/>
 <artifact id="StructureDefinition/patient-correction-communication-initial" key="StructureDefinition-patient-correction-communication-initial" name="Patient Correction Communication Initial"/>
@@ -23,6 +24,7 @@
 <artifact id="Task/cfsb1608624320317" key="Task-cfsb1608624320317" name="cfsb1608624320317"/>
 <artifact id="Communication/ex-CommunicationConclusion" key="Communication-ex-CommunicationConclusion" name="ex-CommunicationConclusion"/>
 <artifact id="Communication/ex-CommunicationInitial" key="Communication-ex-CommunicationInitial" name="ex-CommunicationInitial"/>
+<artifact id="Communication/ex-CommunicationInitial2" key="Communication-ex-CommunicationInitial2" name="ex-CommunicationInitial2"/>
 <artifact id="Communication/ex-CommunicationQuestion1" key="Communication-ex-CommunicationQuestion1" name="ex-CommunicationQuestion1"/>
 <artifact id="Communication/ex-CommunicationQuestion2" key="Communication-ex-CommunicationQuestion2" name="ex-CommunicationQuestion2"/>
 <artifact id="Communication/ex-CommunicationResponse1" key="Communication-ex-CommunicationResponse1" name="ex-CommunicationResponse1"/>

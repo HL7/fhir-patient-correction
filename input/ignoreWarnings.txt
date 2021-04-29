@@ -1,5 +1,21 @@
 == Suppressed Messages ==
 
-# Add warning and/or information messages here after you've confirmed that they aren't really a problem
-# (And include comments like this justifying why)
-# See https://github.com/FHIR/sample-ig/blob/master/input/ignoreWarnings.txt for examples
+# normal IG stuff
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/ImplementationGuide
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/StructureDefinition
+
+
+# resources used in this IG
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/CodeSystem
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/ValueSet
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/Organization
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/Patient
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/Practitioner
+
+
+# profiles defined in this IG
+Validate resource against profile http://hl7.org/fhir/uv/patient-corrections/StructureDefinition/patient-correction-communication-initial
+Validate resource against profile http://hl7.org/fhir/uv/patient-corrections/StructureDefinition/patient-correction-communication-question
+Validate resource against profile http://hl7.org/fhir/uv/patient-corrections/StructureDefinition/patient-correction-communication-response
+Validate resource against profile http://hl7.org/fhir/uv/patient-corrections/StructureDefinition/patient-correction-communication-conclusion
+

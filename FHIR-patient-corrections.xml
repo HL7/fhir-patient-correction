@@ -12,7 +12,7 @@
 <artifact id="Practitioner/ex-practitioner" key="Practitioner-ex-practitioner" name="Dummy Practitioner example"/>
 <artifact id="StructureDefinition/patient-correction-communication-conclusion" key="StructureDefinition-patient-correction-communication-conclusion" name="Patient Correction Communication Conclusion"/>
 <artifact id="StructureDefinition/patient-correction-communication-initial" key="StructureDefinition-patient-correction-communication-initial" name="Patient Correction Communication Initial"/>
-<artifact id="StructureDefinition/patient-correction-communication-request" key="StructureDefinition-patient-correction-communication-request" name="Patient Correction Communication Request"/>
+<artifact id="StructureDefinition/patient-correction-communication-question" key="StructureDefinition-patient-correction-communication-question" name="Patient Correction Communication Question"/>
 <artifact id="StructureDefinition/patient-correction-communication-response" key="StructureDefinition-patient-correction-communication-response" name="Patient Correction Communication Response"/>
 <artifact deprecated="true" id="StructureDefinition/patient-correction-disagreement" key="patient-correction-disagreement" name="Patient Correction Disagreement"/>
 <artifact id="StructureDefinition/patient-correction-request" key="patient-correction-request" name="Patient Correction Request"/>
@@ -23,8 +23,11 @@
 <artifact id="Task/cfsb1608624320317" key="Task-cfsb1608624320317" name="cfsb1608624320317"/>
 <artifact id="Communication/ex-CommunicationConclusion" key="Communication-ex-CommunicationConclusion" name="ex-CommunicationConclusion"/>
 <artifact id="Communication/ex-CommunicationInitial" key="Communication-ex-CommunicationInitial" name="ex-CommunicationInitial"/>
-<artifact id="Communication/ex-CommunicationQuestion" key="Communication-ex-CommunicationQuestion" name="ex-CommunicationQuestion"/>
-<artifact id="Communication/ex-CommunicationResponse" key="Communication-ex-CommunicationResponse" name="ex-CommunicationResponse"/>
+<artifact id="Communication/ex-CommunicationQuestion1" key="Communication-ex-CommunicationQuestion1" name="ex-CommunicationQuestion1"/>
+<artifact id="Communication/ex-CommunicationQuestion2" key="Communication-ex-CommunicationQuestion2" name="ex-CommunicationQuestion2"/>
+<artifact id="Communication/ex-CommunicationResponse1" key="Communication-ex-CommunicationResponse1" name="ex-CommunicationResponse1"/>
+<artifact id="Communication/ex-CommunicationResponse2" key="Communication-ex-CommunicationResponse2" name="ex-CommunicationResponse2"/>
+<artifact id="Communication/ex-CommunicationResponse3" key="Communication-ex-CommunicationResponse3" name="ex-CommunicationResponse3"/>
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>
 <page key="actors-and-use-cases" name="Actors and Use Cases" url="actors-and-use-cases"/>

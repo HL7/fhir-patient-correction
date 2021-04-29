@@ -1,0 +1,20 @@
+@startuml
+title Abstract Model - Disagreement on a Denied Correction stays Denied
+
+note left of CorrectionRequester
+Previously had a Change Denied
+end note
+
+
+CorrectionRequester->RequestFulfiller : Send a Disagreement
+Activate RequestFulfiller
+RequestFulfiller->RequestFulfiller : Record Disagreement
+
+
+note right: Based on the arguments and data decide to to continue to reject changing the record
+RequestFulfiller->RequestFulfiller: Record Rebuttal
+RequestFulfiller->CorrectionRequester: Change remains Denied [with Rebuttal]
+Deactivate RequestFulfiller
+
+note left: frown
+@enduml

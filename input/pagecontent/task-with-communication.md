@@ -4,7 +4,9 @@ With the Task with Communication alternative, a Task is used to describe the cor
 
 ### RESTful interactions
 
-{% include img.html img="restful-interactions.png" %}
+<div>
+{%include task-comm-request.svg%}
+</div>
 
 ### Task Status
 

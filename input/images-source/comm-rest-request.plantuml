@@ -1,0 +1,53 @@
+@startuml
+title RESTful Interactions for Request For Correction Using Communication Alone
+
+note left of CorrectionRequester
+Send a new Correction Request
+end note
+CorrectionRequester->RequestFulfiller: Create (POST) Communication Initial Correction Request
+activate RequestFulfiller
+RequestFulfiller->RequestFulfiller: start internal processing
+RequestFulfiller-->CorrectionRequester: return created Communication (with id)
+
+
+loop
+note left of CorrectionRequester
+Poll periodically to check for 
+correspondence and status of the 
+correction request until completed
+end note
+CorrectionRequester->RequestFulfiller: Search (GET) Communications in response
+CorrectionRequester -> CorrectionRequester: process and react
+end
+
+alt
+note right of RequestFulfiller
+When more information is needed
+then a new Communication is created
+with inResponseTo original
+end note
+RequestFulfiller<-RequestFulfiller: Create (POST) new Communication Question on Correction Request
+end
+
+alt
+note left of CorrectionRequester
+Correspond with Fulfiller
+end note
+CorrectionRequester->RequestFulfiller: Create (POST) new Communication Response on Question
+end
+
+
+
+alt
+note right of RequestFulfiller
+When the request is fulfilled
+(agreed or rejected) then 
+a new concluding Communication
+end note
+RequestFulfiller<-RequestFulfiller: Create (POST) new Communication Conclusion on Correction Request
+end
+
+Deactivate RequestFulfiller
+note left of CorrectionRequester: loop discovers Conclusion Communication
+note left of CorrectionRequester: smile
+@enduml

@@ -1,17 +1,6 @@
 @startuml
-note left: Notice a problem
+title Abstract Model - Request For Correction
+
 CorrectionRequester->RequestFulfiller : Request a Change
-Activate RequestFulfiller
-RequestFulfiller->RequestFulfiller : Check records
 
-loop
-   RequestFulfiller-->CorrectionRequester : Please clarify
-   CorrectionRequester-->RequestFulfiller : Here is the clarification
-end
-
-RequestFulfiller->RequestFulfiller : Decide to make correction
-RequestFulfiller->CorrectionRequester : Change accepted
-Deactivate RequestFulfiller
-
-note left: smile
 @enduml

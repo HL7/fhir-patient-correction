@@ -1,5 +1,5 @@
 @startuml
-title Abstract Model - Request For Correction Denied
+title Abstract Model - Request For Correction accepted
 
 note left of CorrectionRequester
 Notice a problem
@@ -13,9 +13,9 @@ loop
    CorrectionRequester->RequestFulfiller : Here is the clarification
 end
 
-RequestFulfiller->RequestFulfiller : Decide to deny the correction
-RequestFulfiller->CorrectionRequester : Change denied
+RequestFulfiller->RequestFulfiller : Decide to make correction
+RequestFulfiller->CorrectionRequester : Change accepted
 Deactivate RequestFulfiller
 
-note left: frown
+note left: smile
 @enduml

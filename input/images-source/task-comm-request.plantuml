@@ -1,0 +1,47 @@
+@startuml
+title Restful Interactions for Request For Correction Using Communication and Task
+
+note left of CorrectionRequester
+Send a new Correction Request
+end note
+CorrectionRequester->RequestFulfiller: Create (POST) Task
+activate RequestFulfiller
+RequestFulfiller->RequestFulfiller: start internal processing
+RequestFulfiller-->CorrectionRequester: return created Task (with id)
+
+alt
+note right of RequestFulfiller
+When more information is needed
+then the Task is updated and 
+a new Communication is sent
+with inResponseTo Task
+end note
+RequestFulfiller->RequestFulfiller: update Task
+CorrectionRequester<-RequestFulfiller: Create (POST) Communication
+CorrectionRequester -> CorrectionRequester: process and react
+
+alt
+note left of CorrectionRequester
+Correspond with Fulfiller
+end note
+CorrectionRequester->RequestFulfiller: Create (POST) new Communication basedOn Task
+end
+end
+
+
+
+alt
+note right of RequestFulfiller
+When the request is fulfilled
+(agreed or rejected) then 
+the Task is updated and
+a new concluding Communication
+end note
+RequestFulfiller->RequestFulfiller: update Task
+CorrectionRequester<-RequestFulfiller: Create (POST) Communication
+CorrectionRequester -> CorrectionRequester: process and react
+end
+
+Deactivate RequestFulfiller
+note left of CorrectionRequester: smile
+@enduml

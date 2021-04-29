@@ -1,0 +1,44 @@
+@startuml
+title PUSH Interactions for Request For Correction Using Communication Alone
+
+note left of CorrectionRequester
+Send a new Correction Request
+end note
+CorrectionRequester->RequestFulfiller: Create (POST) Communication Initial Correction Request
+activate RequestFulfiller
+RequestFulfiller->RequestFulfiller: start internal processing
+RequestFulfiller-->CorrectionRequester: return created Communication (with id)
+
+alt
+note right of RequestFulfiller
+When more information is needed
+then a new Communication is sent
+with inResponseTo original
+end note
+CorrectionRequester<-RequestFulfiller: Create (POST) new Communication Question On Correction Request
+CorrectionRequester -> CorrectionRequester: process and react
+end
+
+alt
+note left of CorrectionRequester
+Response to a question from the CorrectionFulfiller
+end note
+CorrectionRequester->RequestFulfiller: Create (POST) new Communication Response on Question
+end
+
+
+
+alt
+note right of RequestFulfiller
+When the request is fulfilled
+(agreed or rejected) then 
+a new concluding Communication
+end note
+RequestFulfiller->RequestFulfiller: finish internal processing
+CorrectionRequester<-RequestFulfiller: Create (POST) new Communication Conclusion on Correction Request
+CorrectionRequester -> CorrectionRequester: process and react
+end
+
+Deactivate RequestFulfiller
+note left of CorrectionRequester: smile
+@enduml

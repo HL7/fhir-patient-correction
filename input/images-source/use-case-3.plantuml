@@ -1,19 +1,21 @@
 @startuml
-note left: Previously had a Change Rejected
+title Abstract Model - Disagreement on a Denied Correction results in Change
+
+note left of CorrectionRequester
+Previously had a Change Denied
+end note
+
 CorrectionRequester->RequestFulfiller : Send a Disagreement
 Activate RequestFulfiller
-RequestFulfiller->RequestFulfiller : Check records
+RequestFulfiller->RequestFulfiller : Record Disagreement
 
-loop
-   RequestFulfiller-->CorrectionRequester : Please clarify
-   CorrectionRequester-->RequestFulfiller : Here is the clarification
-end
-
-
-RequestFulfiller->RequestFulfiller : Review Disagreement
-note right: Based on the arguments and data decide to change the record
-RequestFulfiller->CorrectionRequester : Change Accepted
+note right of CorrectionFulfiller
+Based on the arguments and data decide 
+to change the record
+end note
+RequestFulfiller->CorrectionRequester : Record Changed
 Deactivate RequestFulfiller
 
 note left: smile
+
 @enduml

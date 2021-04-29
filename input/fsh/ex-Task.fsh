@@ -3,11 +3,11 @@ InstanceOf: Task
 Description: "Basic Patient Request for Correction"
 Usage: #example
  // Reference to Patient Robert ChartError
-* for = Reference(cfsb1608445009362)
+* for = Reference(ex-patient)
 // Reference to Provider Organization with the Chart in Question
-* owner = Reference(cfsb1608445622504)
+* owner = Reference(ex-practitioner)
 // Reference to Patient Robert ChartError
-* requester = Reference(cfsb1608445009362)
+* requester = Reference(ex-patient)
 * status = #requested
 * intent = #order
 * code.text = "Patient Request for Correction"
@@ -20,11 +20,11 @@ Description: "Basic Patient Request for Correction - Request is Accepted"
 Usage: #example
  
 // Reference to Patient Robert ChartError
-* for = Reference(cfsb1608445009362)
+* for = Reference(ex-patient)
 // Reference to Provider Organization with the Chart in Question
-* owner = Reference(cfsb1608445622504)
+* owner = Reference(ex-practitioner)
 // Reference to Patient Robert ChartError
-* requester = Reference(cfsb1608445009362)
+* requester = Reference(ex-patient)
 * status = #accepted
 * intent = #order
 * code.text = "Patient Request for Correction"
@@ -41,11 +41,11 @@ Description: "Basic Patient Request for Correction - Request is Updated"
 Usage: #example
  
 // Reference to Patient Robert ChartError
-* for = Reference(cfsb1608445009362)
+* for = Reference(ex-patient)
 // Reference to Provider Organization with the Chart in Question
-* owner = Reference(cfsb1608445622504)
+* owner = Reference(ex-practitioner)
 // Reference to Patient Robert ChartError
-* requester = Reference(cfsb1608445009362)
+* requester = Reference(ex-patient)
 * status = #accepted
 * intent = #order
 * code.text = "Patient Request for Correction"
@@ -62,11 +62,11 @@ Description: "Basic Patient Request for Correction - Request is Denied"
 Usage: #example
  
 // Reference to Patient Robert ChartError
-* for = Reference(cfsb1608445009362)
+* for = Reference(ex-patient)
 // Reference to Provider Organization with the Chart in Question
-* owner = Reference(cfsb1608445622504)
+* owner = Reference(ex-practitioner)
 // Reference to Patient Robert ChartError
-* requester = Reference(cfsb1608445009362)
+* requester = Reference(ex-patient)
 * status = #rejected
 * statusReason.text = "Chart is correct"
 * note.text = "Referred to Dr. Alan Mani for review"
@@ -87,11 +87,11 @@ Description: "Disagreement with Request for Correction Denial"
 Usage: #example
  
 // Reference to Patient Robert ChartError
-* for = Reference(cfsb1608445009362)
+* for = Reference(ex-patient)
 // Reference to Patient Robert ChartError
-* requester = Reference(cfsb1608445009362)
+* requester = Reference(ex-patient)
 // Reference to Provider Organization with the Chart in Question
-* owner = Reference(cfsb1608445622504)
+* owner = Reference(ex-practitioner)
 // Reference to Basic Patient Request for Correction
 * reasonReference = Reference(cfsb1608445649594)
 * intent = #order

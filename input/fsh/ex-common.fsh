@@ -9,7 +9,7 @@ Description: "Dummy patient example for completeness sake. No actual use of this
 // history - http://playgroundjungle.com/2018/02/origins-of-john-jacob-jingleheimer-schmidt.html
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * name[+].use = #usual
-* name[=].family = "Smith"
+* name[=].family = "Schmidt"
 * name[=].given = "John"
 * name[+].use = #old
 * name[=].family = "Schnidt"
@@ -19,13 +19,13 @@ Description: "Dummy patient example for completeness sake. No actual use of this
 * name[=].given[+] = "Heimer"
 * name[=].period.end = "1960"
 * name[+].use = #official
-* name[=].family = "Smith"
+* name[=].family = "Schmidt"
 * name[=].given[+] = "John"
 * name[=].given[+] = "Jacob"
 * name[=].given[+] = "Jingleheimer"
 * name[=].period.start = "1960-01-01"
 * name[+].use = #nickname
-* name[=].family = "Smith"
+* name[=].family = "Schmidt"
 * name[=].given = "Jack"
 * gender = #other
 * birthDate = "1923-07-25"
@@ -44,7 +44,18 @@ InstanceOf: Practitioner
 Title: "Dummy Practitioner example"
 Description: "Dummy Practitioner example for completeness sake. No actual use of this resource other than an example target"
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
-* telecom.system = #email
-* telecom.value = "JohnMoehrke@gmail.com"
+* name[+].use = #official
+* name[=].family = "Schmitt"
+* name[=].given[+] = "John"
 
-
+Instance: ex-smoking
+InstanceOf: Observation
+Title: "Dummy Patient is smoking"
+Description: "Dummy Patient is a smoker. No actual use of this resource other than ans an exmaple target"
+* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
+* status = #final
+* category = http://terminology.hl7.org/CodeSystem/observation-category#social-history
+* code = http://loinc.org#72166-2
+* subject = Reference(ex-patient)
+* issued = "1983-12-12T05:27:04Z"
+* valueCodeableConcept = http://snomed.info/sct#428041000124106 "Occasional tobacco smoker"

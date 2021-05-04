@@ -9,13 +9,13 @@ CorrectionRequester->RequestFulfiller : Send a Disagreement
 Activate RequestFulfiller
 RequestFulfiller->RequestFulfiller : Record Disagreement
 
-note right of CorrectionFulfiller
-Based on the arguments and data decide 
-to change the record
+note right of RequestFulfiller
+Based on the arguments and data
+decide not to change the record
 end note
-RequestFulfiller->CorrectionRequester : Record Changed
+RequestFulfiller->CorrectionRequester : Record Not Changed
 Deactivate RequestFulfiller
 
-note left: smile
+note left: frown
 
 @enduml

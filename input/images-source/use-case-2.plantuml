@@ -8,7 +8,7 @@ CorrectionRequester->RequestFulfiller : Request a Change
 Activate RequestFulfiller
 RequestFulfiller->RequestFulfiller : Check records
 
-loop
+loop Dialog (status, clarifications, etc.)
    RequestFulfiller->CorrectionRequester : Please clarify
    CorrectionRequester->RequestFulfiller : Here is the clarification
 end

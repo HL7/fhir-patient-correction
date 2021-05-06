@@ -1,8 +1,8 @@
-Profile:        PatientCorrectionRequest
+Profile:        PatientCorrectionTask
 Parent:         Task
-Id:             patient-correction-request
-Title:          "Patient Correction Request"
-Description:    "A correction request orginating from a patient."
+Id:             patient-correction-task
+Title:          "Patient Correction Task"
+Description:    "A Task representing a correction request orginating from a patient. This Task may be linked to by one or more Communication."
 
 * identifier MS
 * identifier 0..*

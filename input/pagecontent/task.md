@@ -1,6 +1,6 @@
 ### Task-only alternative
 
-With the Task-only alternative, a Task resource (PatientCorrectionRequest) is used to convey a patient correction request. The Task is updated as needed to reflect back and forth communication as well as for the various follow-up states that can exist.
+With the Task-only alternative, a Task resource ([Patient Correction Task](StructureDefinition-patient-correction-task.html)) is used to convey a patient correction request. The Task is updated as needed to reflect back and forth communication as well as for the various follow-up states that can exist.
 
 ### RESTful interactions
 

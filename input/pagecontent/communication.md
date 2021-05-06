@@ -1,6 +1,6 @@
 ### Communication-only alternative
 
-With the Communication-only alternative, only Communication is used, both for the initial correction request, and for all of the subsequent back and forth conversation regarding the request,
+With the Communication-only alternative, only Communication is used, both for the [initial correction request](StructureDefinition-patient-correction-communication-initial.html), and for all of the subsequent back and forth conversation regarding the request,
 
 ### RESTful interactions
 
@@ -30,7 +30,7 @@ The Communication includes the following profiled Communication resource
 
 #### Initial Correction Request
 
-This Communication is the initial communication initiated by the Patient to the Organization or Practitioner that is responsible for the healthcare information that needs a correction. This communication includes the explanation of the request, and may include pointers to the exact records by identifier or reference. When an identifier or reference is not known to the Patient, but where the patient has a copy of the healthcare information in question, this may be included in the Communication. This communication may be sent by the Patient or a RelatedPerson on-behalf of the Patient.
+This Communication is the [initial communication](StructureDefinition-patient-correction-communication-initial.html) initiated by the Patient to the Organization or Practitioner that is responsible for the healthcare information that needs a correction. This communication includes the explanation of the request, and may include pointers to the exact records by identifier or reference. When an identifier or reference is not known to the Patient, but where the patient has a copy of the healthcare information in question, this may be included in the Communication. This communication may be sent by the Patient or a RelatedPerson on-behalf of the Patient.
 
 * The [Profiled Communication Resource](StructureDefinition-patient-correction-communication-initial.html)
 * An [Example Simple text based Initial Change Request](Communication-ex-CommunicationInitial.html)

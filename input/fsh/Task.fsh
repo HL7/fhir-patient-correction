@@ -17,7 +17,7 @@ Description:    "A Task representing a correction request orginating from a pati
 
 * statusReason MS
 * statusReason 0..1
-* statusReason ^short = "The reason for the correctioj request status."
+* statusReason ^short = "The reason for the correction request status."
 
 * businessStatus MS
 * businessStatus 0..1

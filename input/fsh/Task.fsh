@@ -13,11 +13,11 @@ Description:    "A Task representing a correction request orginating from a pati
 
 * status MS
 * status 1..1
-* status ^short = "Value Set - certain values recommended. Some must be supported."
+* status ^short = "The status of the correction request."
 
 * statusReason MS
 * statusReason 0..1
-* statusReason ^short = "Reason for rejection, for example."
+* statusReason ^short = "The reason for the correctioj request status."
 
 * businessStatus MS
 * businessStatus 0..1
@@ -33,7 +33,7 @@ Description:    "A Task representing a correction request orginating from a pati
 
 * description MS
 * description 1..1
-* description ^short = "Human readable description of what is to be performed.  For example: \"Please correct the Progress Note dated 2/10/20 in which you state that I am a smoke cigarettes. I do not smoke cigarettes but do smoke cigars\"."
+* description ^short = "Human-readable indication that this is a patient correction request."
 
 * for MS
 * for 1..1
@@ -48,7 +48,7 @@ Description:    "A Task representing a correction request orginating from a pati
 
 * authoredOn MS
 * authoredOn 1..1
-* authoredOn ^short = "Date/Time original request was authored."
+* authoredOn ^short = "The date/time that the original correction request was authored."
 
 * lastModified MS
 * lastModified 0..1
@@ -56,20 +56,22 @@ Description:    "A Task representing a correction request orginating from a pati
 
 * requester MS
 * requester 0..1
-* requester ^short = "The entity that requests the correction.  Examples - Patient, CareGiver, Clinician."
+* requester only Reference(Patient or RelatedPerson)
+* requester ^short = "The entity that requests the correction, such as the patient or caregiver."
 
 * owner MS
 * owner 0..1
+* owner only Reference(Practitioner | PractitionerRole | Organization | CareTeam | HealthcareService)
 * owner ^short = "The entity that is responsibility for fulfilling the request.  Especially important to indicate owner on Fulfiller side."
 
 * note 0..*
-* note ^short = "Notes from those that are working on the correction about that work."
+* note ^short = "Notes from those that are working on the correction about that work (this is not the correction request itself)."
 
 * restriction 0..0
 * restriction ^short = ""
 
 * input 0..*
-* input ^short = "Provides details about the specific correction being requested."
+* input ^short = "Provides the details of the correction(s) being requested."
 
 * input.type 1..1
 * input.type ^short = "Possible types: 1) Encounter in which error was made, 2) Original Correction Request that was Denied, 3) Additional Details on Disagreement."

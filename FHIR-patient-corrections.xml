@@ -5,24 +5,15 @@
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
-<artifact id="CodeSystem/CommunicationCategory" key="CodeSystem-CommunicationCategory" name="Communication Categories"/>
-<artifact id="ValueSet/CommunicationCategoryVS" key="ValueSet-CommunicationCategoryVS" name="CommunicationCategoryVS"/>
 <artifact id="Organization/ex-organization" key="Organization-ex-organization" name="Dummy Organization example"/>
 <artifact id="Patient/ex-patient" key="Patient-ex-patient" name="Dummy Patient example"/>
 <artifact id="Observation/ex-smoking" key="Observation-ex-smoking" name="Dummy Patient is smoking"/>
+<artifact id="Practitioner/ex-practitioner2" key="Practitioner-ex-practitioner2" name="Dummy Practitioner (PCP) example"/>
 <artifact id="Practitioner/ex-practitioner" key="Practitioner-ex-practitioner" name="Dummy Practitioner example"/>
-<artifact id="StructureDefinition/patient-correction-communication-conclusion" key="StructureDefinition-patient-correction-communication-conclusion" name="Patient Correction Communication Conclusion"/>
-<artifact id="StructureDefinition/patient-correction-communication-initial" key="StructureDefinition-patient-correction-communication-initial" name="Patient Correction Communication Initial"/>
-<artifact id="StructureDefinition/patient-correction-communication-question" key="StructureDefinition-patient-correction-communication-question" name="Patient Correction Communication Question"/>
-<artifact id="StructureDefinition/patient-correction-communication-response" key="StructureDefinition-patient-correction-communication-response" name="Patient Correction Communication Response"/>
+<artifact id="StructureDefinition/patient-correction-communication" key="StructureDefinition-patient-correction-communication" name="Patient Correction Communication"/>
 <artifact deprecated="true" id="StructureDefinition/patient-correction-disagreement" key="patient-correction-disagreement" name="Patient Correction Disagreement"/>
 <artifact deprecated="true" id="StructureDefinition/patient-correction-request" key="patient-correction-request" name="Patient Correction Request"/>
 <artifact id="StructureDefinition/patient-correction-task" key="StructureDefinition-patient-correction-task" name="Patient Correction Task"/>
-<artifact id="Task/cfsb1608445649594" key="Task-cfsb1608445649594" name="cfsb1608445649594"/>
-<artifact id="Task/cfsb1608445649595" key="Task-cfsb1608445649595" name="cfsb1608445649595"/>
-<artifact id="Task/cfsb1608445649596" key="Task-cfsb1608445649596" name="cfsb1608445649596"/>
-<artifact id="Task/cfsb1608445649597" key="Task-cfsb1608445649597" name="cfsb1608445649597"/>
-<artifact id="Task/cfsb1608624320317" key="Task-cfsb1608624320317" name="cfsb1608624320317"/>
 <artifact id="Communication/ex-CommunicationConclusion" key="Communication-ex-CommunicationConclusion" name="ex-CommunicationConclusion"/>
 <artifact id="Communication/ex-CommunicationInitial" key="Communication-ex-CommunicationInitial" name="ex-CommunicationInitial"/>
 <artifact id="Communication/ex-CommunicationInitial2" key="Communication-ex-CommunicationInitial2" name="ex-CommunicationInitial2"/>
@@ -31,15 +22,20 @@
 <artifact id="Communication/ex-CommunicationResponse1" key="Communication-ex-CommunicationResponse1" name="ex-CommunicationResponse1"/>
 <artifact id="Communication/ex-CommunicationResponse2" key="Communication-ex-CommunicationResponse2" name="ex-CommunicationResponse2"/>
 <artifact id="Communication/ex-CommunicationResponse3" key="Communication-ex-CommunicationResponse3" name="ex-CommunicationResponse3"/>
+<artifact id="Task/ex-TaskBasicRequest" key="Task-ex-TaskBasicRequest" name="ex-TaskBasicRequest"/>
+<artifact id="Task/ex-TaskBasicRequestAccepted" key="Task-ex-TaskBasicRequestAccepted" name="ex-TaskBasicRequestAccepted"/>
+<artifact id="Task/ex-TaskBasicRequestDenied" key="Task-ex-TaskBasicRequestDenied" name="ex-TaskBasicRequestDenied"/>
+<artifact id="Task/ex-TaskBasicRequestDisagree" key="Task-ex-TaskBasicRequestDisagree" name="ex-TaskBasicRequestDisagree"/>
+<artifact id="Task/ex-TaskBasicRequestUpdated" key="Task-ex-TaskBasicRequestUpdated" name="ex-TaskBasicRequestUpdated"/>
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>
 <page key="actors-and-use-cases" name="Actors and Use Cases" url="actors-and-use-cases"/>
 <page key="artifacts" name="Artifacts Summary"/>
 <page key="communication" name="Communication"/>
+<page key="communication-with-task" name="Communication with Task"/>
 <page key="index" name="Home"/>
 <page deprecated="true" key="home" name="IG Home" url="index"/>
 <page key="specification" name="Specification" url="specification"/>
 <page key="toc" name="Table of Contents" url="toc"/>
 <page key="task" name="Task"/>
-<page key="task-with-communication" name="Task with Communication"/>
 </specification>

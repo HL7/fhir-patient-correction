@@ -35,23 +35,32 @@ Description: "Dummy patient example for completeness sake. No actual use of this
 Instance:   ex-organization
 InstanceOf: Organization
 Title:      "Dummy Organization example"
-Description: "Dummy Organization example for completeness sake. No actual use of this resource other than an example target"
+Description: "Dummy Organization example for completeness sake. No actual use of this resource other than an example target."
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * name = "nowhere"
 
 Instance: ex-practitioner
 InstanceOf: Practitioner
 Title: "Dummy Practitioner example"
-Description: "Dummy Practitioner example for completeness sake. No actual use of this resource other than an example target"
+Description: "Dummy Practitioner example for completeness sake. No actual use of this resource other than an example target."
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * name[+].use = #official
 * name[=].family = "Schmitt"
 * name[=].given[+] = "John"
 
+Instance: ex-practitioner2
+InstanceOf: Practitioner
+Title: "Dummy Practitioner (PCP) example"
+Description: "Dummy Practitioner (PCP) example for completeness sake. No actual use of this resource other than an example target."
+* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
+* name[+].use = #official
+* name[=].family = "Schmitt"
+* name[=].given[+] = "Alice"
+
 Instance: ex-smoking
 InstanceOf: Observation
 Title: "Dummy Patient is smoking"
-Description: "Dummy Patient is a smoker. No actual use of this resource other than ans an exmaple target"
+Description: "Dummy Patient is a smoker. No actual use of this resource other than as an exmaple target."
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * status = #final
 * category = http://terminology.hl7.org/CodeSystem/observation-category#social-history

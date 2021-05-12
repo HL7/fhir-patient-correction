@@ -2,14 +2,11 @@ Profile:        PatientCorrectionTask
 Parent:         Task
 Id:             patient-correction-task
 Title:          "Patient Correction Task"
-Description:    "A Task representing a correction request orginating from a patient. This Task may be linked to by one or more Communication."
+Description:    "A Task representing patient correction request. This Task may be linked to by one or more Communication."
 
 * identifier MS
 * identifier 0..*
 * identifier ^short = "A business identifier for the correction process. It could be assigned by requester or fulfiller."
-
-* partOf 0..*
-* partOf ^short = "Could potentically be used on child tasks on a request for correction task if part is accepted and part in denied."
 
 * status MS
 * status 1..1
@@ -29,7 +26,7 @@ Description:    "A Task representing a correction request orginating from a pati
 
 * code MS
 * code 1..1
-* code ^short = "Code and code.text to represent patient correction. Code and code.text to represent a disagreement."
+* code ^short = "Code and code.text to represent patient correction, or Code and code.text to represent a disagreement."
 
 * description MS
 * description 1..1
@@ -37,10 +34,8 @@ Description:    "A Task representing a correction request orginating from a pati
 
 * for MS
 * for 1..1
+* for only Reference(Patient)
 * for ^short = "The patient whose record this correction references."
-
-* encounter 0..1
-* encounter ^short = "This is to indicate that this specific task originated in a specific encounter. Correction requests from patients are expected to usually originate outside of an encounter. An exception might be requests for correction sent from the inpatient bedside by patient or caregiver."
 
 * executionPeriod MS
 * executionPeriod 0..1
@@ -61,7 +56,7 @@ Description:    "A Task representing a correction request orginating from a pati
 
 * owner MS
 * owner 0..1
-* owner only Reference(Practitioner | PractitionerRole | Organization | CareTeam | HealthcareService)
+* owner only Reference(Practitioner or PractitionerRole or Organization or CareTeam or HealthcareService)
 * owner ^short = "The entity that is responsibility for fulfilling the request.  Especially important to indicate owner on Fulfiller side."
 
 * note 0..*
@@ -71,20 +66,18 @@ Description:    "A Task representing a correction request orginating from a pati
 * restriction ^short = ""
 
 * input 0..*
-* input ^short = "Provides the details of the correction(s) being requested."
-
-* input.type 1..1
-* input.type ^short = "Possible types: 1) Encounter in which error was made, 2) Original Correction Request that was Denied, 3) Additional Details on Disagreement."
+* input ^short = "Details of the correction request, as well as any follow-up communication from the patient."
 
 * input.value[x] 1..1
 * input.value[x] only string or Attachment or Reference
-* input.value[x] ^short = "1) Reference (Encounter), 2) Attachment, 3) Reference (Backbone), 4) Reference (Backbone), 5) Reference (CommunicationRequest), 6) String 7) DocumentReference"
 
 * output 0..*
-* output ^short = "Documentation about the Correction from the Fulfiller. For example, an explanation about request is extended 60 days, that patient can ask to have correction sent to third parties, or an explanation of denial and a patient's right to disagree."
-
-* output.type 1..1
-* output.type ^short = "Type indicating \"Additional Information.\""
+* output ^short = "Communication from the fulfiller to the patient about the correction request."
 
 * output.value[x] 1..1
 * output.value[x] only string
+
+// not used, so forbidden (would rather mark as "If you send, it can be ignored"). 
+* encounter 0..0
+* basedOn 0..0
+* partOf 0..0

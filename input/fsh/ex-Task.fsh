@@ -1,6 +1,6 @@
-Instance: cfsb1608445649594
+Instance: ex-TaskBasicRequest
 InstanceOf: Task
-Description: "Basic Patient Request for Correction"
+Description: "Basic Patient Request for Correction, using Task without Communication"
 Usage: #example
  // Reference to Patient Robert ChartError
 * for = Reference(ex-patient)
@@ -14,9 +14,9 @@ Usage: #example
 * description = "My chart states that I smoke two packs a day.  I do not smoke"
 * authoredOn = "2020-12-12T19:28:17+10:00"
 
-Instance: cfsb1608445649595
+Instance: ex-TaskBasicRequestAccepted
 InstanceOf: Task
-Description: "Basic Patient Request for Correction - Request is Accepted"
+Description: "Basic Patient Request for Correction - Request is Accepted, using Task without Communication"
 Usage: #example
  
 // Reference to Patient Robert ChartError
@@ -35,9 +35,9 @@ Usage: #example
 * output.type.text = "Communication to Patient"
 * output.valueMarkdown = "Your request for amendment has been accepted and your chart will be corrected.  If you would like us to notify other clinicians of the amendment, please provide name and contact information"
 
-Instance: cfsb1608445649596
+Instance: ex-TaskBasicRequestUpdated
 InstanceOf: Task
-Description: "Basic Patient Request for Correction - Request is Updated"
+Description: "Basic Patient Request for Correction - Request is Updated, using Task without Communication"
 Usage: #example
  
 // Reference to Patient Robert ChartError
@@ -54,11 +54,11 @@ Usage: #example
 * lastModified = "2020-12-18T19:28:17+10:00"
 * input[0].type.text = "Who to Notify"
 // References  CommunicationRequest Resource requesting notification to primary care doctor
-* input[0].valueReference = Reference(cfsb1608619795209)
+* input[0].valueReference = Reference(ex-practitioner2)
 
-Instance: cfsb1608445649597
+Instance: ex-TaskBasicRequestDenied
 InstanceOf: Task
-Description: "Basic Patient Request for Correction - Request is Denied"
+Description: "Basic Patient Request for Correction - Request is Denied, using Task without Communication"
 Usage: #example
  
 // Reference to Patient Robert ChartError
@@ -81,9 +81,9 @@ Usage: #example
 * output[1].type.text = "Explanation of Right to Disagree"
 * output[1].valueMarkdown = "You have a right to provide a written disagreement to this Denial Decision. If you choose to provide a disagreement, it will be attached to your medical record."
 
-Instance: cfsb1608624320317
+Instance: ex-TaskBasicRequestDisagree
 InstanceOf: Task
-Description: "Disagreement with Request for Correction Denial"
+Description: "Disagreement with Request for Correction Denial, using Task without Communication"
 Usage: #example
  
 // Reference to Patient Robert ChartError
@@ -93,7 +93,7 @@ Usage: #example
 // Reference to Provider Organization with the Chart in Question
 * owner = Reference(ex-practitioner)
 // Reference to Basic Patient Request for Correction
-* reasonReference = Reference(cfsb1608445649594)
+* reasonReference = Reference(ex-TaskBasicRequest)
 * intent = #order
 * status = #requested
 * authoredOn = "2020-12-20T19:28:17+10:00"

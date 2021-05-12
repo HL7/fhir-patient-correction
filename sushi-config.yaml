@@ -42,7 +42,7 @@ menu:
     Overview: specification.html
     Task only: task.html
     Communication only: communication.html
-    Task with Communication: task-with-communication.html
+    Communication with Task: communication-with-task.html
   Artifacts: artifacts.html
   Other Resources:
     "FHIR Spec ": new-tab {{site.data.fhir.path}}index.html

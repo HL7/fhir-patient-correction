@@ -1,10 +1,9 @@
-Intro text for your profile
+This is the profile for the Patient Correction Communication, which is used for back and forth communications about a patient correction.
 
-### Header you would like to have
+### Usage
 
-Text where you explain how to use this profile
+The same Communication profile, described below, is used for all back and forth communications between the patient and the fulfiller. There may or may not also be a Task created by the fulfiller's server as a result of the initial Communication.
 
-#### Sub headers
+The *sender* and *recipient* should be set appropriately for each Communication, depending on whether the Communication is from patient to fulfiller, or fulfiller to patient. For the initial Communication, *inResponseTo* will be empty, but subsequent Communications should always point to the Communication that they are responding to. If there is an associated Task, then *about* should point to that Task. Otherwise, *about* should point to the initial Communication from the patient.
 
-More text
-
+The text or other content of the communication should be put in *payload*. *note* should only be used for notes from those that are working on the correction, about the process of making that correction. It should not be used for the correction request itself, or subsequent messages between patient and fulfiller.

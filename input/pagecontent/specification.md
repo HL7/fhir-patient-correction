@@ -4,7 +4,7 @@ This implementation guide describes three alternatives for how patient requests 
 
 * [Using Task only](task.html)
 * [Using Communication only](communication.html)
-* [Using Task with Communication](task-with-communication.html)
+* [Using Communication with Task](communication-with-task.html)
 
 ### Bundle
 

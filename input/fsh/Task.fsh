@@ -27,6 +27,7 @@ Description:    "A Task representing patient correction request. This Task may b
 * code MS
 * code 1..1
 * code ^short = "Code and code.text to represent patient correction, or Code and code.text to represent a disagreement."
+* code from PatientCorrectionTaskTypesVS
 
 * description MS
 * description 1..1
@@ -59,20 +60,27 @@ Description:    "A Task representing patient correction request. This Task may b
 * owner only Reference(Practitioner or PractitionerRole or Organization or CareTeam or HealthcareService)
 * owner ^short = "The entity that is responsibility for fulfilling the request.  Especially important to indicate owner on Fulfiller side."
 
+* reasonReference only Reference(PatientCorrectionTask)
+* reasonReference ^short = "The original correction request Task."
+* reasonReference obeys task-reasonreference
+
 * note 0..*
-* note ^short = "Notes from those that are working on the correction about that work (this is not the correction request itself)."
+* note ^short = "Used to convey any back and forth conversation between Fulfiller and Requester, for example, to clarify the request."
+* note obeys task-note
 
 * restriction 0..0
 * restriction ^short = ""
 
 * input 0..*
-* input ^short = "Details of the correction request, as well as any follow-up communication from the patient."
+* input ^short = "Details of the Correction Request or of the Disagreement to Correction Denial."
 
 * input.value[x] 1..1
 * input.value[x] only string or Attachment or Reference
+* input obeys task-input
 
 * output 0..*
-* output ^short = "Communication from the fulfiller to the patient about the correction request."
+* output ^short = "Formal Response from Fulfiller to the Correction Request or to the Disagreement to Correction Denial."
+* output obeys task-output1 and task-output2 and task-output3
 
 * output.value[x] 1..1
 * output.value[x] only string
@@ -81,3 +89,40 @@ Description:    "A Task representing patient correction request. This Task may b
 * encounter 0..0
 * basedOn 0..0
 * partOf 0..0
+
+
+Invariant: task-reasonreference
+Description: "If Task.code indicates this is a Disagreement Task, this field SHALL reference the original Request for Correction Task."
+Severity: #error
+
+Invariant: task-note
+Description: "Task.note[i] SHALL only be updated or deleted by its initial author."
+Severity: #error
+
+Invariant: task-input
+Description: "Task.input SHALL only be populated or updated by the CorrectionRequestor."
+Severity: #error
+
+Invariant: task-output1
+Description: "Task.output SHALL only be populated or updated by the CorrectionFulfiller."
+Severity: #error
+
+Invariant: task-output2
+Description: "If Task.code indicates this is a Request for Correction Task, this field SHALL contain the formal response to the request (acceptance, denial, partial acceptance/denial)."
+Severity: #error
+
+Invariant: task-output3
+Description: "If Task.code indicates this is a Disagreement Task, this field SHALL contain the formal response to the disagreement and optionally a rebuttal."
+Severity: #error
+
+
+CodeSystem:  PatientCorrectionTaskTypes
+Title: "Patient Correction Task Types"
+Description:  "CodeSystem of defines Task code for use in Patient Correction Request"
+* #medRecCxReq "Correction request by the Patient or RelatedPerson"
+* #medRecCxDenialDisagree "Disagreement with a denial correction request by the Patient or RelatedPerson"
+
+
+ValueSet: PatientCorrectionTaskTypesVS
+* PatientCorrectionTaskTypes#medRecCxReq
+* PatientCorrectionTaskTypes#medRecCxDenialDisagree

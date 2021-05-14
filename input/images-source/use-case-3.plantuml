@@ -1,5 +1,5 @@
 @startuml
-title Abstract Model - Disagreement on a Denied Correction results in Change
+title Abstract Model - Disagreement on a Denied Correction
 
 note left of CorrectionRequester
 Previously had a Change Denied

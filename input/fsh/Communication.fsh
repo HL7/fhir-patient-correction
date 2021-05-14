@@ -17,6 +17,8 @@ Description:    "A Communication between a patient and a fulfiller relating to a
 * status = #in-progress
 * status ^short = "The status is always in-progress."
 
+* category from PatientCorrectionCommunicationTypesVS
+
 * priority MS
 * priority ^short = "Priority may be used to enable prioritizing of the processing."
 
@@ -50,3 +52,15 @@ Description:    "A Communication between a patient and a fulfiller relating to a
 * encounter 0..0
 * basedOn 0..0
 * partOf 0..0
+
+
+CodeSystem:  PatientCorrectionCommunicationTypes
+Title: "Patient Correction Communication Types"
+Description:  "CodeSystem of defines Communication category for use in Patient Correction Request"
+* #medRecCxReq "Correction request by the Patient or RelatedPerson"
+* #medRecCxDenialDisagree "Disagreement with a denial correction request by the Patient or RelatedPerson"
+
+
+ValueSet: PatientCorrectionCommunicationTypesVS
+* PatientCorrectionCommunicationTypes#medRecCxReq
+* PatientCorrectionCommunicationTypes#medRecCxDenialDisagree

@@ -11,9 +11,13 @@
 <artifact id="Practitioner/ex-practitioner2" key="Practitioner-ex-practitioner2" name="Dummy Practitioner (PCP) example"/>
 <artifact id="Practitioner/ex-practitioner" key="Practitioner-ex-practitioner" name="Dummy Practitioner example"/>
 <artifact id="StructureDefinition/patient-correction-communication" key="StructureDefinition-patient-correction-communication" name="Patient Correction Communication"/>
+<artifact id="CodeSystem/PatientCorrectionCommunicationTypes" key="CodeSystem-PatientCorrectionCommunicationTypes" name="Patient Correction Communication Types"/>
 <artifact deprecated="true" id="StructureDefinition/patient-correction-disagreement" key="patient-correction-disagreement" name="Patient Correction Disagreement"/>
 <artifact deprecated="true" id="StructureDefinition/patient-correction-request" key="patient-correction-request" name="Patient Correction Request"/>
 <artifact id="StructureDefinition/patient-correction-task" key="StructureDefinition-patient-correction-task" name="Patient Correction Task"/>
+<artifact id="CodeSystem/PatientCorrectionTaskTypes" key="CodeSystem-PatientCorrectionTaskTypes" name="Patient Correction Task Types"/>
+<artifact id="ValueSet/PatientCorrectionCommunicationTypesVS" key="ValueSet-PatientCorrectionCommunicationTypesVS" name="PatientCorrectionCommunicationTypesVS"/>
+<artifact id="ValueSet/PatientCorrectionTaskTypesVS" key="ValueSet-PatientCorrectionTaskTypesVS" name="PatientCorrectionTaskTypesVS"/>
 <artifact id="Communication/ex-CommunicationConclusion" key="Communication-ex-CommunicationConclusion" name="ex-CommunicationConclusion"/>
 <artifact id="Communication/ex-CommunicationInitial" key="Communication-ex-CommunicationInitial" name="ex-CommunicationInitial"/>
 <artifact id="Communication/ex-CommunicationInitial2" key="Communication-ex-CommunicationInitial2" name="ex-CommunicationInitial2"/>

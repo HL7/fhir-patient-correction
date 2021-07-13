@@ -1,13 +1,13 @@
 @startuml
-title Restful Interactions for Request For Correction Using Communication and Task
+title Communication spawns Task
 
 note left of CorrectionRequester
 Send a new Correction Request
 end note
-CorrectionRequester->RequestFulfiller: Create (POST) Task
+CorrectionRequester->RequestFulfiller: Create (POST) Communication
 activate RequestFulfiller
-RequestFulfiller->RequestFulfiller: start internal processing
-RequestFulfiller-->CorrectionRequester: return created Task (with id)
+RequestFulfiller->RequestFulfiller: Create Task using internal processing
+RequestFulfiller-->CorrectionRequester: return created Communication
 
 alt
 note right of RequestFulfiller

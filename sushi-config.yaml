@@ -40,9 +40,9 @@ menu:
   Actors and Use Cases: actors-and-use-cases.html
   Specification: 
     Overview: specification.html
+    Communication with Task: communication-with-task.html
     Task only: task.html
     Communication only: communication.html
-    Communication with Task: communication-with-task.html
   Artifacts: artifacts.html
   Other Resources:
     "FHIR Spec ": new-tab {{site.data.fhir.path}}index.html

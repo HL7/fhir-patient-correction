@@ -1,6 +1,17 @@
 ### Communication with Task alternative
 
-With the Communication with Task alternative, a Task ([Patient Correction Task](StructureDefinition-patient-correction-task.html)) is created as a result of the initial Communication. Back and forth communications and conversation regarding the correction request are done using Communication, but the status of the request can be tracked using the Task.
+A patient request for correction is initiated by creating a Communication resource. This results in the creation
+of a Task ([Patient Correction Task](StructureDefinition-patient-correction-task.html)) resource, which can be used
+to track the status of the request. The **about** field of the Correction
+contains a reference to the Task. 
+
+All back and forth communication relating to the request is accomplished via additional Communication resources,
+each of which should link back to the Task. All Communications related to the Task can be located by searching the
+**about** field for the Task reference.
+
+The Communication **recipient** and **sender** fields are used to track whether each Communication is from the patient
+to the fulfiller, or vice versa.
+
 
 ### RESTful interactions
 

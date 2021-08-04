@@ -5,13 +5,13 @@ Title:          "Patient Correction Communication"
 Description:    "A Communication between a patient and a fulfiller relating to a patient correction request."
 
 * about 0..1
-* about only Reference(PatientCorrectionTask or PatientCorrectionCommunication)
-* about ^short = "The Patient Correction Task associated with this correction request, if any. Otherwise this would point to the initial Communication, unless this is the initial one."
-* about ^comment = "The about element will be empty in the initial correction request. The about element will point at the Task or the initial Communication in all other communications. This enables finding all Communications related to a correction request."
+* about only Reference(PatientCorrectionCommunication)
+* about ^short = "The original Patient Correction Request Communication associated with this correction request (unless this is the original communication, in which case this will be empty)."
+* about ^comment = "The about element will be empty in the initial Patient Correction Request Communication. The about element will point at the initial communication in all other communications. This allows for searching for all communications related to a patient correction request."
 
 * inResponseTo 0..*
 * inResponseTo only Reference(PatientCorrectionCommunication)
-* inResponseTo ^short = "Patient Correction Communications (zero or more) that this is in response to. Empty for the initial Patient Correction Communication. "
+* inResponseTo ^short = "Patient Correction Request Communications (zero or more) that this is in response to. Empty for the initial Patient Correction Communication. "
 * inResponseTo ^comment = "The inResponse element is used to point at one or more communication for which this is a response. This element enables linking questions to answers, and answers to follow-up questions."
 
 * status = #in-progress
@@ -64,3 +64,18 @@ Description:  "CodeSystem of defines Communication category for use in Patient C
 ValueSet: PatientCorrectionCommunicationTypesVS
 * PatientCorrectionCommunicationTypes#medRecCxReq
 * PatientCorrectionCommunicationTypes#medRecCxDenialDisagree
+
+
+Instance: Communication-About
+InstanceOf: SearchParameter
+Title: "Search on the Communication.about element"
+Description: "Search Parameter extension enabling clients to search on the Communication.about element"
+Usage: #definition
+* url = "http://hl7.org/fhir/uv/patient-corrections/SearchParameter-Communication-About"
+* description = "This SearchParameter enables finding all communications related to a Patient Request for Correction. Each communication related to a particular correction request will point to the original communication in the request."
+* name = "About"
+* status = #active
+* code = #about
+* base = #PatientCorrectionCommunication
+* expression = "Communication.about"
+* type = #reference

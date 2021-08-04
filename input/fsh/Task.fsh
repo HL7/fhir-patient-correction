@@ -10,7 +10,7 @@ Description:    "A Task representing patient correction request. This Task may b
 
 * status MS
 * status 1..1
-* status ^short = "The status of the correction request."
+* status ^short = "The status of this correction request Task (Ready, In-Progress, Completed, or Canceled)."
 
 * statusReason MS
 * statusReason 0..1
@@ -18,7 +18,7 @@ Description:    "A Task representing patient correction request. This Task may b
 
 * businessStatus MS
 * businessStatus 0..1
-* description ^short = "Provide further detail on status. Examples include Extended to represent that the consideration of an amendment request has been extended."
+* businessStatus ^short = "The business status of the correction request. For example: request accepted, request denied, waiting for more info from patient, in progress."
 
 * intent 1..1
 * intent only code
@@ -60,8 +60,9 @@ Description:    "A Task representing patient correction request. This Task may b
 * owner only Reference(Practitioner or PractitionerRole or Organization or CareTeam or HealthcareService)
 * owner ^short = "The entity that is responsibility for fulfilling the request.  Especially important to indicate owner on Fulfiller side."
 
-* reasonReference only Reference(PatientCorrectionTask)
-* reasonReference ^short = "The original correction request Task."
+* reasonReference 1..1
+* reasonReference only Reference(PatientCorrectionCommunication)
+* reasonReference ^short = "The original Patient Correction Request Communication associated with the correction request."
 * reasonReference obeys task-reasonreference
 
 * note 0..*
@@ -92,7 +93,7 @@ Description:    "A Task representing patient correction request. This Task may b
 
 
 Invariant: task-reasonreference
-Description: "If Task.code indicates this is a Disagreement Task, this field SHALL reference the original Request for Correction Task."
+Description: "If Task.code indicates this is a Disagreement Task, this field SHALL reference the original Request for Correction Communication."
 Severity: #error
 
 Invariant: task-note
@@ -126,3 +127,18 @@ Description:  "CodeSystem of defines Task code for use in Patient Correction Req
 ValueSet: PatientCorrectionTaskTypesVS
 * PatientCorrectionTaskTypes#medRecCxReq
 * PatientCorrectionTaskTypes#medRecCxDenialDisagree
+
+
+Instance: Task-ReasonReference
+InstanceOf: SearchParameter
+Title: "Search on the Task.reasonReference element"
+Description: "Search Parameter extension enabling clients to search on the Task.reasonReference element"
+Usage: #definition
+* url = "http://hl7.org/fhir/uv/patient-corrections/SearchParameter-Task-ReasonReference"
+* description = "This SearchParameter enables finding all tasks related to a Patient Request for Correction. Each task related to a particular correction request will point to the original communication in the request. There will be a task for the original request, and there may be additional tasks for any disagreements."
+* name = "About"
+* status = #active
+* code = #about
+* base = #PatientCorrectionTask
+* expression = "Task.reasonReference"
+* type = #reference

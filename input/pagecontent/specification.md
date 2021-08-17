@@ -22,10 +22,3 @@ Must Support on any profile data element SHALL be interpreted as follows:
   
 NOTE: The above definition of Must Support is derived from HL7v2 concept “Required but may be empty - RE” described in HL7v2 V28_CH02B_Conformance.doc.
 NOTE: Readers are advised to understand FHIR Terminology requirements, FHIR RESTful API based on the HTTP protocol, along with FHIR Data Types, FHIR Search and FHIR Resource formats before implementing US Core requirements.
-
-### Alternatives to Communication with Task
-
-The following alternatives have also been considered for creating and managing patient requests for corrections:
-
-* [Using Task only](task.html)
-* [Using Communication only](communication.html)

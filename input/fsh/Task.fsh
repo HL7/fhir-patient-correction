@@ -65,10 +65,6 @@ Description:    "A Task representing patient correction request. This Task may b
 * reasonReference ^short = "The original Patient Correction Request Communication associated with the correction request."
 * reasonReference obeys task-reasonreference
 
-* note 0..*
-* note ^short = "Used to convey any back and forth conversation between Fulfiller and Requester, for example, to clarify the request."
-* note obeys task-note
-
 * restriction 0..0
 * restriction ^short = ""
 

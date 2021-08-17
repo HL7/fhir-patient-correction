@@ -9,10 +9,10 @@ Description:    "A Communication between a patient and a fulfiller relating to a
 * about ^short = "The original Patient Correction Request Communication associated with this correction request (unless this is the original communication, in which case this will be empty)."
 * about ^comment = "The about element will be empty in the initial Patient Correction Request Communication. The about element will point at the initial communication in all other communications. This allows for searching for all communications related to a patient correction request."
 
-* inResponseTo 0..*
+* inResponseTo 0..1
 * inResponseTo only Reference(PatientCorrectionCommunication)
-* inResponseTo ^short = "Patient Correction Request Communications (zero or more) that this is in response to. Empty for the initial Patient Correction Communication. "
-* inResponseTo ^comment = "The inResponse element is used to point at one or more communication for which this is a response. This element enables linking questions to answers, and answers to follow-up questions."
+* inResponseTo ^short = "Patient Correction Request Communication that this is in response to. Empty for the initial Patient Correction Communication. "
+* inResponseTo ^comment = "The inResponse element is used to point at the Communication for which this is a response. This element enables linking questions to answers, and answers to follow-up questions."
 
 * status = #in-progress
 * status ^short = "The status is always in-progress."

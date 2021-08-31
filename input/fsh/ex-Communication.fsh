@@ -8,7 +8,8 @@ Usage: #example
 * subject = Reference(ex-patient)
 * sender = Reference(ex-patient)
 * recipient = Reference(ex-organization)
-* status = #in-progress
+* status = #completed
+* category = #medRecCxReq
 * priority = #asap
 * topic.text = "Patient Request for Correction"
 * payload[0].contentString = "My chart states that I smoke two packs a day.  
@@ -28,7 +29,8 @@ Usage: #example
 * subject = Reference(ex-patient)
 * sender = Reference(ex-patient)
 * recipient = Reference(ex-organization)
-* status = #in-progress
+* status = #completed
+* category = #medRecCxReq
 * priority = #asap
 * topic.text = "Patient Request for Correction"
 * payload[0].contentString = "My chart states that I smoke two packs a day.  
@@ -48,7 +50,8 @@ Usage: #example
 * subject = Reference(ex-patient)
 * recipient = Reference(ex-patient)
 * sender = Reference(ex-practitioner)
-* status = #in-progress
+* status = #completed
+* category = #medRecCxReq
 * priority = #asap
 * topic.text = "Patient Request for Correction"
 * payload[0].contentString = "Hi Mr Schmidt,
@@ -72,7 +75,8 @@ Usage: #example
 * subject = Reference(ex-patient)
 * sender = Reference(ex-patient)
 * recipient = Reference(ex-practitioner)
-* status = #in-progress
+* status = #completed
+* category = #medRecCxReq
 * priority = #asap
 * topic.text = "Patient Request for Correction"
 * payload[0].contentString = "Hi John,
@@ -94,7 +98,8 @@ Usage: #example
 * subject = Reference(ex-patient)
 * recipient = Reference(ex-patient)
 * sender = Reference(ex-practitioner)
-* status = #in-progress
+* status = #completed
+* category = #medRecCxReq
 * priority = #asap
 * topic.text = "Patient Request for Correction"
 * payload[0].contentString = "Hi Mr. Schmidt,
@@ -127,7 +132,8 @@ Usage: #example
 * subject = Reference(ex-patient)
 * sender = Reference(ex-patient)
 * recipient = Reference(ex-practitioner)
-* status = #in-progress
+* status = #completed
+* category = #medRecCxReq
 * priority = #asap
 * topic.text = "Patient Request for Correction"
 * payload[0].contentString = "Hi John,
@@ -157,7 +163,8 @@ Usage: #example
 * subject = Reference(ex-patient)
 * sender = Reference(ex-patient)
 * recipient = Reference(ex-practitioner)
-* status = #in-progress
+* status = #completed
+* category = #medRecCxReq
 * priority = #asap
 * topic.text = "Patient Request for Correction"
 * payload[0].contentString = "Hi John,
@@ -178,7 +185,8 @@ Usage: #example
 * subject = Reference(ex-patient)
 * recipient = Reference(ex-patient)
 * sender = Reference(ex-practitioner)
-* status = #in-progress
+* status = #completed
+* category = #medRecCxReq
 * priority = #asap
 * topic.text = "Patient Request for Correction"
 * payload[0].contentString = "Your records have been corrected. Thank you"

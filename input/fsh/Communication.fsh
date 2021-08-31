@@ -4,46 +4,47 @@ Id:             patient-correction-communication
 Title:          "Patient Correction Communication"
 Description:    "A Communication between a patient and a fulfiller relating to a patient correction request."
 
-* about 0..1
-* about only Reference(PatientCorrectionCommunication)
-* about ^short = "The original Patient Correction Request Communication associated with this correction request (unless this is the original communication, in which case this will be empty)."
-* about ^comment = "The about element will be empty in the initial Patient Correction Request Communication. The about element will point at the initial communication in all other communications. This allows for searching for all communications related to a patient correction request."
+* about MS
+* about 0..2
+* about only Reference(PatientCorrectionTask or PatientCorrectionCommunication)
+* about ^short = "If this is the orginal Patient Correction Request or Logging of Disagreement, then Communication.about will initially be empty when posted by the Requester but populated with the Request for Correction Task reference by the Fulfiller when the Fulfiller spawn a Task to represent the Request for Correction or Logging of Disagreement process. For all subsequent Communicationresources that represents conversations help between Requester and Fulfiller as part of the process, Communication.about references the Communication resource that contains the original request."
 
+* inResponseTo MS
 * inResponseTo 0..1
 * inResponseTo only Reference(PatientCorrectionCommunication)
-* inResponseTo ^short = "Patient Correction Request Communication that this is in response to. Empty for the initial Patient Correction Communication. "
-* inResponseTo ^comment = "The inResponse element is used to point at the Communication for which this is a response. This element enables linking questions to answers, and answers to follow-up questions."
+* inResponseTo ^short = "Patient Correction Request Communication that this is in response to. This will only be filled in if it represents a response to another Communication resource.  It can be used to query and assemble conversation threads related to the request process."
 
-* status = #in-progress
-* status ^short = "The status is always in-progress."
+* status = #completed
+* status ^short = "Fixed: completed."
 
+* category MS
+* category 1..1
 * category from PatientCorrectionCommunicationTypesVS
 
-* priority MS
 * priority ^short = "Priority may be used to enable prioritizing of the processing."
 
 * topic MS
 * topic ^short = "The title of this Patient Correction Request."
 
+* subject MS
 * subject 1..1
 * subject ^short = "The Patient that the correction request applies to."
 * subject only Reference(Patient)
 
 * sender 1..1
 * sender only Reference(Patient or RelatedPerson or Practitioner or PractitionerRole or Organization or HealthcareService)
-* sender ^short = "Depending on the direction of the patient correction communication, the sender of the communication may be the Patient (or a RelatedPerson who is communicating on their behalf), or it may be the fulfiller."
+* sender ^short = "Depending on the direction of the patient correction communication, the sender of the communication may be the Requester or it may be the Fulfiller.  On the initial request for correction or logging of disagreement, the Fulfiller will use sender to represent the Task.requester."
 
 * recipient 1..1
 * recipient only Reference(Patient or RelatedPerson or Practitioner or PractitionerRole or Organization or CareTeam or HealthcareService)
-* recipient ^short = "Depending on the direction of the patient correction communication, the recipient of the communication may be the fulfiller, or it may be the Patient (or a RelatedPerson who is communicating on their behalf)."
+* recipient ^short = "Depending on the direction of the patient correction communication, the recipient of the communication may be the Fulfiller, or it may be the Requester."
 
 * sent 1..1
-* sent ^short = "The date that this patient correction communication was sent."
+* sent ^short = "The date that this particular part of the conversation is sent.  On the initial request from the Requestor for either correction or logging a disagreement, this date/time will be used as Task.authored to signify when the process was initiated on the Fulfiller."
 
 * payload 0..*
 * payload MS
-* payload ^short = "The contents of the patient correction request. If this is the original correction request communication from the patient, the payload would contain the request."
-* payload ^comment = "The contents of the the patient correction request. When the patient can point at historic resources needing to be corrected, they are included here."
+* payload ^short = "The contents of this particular conversation component. If this is the original correction request or logging of a disagreement, then the payload would contain the request. If it is the final outcome of the request, then the payload would contain the final outcome information.  Otherwise it contains a single message in back and forth conversation needed to process the initial request. Since it is possible to have a Communication resource reference a conversation held outside of the FHIR Rest protocol (email, mail, portal messaging – see Communication.channel) the minimum cardinality is zero.  However, it is expected in most cases payload will be valued."
 
 * note 0..*
 * note ^short = "Notes from those that are working on the correction about that work (this is not the correction request itself)."

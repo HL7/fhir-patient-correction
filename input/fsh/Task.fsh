@@ -14,11 +14,11 @@ Description:    "Represents the process of reviewing the patient’s request for
 * status from task-status
 
 * statusReason 0..1
-* statusReason ^short = "The reason for the correction request status."
+* statusReason ^short = "The reason for the correction request status. Codes to identify the reason for current status. These will typically be specific to a particular workflow."
 
 * businessStatus MS
 * businessStatus 0..1
-* businessStatus ^short = "The business status of the request for correction process or the log disagreement process. For example:  Waiting on additional information from requester, Waiting on additional information from fulfiller (could be a specific party on the fulfiller side) , more time needed to review request, an amendment will be made to the record, an amendment has been made to the record, current record determined accurate and will not be amended, a partial amendment will be made to the record, a partial amendment has been made to the record, disagreement has been reviewed and  attached to the record, disagreement has been rebutted."
+* businessStatus ^short = "The business status of the request for correction process or the log disagreement process. The domain-specific business-contextual sub-state of the task. For example:  Waiting on additional information from requester, Waiting on additional information from fulfiller (could be a specific party on the fulfiller side) , more time needed to review request, an amendment will be made to the record, an amendment has been made to the record, current record determined accurate and will not be amended, a partial amendment will be made to the record, a partial amendment has been made to the record, disagreement has been reviewed and  attached to the record, disagreement has been rebutted."
 
 * intent 1..1
 * intent only code
@@ -29,8 +29,6 @@ Description:    "Represents the process of reviewing the patient’s request for
 * code 1..1
 * code ^short = "Code and code.text to represent patient correction, or Code and code.text to represent a disagreement."
 * code from PatientCorrectionTaskTypesVS
-
-* description ^short = ""
 
 * for MS
 * for 1..1
@@ -56,29 +54,45 @@ Description:    "Represents the process of reviewing the patient’s request for
 * owner MS
 * owner 0..1
 * owner only Reference(Practitioner or PractitionerRole or Organization or CareTeam or HealthcareService)
-* owner ^short = "The entity that is responsibility for fulfilling the request.  Especially important to indicate owner on Fulfiller side."
+* owner ^short = "The entity that is responsibility for fulfilling the request. Initially, this could be populated from Communication.recipient on the Communication resource of the initial request.  TheFulfiller can then refine to a specific individual, group, role, or department.  For example, a medical records staff person."
 
-* reasonReference 1..1
-* reasonReference only Reference(PatientCorrectionCommunication)
-* reasonReference ^short = "The original Patient Correction Request Communication associated with the correction request."
+* reasonCode ^short = "Why task is needed.  E.g. Need record correct prior to upcoming surgery."
+
+* reasonReference 0..1
+* reasonReference only Reference(PatientCorrectionTask)
+* reasonReference ^short = "Used on Log Disagreement Task to point to the original Request for Correction Task."
 * reasonReference obeys task-reasonreference
+
+* note ^short = ""
 
 * restriction 0..0
 * restriction ^short = ""
 
 * input 0..*
-* input ^short = "Details of the Correction Request or of the Disagreement to Correction Denial."
+
+* input.id 0..0
+* input.extension 0..0
+* input.modifierExtension 0..0
+
+* input.type ^short = "Label for input"
+* input.type from PatientCorrectionTaskTypesVS
 
 * input.value[x] 1..1
-* input.value[x] only string or Attachment or Reference
+* input.value[x] only string or Attachment or Reference(PatientCorrectionCommunication)
 * input obeys task-input
 
 * output 0..*
 * output ^short = "Formal Response from Fulfiller to the Correction Request or to the Disagreement to Correction Denial."
 * output obeys task-output1 and task-output2 and task-output3
 
+* output.id 0..0
+* output.extension 0..0
+* output.modifierExtension 0..0
+
+* output.type from PatientCorrectionOutputTypesVS
+
 * output.value[x] 1..1
-* output.value[x] only string
+* output.value[x] only string or Attachment or Reference(PatientCorrectionCommunication)
 
 // not used, so forbidden (would rather mark as "If you send, it can be ignored"). 
 * encounter 0..0
@@ -121,6 +135,16 @@ Description:  "CodeSystem of defines Task code for use in Patient Correction Req
 ValueSet: PatientCorrectionTaskTypesVS
 * PatientCorrectionTaskTypes#medRecCxReq
 * PatientCorrectionTaskTypes#medRecCxDenialDisagree
+
+
+CodeSystem:  PatientCorrectionOutputTypes
+Title: "Patient Correction Output Types"
+Description:  "CodeSystem for Patient Correction Request Outputs"
+* #medRecCxReqResolution "Correction request resolution"
+
+
+ValueSet: PatientCorrectionOutputTypesVS
+* PatientCorrectionOutputTypes#medRecCxReqResolution
 
 
 Instance: Task-ReasonReference

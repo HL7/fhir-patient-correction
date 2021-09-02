@@ -68,3 +68,10 @@ Description: "Dummy Patient is a smoker. No actual use of this resource other th
 * subject = Reference(ex-patient)
 * issued = "1983-12-12T05:27:04Z"
 * valueCodeableConcept = http://snomed.info/sct#428041000124106 "Occasional tobacco smoker"
+
+//Instance:   ex-document
+//InstanceOf: DocumentReference
+//Title:      "Dummy Document example"
+//Description: "Dummy Document example for completeness sake. No actual use of this resource other than an example target."
+//* status = #final
+//* content ???

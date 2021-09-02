@@ -1,12 +1,50 @@
-### Using Communication with Task
+### Communication with Task
 
-The recommended approach for creating and managing patient requests or corrections is to use a Communication resource, which results in the creation of a Task resource.
+A patient request for correction is initiated by creating a Communication resource. This results in the creation
+of a Task ([Patient Correction Task](StructureDefinition-patient-correction-task.html)) resource, which can be used
+to track the status of the request. The **about** field of the Communication will be empty for the initial Communication, but subsequent Communications will point to the initial Communication for the correction request in the about field.
+contains a reference to the Task. 
 
-* [Using Communication with Task](communication-with-task.html)
+All Communications related to the correction request can be located by searching the **about** field for the original Communication.
 
-### Bundle
+The Communication **recipient** and **sender** fields are used to track whether each Communication is from the patient
+to the fulfiller, or vice versa.
 
-TODO: define how a Bundle can be used to carry the above for task/communication, with also in the bundle the clinical information of interest. In this way any references would be carried.
+### Linkages between resources
+
+#### Amendment requested and accepted
+
+{% include img.html img="amendment-requested-and-accepted.png" %}
+
+#### Amendment requested and rejected
+
+{% include img.html img="amendment-requested-and-rejected.png" %}
+
+#### Logging a disagreement
+
+{% include img.html img="logging-a-disagreement.png" %}
+
+### RESTful interactions
+
+<div>
+{%include task-comm-request.svg%}
+</div>
+
+### Task Status
+
+The Task Status is used to convey the the state of the patient correction.
+
+Status | Definition |
+---|---
+Ready | Task received by Fulfiller
+In-Progress | Fulfiller working on request
+Completed | Fulfiller has completed the request (examples include amending the record, denying the amendment request, partially amending and partially denying, logging the disagreement, and rebutting a disagreement.
+Canceled | Fulfiller canceled request based on Requester.
+{: .grid}
+
+### State machine
+
+{% include img.html img="patient-request-state-machine.png" %}
 
 ### Must Support
 

@@ -14,11 +14,13 @@ The following data-elements must always be present (Mandatory definition]) or mu
 6.	for: the patient whose record is to be corrected
 7.	requestor: the person who asked for the correction on behalf of the patient in Task.for.
 8.	authoredOn: date/time when the request was received on the Fulfiller side
-9.	lastModified – date/time of last update to the process.
-10.	reasonReference: For a correction request, this references the original correction request Communication resource. For the logging of a disagreement, reasonReference contains a reference to the original logging of disagreement Communication resource and the Original  or maybe the original correction request Task if it’s a Disagreement Task or either.  
+9.	lastModified: date/time of last update to the process.
+10.	input: points to the Communication resource containing the original patient correction or log disagreement request.
+11.	output: points to the Communication resource containing the resolution of the request (for example, the completed amendment report)
+12.	reasonReference: if the Task represents a disagreement, points to the Task containing the original request for correction process.
 
 ### Profile-specific implementation guidance:
 
 * The Task is spawned by the Fulfiller as a result of receipt of a Request for a Correction or a Request to Log a Disagreement.  It is expected that in most cases, these requests will be coming through a Communication resource.  However, this specification does not preclude the use of Task when requests are received via alternative means such as paper forms in the mail.  
-* When a request for correction or logging of a disagreement is received via a Request for Correction or Log Disagreement Communication resource posting, a Task is spawned and then several fields in the Task must be populated by copying from the Communication resource that contains the original request.  In specific, code, for, requester, and authoredOn must be pulled from fields in the original Communication resource (see details on these fields below).
-* When the Task is posted on the Fulfiller as a result of an originating Communication resource, the Fulfiller must update the Communication resource to reference the Task in the Communication.about field.
+* When a request for correction or logging of a disagreement is received via a Request for Correction or Log Disagreement Communication resource posting, a Task is spawned and then several fields in the Task must be populated by copying from the Communication resource that contains the original request.  In specific, code, for, requester, input, and authoredOn must be pulled from fields in the original Communication resource (see details on these fields below).
+* When the Task is posted on the Fulfiller as a result of an originating Communication resource, the Fulfiller must update the Communication resource to reference the Task in the Communication.about field. 

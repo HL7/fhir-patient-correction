@@ -69,9 +69,12 @@ Description: "Dummy Patient is a smoker. No actual use of this resource other th
 * issued = "1983-12-12T05:27:04Z"
 * valueCodeableConcept = http://snomed.info/sct#428041000124106 "Occasional tobacco smoker"
 
-//Instance:   ex-document
-//InstanceOf: DocumentReference
-//Title:      "Dummy Document example"
-//Description: "Dummy Document example for completeness sake. No actual use of this resource other than an example target."
-//* status = #final
-//* content ???
+Instance: ex-documentreference
+InstanceOf: DocumentReference
+Title: "Dummy DocumentReference example"
+Description: "Dummy DocumentReference example for completeness sake. No actual use of this resource other than an example target"
+Usage: #example
+* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
+* status = #current
+* content.attachment.title = "Hello World"
+* content.attachment.contentType = #text/plain

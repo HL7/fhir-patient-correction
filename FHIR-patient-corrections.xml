@@ -5,6 +5,7 @@
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
+<artifact id="DocumentReference/ex-documentreference" key="DocumentReference-ex-documentreference" name="Dummy DocumentReference example"/>
 <artifact id="Organization/ex-organization" key="Organization-ex-organization" name="Dummy Organization example"/>
 <artifact id="Patient/ex-patient" key="Patient-ex-patient" name="Dummy Patient example"/>
 <artifact id="Observation/ex-smoking" key="Observation-ex-smoking" name="Dummy Patient is smoking"/>

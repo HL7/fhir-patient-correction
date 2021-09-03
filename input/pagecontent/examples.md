@@ -1,6 +1,6 @@
 ### Example Request for Correction Workflow with Links to Example Resources
 
-The links in the events below are to example [Communication](StructureDefinition-patient-correction-communication.html) or [Task](StructureDefinition-patient-correction-task.html) resources.
+The links in the events below are to example [Patient Correction Communication](StructureDefinition-patient-correction-communication.html) or [Patient Correction Task](StructureDefinition-patient-correction-task.html) resources.
 
 #### EVENT 1:
 

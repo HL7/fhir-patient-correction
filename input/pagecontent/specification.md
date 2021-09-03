@@ -36,7 +36,7 @@ The Task Status is used to convey the the state of the patient correction.
 
 Status | Definition |
 ---|---
-Received | Task received by Fulfiller
+Ready | Task received by Fulfiller
 In-Progress | Fulfiller working on request
 Completed | Fulfiller has completed the request (examples include amending the record, denying the amendment request, partially amending and partially denying, logging the disagreement, and rebutting a disagreement.
 Canceled | Fulfiller canceled request based on Requester.

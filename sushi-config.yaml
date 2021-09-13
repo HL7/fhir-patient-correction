@@ -41,8 +41,9 @@ menu:
   Specification: specification.html
   Examples: examples.html
   Artifacts: artifacts.html
+  Downloads: downloads.html
   Archive:
     Task only alternative: task.html
     Communication only alternative: communication.html
-  Other Resources:
+  Other Resources: 
     "FHIR Spec ": new-tab {{site.data.fhir.path}}index.html

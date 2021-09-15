@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/uv/patient-corrections" ciUrl="http://build.fhir.org/ig/HL7/patient-corrections" defaultVersion="0.3.2" defaultWorkgroup="" gitUrl="https://github.com/HL7/fhir-patient-correction" url="http://hl7.org/fhir/uv/patient-corrections">
+<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/uv/patient-corrections" ciUrl="http://build.fhir.org/ig/HL7/patient-corrections" defaultVersion="0.4.0" defaultWorkgroup="" gitUrl="https://github.com/HL7/fhir-patient-correction" url="http://hl7.org/fhir/uv/patient-corrections">
 <version code="current" url="http://build.fhir.org/ig/HL7/patient-corrections"/>
-<version code="0.3.2" url="http://hl7.org/fhir/uv/patient-corrections"/>
+<version code="0.4.0" url="http://hl7.org/fhir/uv/patient-corrections"/>
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
@@ -52,6 +52,7 @@
 <page key="artifacts" name="Artifacts Summary"/>
 <page key="communication" name="Communication"/>
 <page key="communication-with-task" name="Communication with Task"/>
+<page key="downloads" name="Downloads"/>
 <page key="examples" name="Examples"/>
 <page key="index" name="Home"/>
 <page deprecated="true" key="home" name="IG Home" url="index"/>

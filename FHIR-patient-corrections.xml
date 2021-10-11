@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/uv/patient-corrections" ciUrl="http://build.fhir.org/ig/HL7/patient-corrections" defaultVersion="0.4.0" defaultWorkgroup="" gitUrl="https://github.com/HL7/fhir-patient-correction" url="http://hl7.org/fhir/uv/patient-corrections">
+<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/uv/patient-corrections" ciUrl="http://build.fhir.org/ig/HL7/patient-corrections" defaultVersion="0.4.2" defaultWorkgroup="" gitUrl="https://github.com/HL7/fhir-patient-correction" url="http://hl7.org/fhir/uv/patient-corrections">
 <version code="current" url="http://build.fhir.org/ig/HL7/patient-corrections"/>
-<version code="0.4.0" url="http://hl7.org/fhir/uv/patient-corrections"/>
+<version code="0.4.2" url="http://hl7.org/fhir/uv/patient-corrections"/>
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
@@ -31,32 +31,16 @@
 <artifact id="Task/correctionrequestprocess4" key="Task-correctionrequestprocess4" name="correctionrequestprocess4"/>
 <artifact id="Task/correctionrequestprocess5" key="Task-correctionrequestprocess5" name="correctionrequestprocess5"/>
 <artifact id="Task/correctionrequestprocess6" key="Task-correctionrequestprocess6" name="correctionrequestprocess6"/>
-<artifact id="Communication/ex-CommunicationConclusion" key="Communication-ex-CommunicationConclusion" name="ex-CommunicationConclusion"/>
-<artifact id="Communication/ex-CommunicationInitial" key="Communication-ex-CommunicationInitial" name="ex-CommunicationInitial"/>
-<artifact id="Communication/ex-CommunicationInitial2" key="Communication-ex-CommunicationInitial2" name="ex-CommunicationInitial2"/>
-<artifact id="Communication/ex-CommunicationQuestion1" key="Communication-ex-CommunicationQuestion1" name="ex-CommunicationQuestion1"/>
-<artifact id="Communication/ex-CommunicationQuestion2" key="Communication-ex-CommunicationQuestion2" name="ex-CommunicationQuestion2"/>
-<artifact id="Communication/ex-CommunicationResponse1" key="Communication-ex-CommunicationResponse1" name="ex-CommunicationResponse1"/>
-<artifact id="Communication/ex-CommunicationResponse2" key="Communication-ex-CommunicationResponse2" name="ex-CommunicationResponse2"/>
-<artifact id="Communication/ex-CommunicationResponse3" key="Communication-ex-CommunicationResponse3" name="ex-CommunicationResponse3"/>
-<artifact id="Task/ex-TaskBasicRequest" key="Task-ex-TaskBasicRequest" name="ex-TaskBasicRequest"/>
-<artifact id="Task/ex-TaskBasicRequestAccepted" key="Task-ex-TaskBasicRequestAccepted" name="ex-TaskBasicRequestAccepted"/>
-<artifact id="Task/ex-TaskBasicRequestDenied" key="Task-ex-TaskBasicRequestDenied" name="ex-TaskBasicRequestDenied"/>
-<artifact id="Task/ex-TaskBasicRequestDisagree" key="Task-ex-TaskBasicRequestDisagree" name="ex-TaskBasicRequestDisagree"/>
-<artifact id="Task/ex-TaskBasicRequestUpdated" key="Task-ex-TaskBasicRequestUpdated" name="ex-TaskBasicRequestUpdated"/>
 <artifact id="Communication/initialrequestforcorrection" key="Communication-initialrequestforcorrection" name="initialrequestforcorrection"/>
 <artifact id="Communication/recordamended" key="Communication-recordamended" name="recordamended"/>
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>
 <page key="actors-and-use-cases" name="Actors and Use Cases" url="actors-and-use-cases"/>
 <page key="artifacts" name="Artifacts Summary"/>
-<page key="communication" name="Communication"/>
-<page key="communication-with-task" name="Communication with Task"/>
 <page key="downloads" name="Downloads"/>
 <page key="examples" name="Examples"/>
 <page key="index" name="Home"/>
 <page deprecated="true" key="home" name="IG Home" url="index"/>
 <page key="specification" name="Specification" url="specification"/>
 <page key="toc" name="Table of Contents" url="toc"/>
-<page key="task" name="Task"/>
 </specification>

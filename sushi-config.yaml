@@ -6,7 +6,7 @@
 
 id: hl7.fhir.uv.patient-corrections
 canonical: http://hl7.org/fhir/uv/patient-corrections
-version: 0.4.0
+version: 0.4.2
 name: PatientCorrectionsImplementationGuide
 title: "Patient Corrections Implementation Guide"
 status: draft
@@ -42,8 +42,5 @@ menu:
   Examples: examples.html
   Artifacts: artifacts.html
   Downloads: downloads.html
-  Archive:
-    Task only alternative: task.html
-    Communication only alternative: communication.html
   Other Resources: 
     "FHIR Spec ": new-tab {{site.data.fhir.path}}index.html

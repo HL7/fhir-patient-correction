@@ -6,7 +6,7 @@
 
 id: hl7.fhir.uv.patient-corrections
 canonical: http://hl7.org/fhir/uv/patient-corrections
-version: 0.4.2
+version: 0.4.3
 name: PatientCorrectionsImplementationGuide
 title: "Patient Corrections Implementation Guide"
 status: draft

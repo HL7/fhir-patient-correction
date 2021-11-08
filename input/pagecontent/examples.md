@@ -23,10 +23,6 @@ The medical records staff person has all the information needed and refers the r
 
 The medical records staff person learns that the amendment has been accepted. The change, however, has not yet been done. The [Task resource](Task-correctionrequestprocess5.html) on the Fulfiller is updated to show the status of the request for correction process. The Requester gets notification of the status by polling or notifications from the Fulfiller.
 
-#### EVENT 6 Variant 1:
-
-The amendment has been completed. The [Task resource](Task-correctionrequestprocess6.html) on the Fulfiller is updated to show the completion of the request for correction process and provided an amendment report in Task.output. The Requester gets notification of the status and the resulting amendment report by polling or notifications from the Fulfiller.
-
-#### EVENT 6 Variant 2:
+#### EVENT 6:
 
 The amendment has been completed. The [Task resource](Task-correctionrequestprocess6.html) on the Fulfiller is updated to show the completion of the request for correction process. A [Communication resource](Communication-recordamended.html) is posted on the Fulfiller that provides the amendment report. The Requester gets notification of the status and the resulting amendment report by polling or notifications from the Fulfiller.

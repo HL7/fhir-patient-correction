@@ -1,10 +1,9 @@
-Alias: $FHIRPatientCorrectionTemp = https://www.maxmddirect.com/fhir/us/mmdtempterminology/6qlB89NQ/CodeSystem/FHIRPatientCorrectionTemp
-
 Instance: recordamended
 InstanceOf: PatientCorrectionCommunication
+Description: "Example of request for correction ammendment completed Communication"
 Usage: #example
 * about = Reference(initialrequestforcorrection)
-* category = $FHIRPatientCorrectionTemp#medRecCxReq "medical record correction request"
+* category = PatientCorrectionCommunicationTypes#medRecCxReq
 * payload[0].contentString = "Your record has been amended as requested.  See attached."
 * payload[+].contentReference = Reference(ex-documentreference)
 * recipient = Reference(ex-patient)

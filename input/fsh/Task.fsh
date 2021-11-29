@@ -75,7 +75,7 @@ Description:    "Represents the process of reviewing the patient’s request for
 * input.modifierExtension 0..0
 
 * input.type ^short = "Label for input"
-* input.type from PatientCorrectionTaskTypesVS
+* input.type from PatientCorrectionCommunicationTypesVS
 
 * input.value[x] 1..1
 * input.value[x] only string or Attachment or Reference(PatientCorrectionCommunication)
@@ -127,23 +127,25 @@ Severity: #error
 
 CodeSystem:  PatientCorrectionTaskTypes
 Title: "Patient Correction Task Types"
-Description:  "CodeSystem of defines Task code for use in Patient Correction Request"
+Description:  "CodeSystem of task types for patient corrections"
 * #medRecCxReq "Correction request by the Patient or RelatedPerson"
 * #medRecCxDenialDisagree "Disagreement with a denial correction request by the Patient or RelatedPerson"
 
 
 ValueSet: PatientCorrectionTaskTypesVS
+Description: "ValueSet of task types for patient corrections"
 * PatientCorrectionTaskTypes#medRecCxReq
 * PatientCorrectionTaskTypes#medRecCxDenialDisagree
 
 
 CodeSystem:  PatientCorrectionOutputTypes
 Title: "Patient Correction Output Types"
-Description:  "CodeSystem for Patient Correction Request Outputs"
+Description:  "CodeSystem of output types for patient corrections"
 * #medRecCxReqResolution "Correction request resolution"
 
 
 ValueSet: PatientCorrectionOutputTypesVS
+Description: "ValueSet of output types for patient corrections"
 * PatientCorrectionOutputTypes#medRecCxReqResolution
 
 

@@ -57,12 +57,13 @@ Description:    "A Communication between a patient and a fulfiller relating to a
 
 CodeSystem:  PatientCorrectionCommunicationTypes
 Title: "Patient Correction Communication Types"
-Description:  "CodeSystem of defines Communication category for use in Patient Correction Request"
+Description: "CodeSystem of Communication categories for use in Patient Correction Request"
 * #medRecCxReq "Correction request by the Patient or RelatedPerson"
 * #medRecCxDenialDisagree "Disagreement with a denial correction request by the Patient or RelatedPerson"
 
 
 ValueSet: PatientCorrectionCommunicationTypesVS
+Description: "ValueSet of Communication types for use in Patient Correction Request"
 * PatientCorrectionCommunicationTypes#medRecCxReq
 * PatientCorrectionCommunicationTypes#medRecCxDenialDisagree
 

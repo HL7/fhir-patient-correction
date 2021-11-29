@@ -1,8 +1,9 @@
 Instance: additionalinfoprovided
 InstanceOf: PatientCorrectionCommunication
+Description: "Example of request for correction additional information provided Communication"
 Usage: #example
 * about = Reference(initialrequestforcorrection)
-* category.text = "Request for Correction"
+* category = PatientCorrectionCommunicationTypes#medRecCxReq
 * inResponseTo = Reference(additionalinfoneeded)
 * meta.versionId = "1"
 * payload.contentString = "I quit smoking over 2 years ago on Dec 10th, 2018."

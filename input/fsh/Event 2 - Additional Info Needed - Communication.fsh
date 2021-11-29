@@ -1,10 +1,9 @@
-Alias: $FHIRPatientCorrectionTemp = https://www.maxmddirect.com/fhir/us/mmdtempterminology/6qlB89NQ/CodeSystem/FHIRPatientCorrectionTemp
-
 Instance: additionalinfoneeded
 InstanceOf: PatientCorrectionCommunication
+Description: "Example of request for correction additional information needed Communication"
 Usage: #example
 * about = Reference(initialrequestforcorrection)
-* category = $FHIRPatientCorrectionTemp#medRecCxReq "medical record correction request"
+* category = PatientCorrectionCommunicationTypes#medRecCxReq
 * payload.contentString = "Upon review of your record, we see that you have a history of smoking.  Is this incorrect, or did you quit smoking at some point?"
 * recipient = Reference(ex-patient)
 * sender = Reference(ex-practitioner)

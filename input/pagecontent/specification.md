@@ -34,17 +34,23 @@ to the fulfiller, or vice versa.
 
 The Task Status is used to convey the the state of the patient correction.
 
-Status | Definition |
----|---
-Ready | Task received by Fulfiller
-In-Progress | Fulfiller working on request
-Completed | Fulfiller has completed the request (examples include amending the record, denying the amendment request, partially amending and partially denying, logging the disagreement, and rebutting a disagreement.
-Canceled | Fulfiller canceled request based on Requester.
+Task.status	| Task.businessStatus (Code) | Task.businessStatus Definition (Display) | Notes
+---|---|---|---
+Ready | RequestQueued | a request has been received but not yet reviewed | 
+In Progress | InReview | Reviewing is in progress. | Reviewing might be administrative or clinical review.  Type of request being reviewed could be a correction request of a log of a disagreement to a correction request decision.
+In Progress | NewMessageSenttoRequester | Fulfiller sent message/communication to Requester. | For example, provider might message patient asking for additional information, or to state that additional time is needed on the request, etc.
+In Progress | NewRequestReceivedfromRequester | The Fulfiller has received a new message/communication from the Requester. | For example, additional information pertaining to the request.
+In Progress | RequestAccepted | Decision was made to accept the correction request. | Amendment will be done.
+In Progress | PartialAcceptDeny | Part of the correction request was accepted, and part was denied. | Amendment will be done for accepted part.  Patient can log a disagreement to denied part.
+Completed | AmendmentComplete | Fulfiller completed the amendment to the record. | Amendment and correction are used synonymously.
+Completed | RequestDenied | Fulfiller denied the request. | This concludes the request for correction process. However, the requester could ask to log a disagreement.
+Completed | DisagreementLogged | Fulfiller has logged the requester’s disagreement with the correction request denial. | With HIPAA, he disagreement needs to be attached to the record.
+Completed | DisagreementLoggedandRebuttalSent | Fulfiller has logged the requester’s disagreement with the correction request denial, and provided a formal rebuttal. | With HIPAA, he disagreement needs to be attached to the record.
 {: .grid}
 
 ### State machine
 
-{% include img.html img="patient-request-state-machine.png" %}
+<div>{%include state-diagram.svg%}</div>
 
 ### Must Support
 

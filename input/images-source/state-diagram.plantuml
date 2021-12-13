@@ -1,0 +1,57 @@
+@startuml
+[*] --> Ready: External post of\nCommunication resource
+state Ready {
+  state Request_Queued #lightblue {
+  }
+}
+Ready -> In_Review
+Request_Queued : Request received but not reviewed
+
+state In_Progress {
+  state In_Review #lightblue{
+  }
+  state CorrespondenceSentToRequester #lightblue{
+  }
+  state CorrespondenceReceivedFromRequester #lightblue{
+  }
+  state RequestAccepted #lightblue{
+  }
+  state PartialAcceptDeny #lightblue{
+  }
+}
+In_Review --> CorrespondenceSentToRequester
+CorrespondenceReceivedFromRequester --> In_Review
+In_Review --> RequestAccepted
+In_Review --> PartialAcceptDeny
+CorrespondenceSentToRequester --> CorrespondenceReceivedFromRequester
+In_Review --> RequestDenied
+PartialAcceptDeny --> AmendmentCompleted
+PartialAcceptDeny --> DisagreementLogged
+RequestAccepted --> AmendmentCompleted
+RequestDenied --> DisagreementLogged
+CorrespondenceSentToRequester : e.g. Additional Information Needed
+RequestAccepted : Decision made to accept
+PartialAcceptDeny : Decision made that part of\nrequest is accepted and\npart is denied,\ndisagreement can be logged
+RequestDenied : Decision made to deny,\ndisagreement can be logged
+CorrespondenceReceivedFromRequester : e.g. Additional Information Received
+
+state Complete {
+ state AmendmentCompleted #lightblue{
+ }
+ state DisagreementLogged #lightblue{
+ }
+ state RequestDenied #lightblue{
+ }
+ state InformRebuttalOption #lightblue{
+ }
+}
+DisagreementLogged --> InformRebuttalOption
+RequestDenied --> InformRebuttalOption
+PartialAcceptDeny --> InformRebuttalOption: Communication to inform\non rebuttal option
+Complete --> [*]
+
+state Task.status{
+}
+state Task.businessStatus #lightblue {
+}
+@enduml

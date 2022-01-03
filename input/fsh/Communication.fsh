@@ -70,14 +70,14 @@ Description: "ValueSet of Communication types for use in Patient Correction Requ
 
 Instance: Communication-About
 InstanceOf: SearchParameter
-Title: "Search on the Communication.about element"
-Description: "Search Parameter extension enabling clients to search on the Communication.about element"
+Title: "Search on the PatientCorrectionCommunication.about element"
+Description: "Search Parameter extension enabling clients to search on the PatientCorrectionCommunication.about element"
 Usage: #definition
-* url = "http://hl7.org/fhir/uv/patient-corrections/SearchParameter-Communication-About"
+* url = "http://hl7.org/fhir/uv/patient-corrections/SearchParameter-PatientCorrectionCommunication-About"
 * description = "This SearchParameter enables finding all communications related to a Patient Request for Correction. Each communication related to a particular correction request will point to the original communication in the request."
-* name = "About"
+* name = "PatientCorrectionAbout"
 * status = #active
 * code = #about
 * base = #PatientCorrectionCommunication
-* expression = "Communication.about"
+* expression = "PatientCorrectionCommunication.about"
 * type = #reference

@@ -1,47 +1,38 @@
 @startuml
-title Communication spawns Task
+title Restful Correction Request Process
 
 note left of CorrectionRequester
 Send a new Correction Request
 end note
-CorrectionRequester->RequestFulfiller: Create (POST) Communication
+CorrectionRequester->RequestFulfiller: Create (POST) Bundle with a new Communication
 activate RequestFulfiller
 RequestFulfiller->RequestFulfiller: Create Task using internal processing
-RequestFulfiller-->CorrectionRequester: return created Communication
+RequestFulfiller-->CorrectionRequester: return created Communication resource with pointer to new Task in Communication.about
 
 alt
 note right of RequestFulfiller
 When more information is needed
-then the Task is updated and 
-a new Communication is sent
-with inResponseTo Task
+then the Task status is updated and 
+a new Communication is created that asks for the additional information
 end note
-RequestFulfiller->RequestFulfiller: update Task
-CorrectionRequester<-RequestFulfiller: Create (POST) Communication
-CorrectionRequester -> CorrectionRequester: process and react
-
+RequestFulfiller->RequestFulfiller: update Task status and create new Communication
+end
+CorrectionRequester -> RequestFulfiller: poll (query) for any changes to Task status and for any new Communication.
 alt
 note left of CorrectionRequester
-Correspond with Fulfiller
+Correspond with Fulfiller to respond to request
 end note
-CorrectionRequester->RequestFulfiller: Create (POST) new Communication basedOn Task
+CorrectionRequester->RequestFulfiller: Create (POST) Bundle with a new Communication when appropriate
 end
-end
-
-
-
-alt
 note right of RequestFulfiller
 When the request is fulfilled
 (agreed or rejected) then 
-the Task is updated and
-a new concluding Communication
+the Task status is updated and
+a new concluding Communication is created.
 end note
-RequestFulfiller->RequestFulfiller: update Task
-CorrectionRequester<-RequestFulfiller: Create (POST) Communication
-CorrectionRequester -> CorrectionRequester: process and react
-end
+RequestFulfiller->RequestFulfiller: update Task status and create new Communication with denial or accept/amend
+CorrectionRequester -> RequestFulfiller: query for concluding Task and Communication.
+
 
 Deactivate RequestFulfiller
-note left of CorrectionRequester: smile
 @enduml

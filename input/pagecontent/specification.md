@@ -1,16 +1,30 @@
 ### Communication with Task
 
-A patient request for correction is initiated by creating a [Patient Correction Communication](StructureDefinition-patient-correction-communication.html) resource. This results in the creation
-of a [Patient Correction Task](StructureDefinition-patient-correction-task.html) resource, which can be used
-to track the status of the request. The **about** field of the Communication will be empty for the initial Communication, but subsequent Communications will point to the initial Communication for the correction request in the about field.
-contains a reference to the Task. 
+A patient request for correction is initiated by invoking the [$correction-request](OperationDefinition-correction-request.html) operation. The input for the operation is a [Patient Correction Bundle](StructureDefinition-patient-correction-bundle.html) which includes a  [Patient Correction Communication](StructureDefinition-patient-correction-communication.html) resource that describes the specific request. The invocation of the operation on the fulfiller results in the posting of the [Patient Correction Communication](StructureDefinition-patient-correction-communication.html) resource on the fulfiller.  It is also expected to result in the creation of a [Patient Correction Task](StructureDefinition-patient-correction-task.html) resource which can be used to track the status of the request. 
 
 All Communications related to the correction request can be located by searching the **about** field for the original Communication.
 
-The Communication **recipient** and **sender** fields are used to track whether each Communication is from the patient
-to the fulfiller, or vice versa.
+The Communication **recipient** and **sender** fields are used to track whether each Communication is from the patient to the fulfiller, or vice versa.
+
+### RESTful interactions
+
+<div>
+{%include task-comm-request.svg%}
+</div>
 
 ### Linkages between resources
+
+Certain fields in Task and Communication provide important linkage information.
+
+The **about** field of the Communication will be empty for the initial Communication, but will be populated with a reference to the Task when the Task for the request is spawned.
+
+All subsequent Communications will point to the initial Communication for the correction request in their Communication **about**** fields. 
+
+The Communication **recipient** and **sender** fields are used to track whether each Communication is from the patient to the fulfiller, or vice versa.
+
+Task **input** points to the Communication that contains the initial request details, and Task **output** points to the Communication that contains the final results (amendment or denial details).
+
+The Task **reasonReference** field is used to link a Log Disagreement Task to the related Correction Request Task.
 
 #### Amendment requested and accepted
 
@@ -24,31 +38,25 @@ to the fulfiller, or vice versa.
 
 {% include img.html img="logging-a-disagreement.png" %}
 
-### RESTful interactions
-
-<div>
-{%include task-comm-request.svg%}
-</div>
-
 ### Task Status
 
-The Task Status is used to convey the the state of the patient correction.
+The **Task.status** and **Task.businessStatus** are used to convey the the state of the patient correction.
 
-Task.status	| Task.businessStatus (Code) | Task.businessStatus Definition (Display) | Notes
----|---|---|---
-Ready | RequestQueued | a request has been received but not yet reviewed | 
-In Progress | InReview | Reviewing is in progress. | Reviewing might be administrative or clinical review.  Type of request being reviewed could be a correction request of a log of a disagreement to a correction request decision.
-In Progress | NewMessageSenttoRequester | Fulfiller sent message/communication to Requester. | For example, provider might message patient asking for additional information, or to state that additional time is needed on the request, etc.
-In Progress | NewRequestReceivedfromRequester | The Fulfiller has received a new message/communication from the Requester. | For example, additional information pertaining to the request.
-In Progress | RequestAccepted | Decision was made to accept the correction request. | Amendment will be done.
-In Progress | PartialAcceptDeny | Part of the correction request was accepted, and part was denied. | Amendment will be done for accepted part.  Patient can log a disagreement to denied part.
-Completed | AmendmentComplete | Fulfiller completed the amendment to the record. | Amendment and correction are used synonymously.
-Completed | RequestDenied | Fulfiller denied the request. | This concludes the request for correction process. However, the requester could ask to log a disagreement.
-Completed | DisagreementLogged | Fulfiller has logged the requester’s disagreement with the correction request denial. | With HIPAA, he disagreement needs to be attached to the record.
-Completed | DisagreementLoggedandRebuttalSent | Fulfiller has logged the requester’s disagreement with the correction request denial, and provided a formal rebuttal. | With HIPAA, he disagreement needs to be attached to the record.
+Task.status | Task.businessStatus (Code) | Task.businessStatus (Display) | Task.businessStatus Definition
+---|---|---|---|---
+ready | Queued | Queued | A request to correct a record or log a disagreement has been received by the fulfiller (e.g. provider) but has not yet been reviewed.
+in-progress | In_Review | In Review | Review is in progress.  
+in-progress | WaitingOnInformation | Waiting On Information | The fulfiller (e.g. provider) is waiting for additional information.
+cancelled | NeverMind | Cancelled | The request has been cancelled.
+in-progress | Accepted | Accepted | Decision was made to accept the correction request
+in-progress | PartialAccept | Partial Accept | Part of the correction request was accepted, and part was denied.  
+completed | AmendmentCompleted | Amendment Completed | The record has been amended (corrected).
+completed | Denied | Denied | The request has been denied.  
+completed | DisagreementLogged | Disagreement Logged | The fulfiller (e.g. provider) has logged the requester’s (eg patient’s) disagreement with the correction request denial.
+completed | InformRebuttalOption | Inform Rebuttal Option | The fulfiller (e.g. provider) has logged the requester’s (e.g. patient’s) disagreement with the correction request denial, and provided a formal rebuttal. 
 {: .grid}
 
-### State machine
+#### Task Status state machine
 
 <div>{%include state-diagram.svg%}</div>
 

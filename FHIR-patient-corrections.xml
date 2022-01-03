@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="https://build.fhir.org/ig/HL7/fhir-patient-correction" ciUrl="https://build.fhir.org/ig/HL7/fhir-patient-correction" defaultVersion="0.4.5" defaultWorkgroup="" gitUrl="https://github.com/HL7/fhir-patient-correction" url="https://hl7.org/fhir/uv/fhir-patient-correction">
+<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="https://build.fhir.org/ig/HL7/fhir-patient-correction" ciUrl="https://build.fhir.org/ig/HL7/fhir-patient-correction" defaultVersion="0.4.6" defaultWorkgroup="" gitUrl="https://github.com/HL7/fhir-patient-correction" url="https://hl7.org/fhir/uv/fhir-patient-correction">
 <version code="current" url="https://build.fhir.org/ig/HL7/fhir-patient-correction"/>
-<version code="0.4.5" url="https://build.fhir.org/ig/HL7/fhir-patient-correction"/>
+<version code="0.4.6" url="https://build.fhir.org/ig/HL7/fhir-patient-correction"/>
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
@@ -22,8 +22,8 @@
 <artifact id="ValueSet/PatientCorrectionCommunicationTypesVS" key="ValueSet-PatientCorrectionCommunicationTypesVS" name="PatientCorrectionCommunicationTypesVS"/>
 <artifact id="ValueSet/PatientCorrectionOutputTypesVS" key="ValueSet-PatientCorrectionOutputTypesVS" name="PatientCorrectionOutputTypesVS"/>
 <artifact id="ValueSet/PatientCorrectionTaskTypesVS" key="ValueSet-PatientCorrectionTaskTypesVS" name="PatientCorrectionTaskTypesVS"/>
-<artifact id="SearchParameter/Communication-About" key="SearchParameter-Communication-About" name="Search on the Communication.about element"/>
-<artifact id="SearchParameter/Task-ReasonReference" key="SearchParameter-Task-ReasonReference" name="Search on the Task.reasonReference element"/>
+<artifact id="SearchParameter/Communication-About" key="SearchParameter-Communication-About" name="Search on the PatientCorrectionCommunication.about element"/>
+<artifact id="SearchParameter/PatientCorrectionTask-ReasonReference" key="SearchParameter-PatientCorrectionTask-ReasonReference" name="Search on the PatientCorrectionTask.reasonReference element"/>
 <artifact id="Communication/additionalinfoneeded" key="Communication-additionalinfoneeded" name="additionalinfoneeded"/>
 <artifact id="Communication/additionalinfoprovided" key="Communication-additionalinfoprovided" name="additionalinfoprovided"/>
 <artifact id="OperationDefinition/correction-request" key="OperationDefinition-correction-request" name="correction-request"/>

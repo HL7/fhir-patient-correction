@@ -4,7 +4,7 @@ title Restful Correction Request Process
 note left of CorrectionRequester
 Send a new Correction Request
 end note
-CorrectionRequester->RequestFulfiller: Create (POST) Bundle with a new Communication
+CorrectionRequester->RequestFulfiller: Invoke $correction-request operation (Bundle) with a new Communication
 activate RequestFulfiller
 RequestFulfiller->RequestFulfiller: Create Task using internal processing
 RequestFulfiller-->CorrectionRequester: return created Communication resource with pointer to new Task in Communication.about
@@ -22,7 +22,7 @@ alt
 note left of CorrectionRequester
 Correspond with Fulfiller to respond to request
 end note
-CorrectionRequester->RequestFulfiller: Create (POST) Bundle with a new Communication when appropriate
+CorrectionRequester->RequestFulfiller: Invoke $correction-request operation (Bundle)
 end
 note right of RequestFulfiller
 When the request is fulfilled

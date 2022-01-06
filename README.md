@@ -4,5 +4,4 @@ The Patient Corrections Implementation Guide provides a method for communicating
 
 Continuous build available https://build.fhir.org/ig/HL7/fhir-patient-correction/
 
-Patient Empowerment zulip chat stream https://chat.fhir.org/#narrow/stream/179262-patient-empowerment
-
+Patient Empowerment Zulip chat stream https://chat.fhir.org/#narrow/stream/179262-patient-empowerment

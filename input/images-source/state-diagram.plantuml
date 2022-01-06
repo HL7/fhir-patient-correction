@@ -1,5 +1,6 @@
 @startuml
-[*] -> ready: External post of\nCommunication resource
+skinparam svgDimensionStyle false
+[*] -> ready: External post of Communication resource
 state ready {
   state Queued #lightblue {
   }
@@ -29,16 +30,17 @@ Accepted --> AmendmentCompleted
 Denied -> DisagreementLogged
 WaitingOnInformation : e.g. Additional Information Needed
 Accepted : Decision made to accept
-PartialAccept : Decision made that part of\nrequest is accepted and\npart is denied,\ndisagreement can be logged
-Denied : Decision made to deny,\ndisagreement can be logged
+PartialAccept : Decision made that part of request is accepted and part is denied, disagreement can be logged
+Denied : Decision made to deny, disagreement can be logged
 
 state cancelled {
   state Nevermind #lightblue {
   }
 }
+cancelled --> [*]
 ready --> cancelled
 inprogress --> cancelled
-Nevermind : Requester decided to cancel\nthe request for correction
+Nevermind : Requester decided to cancel the request for correction
 
 state complete {
  state AmendmentCompleted #lightblue{
@@ -52,7 +54,7 @@ state complete {
 }
 DisagreementLogged -> InformRebuttalOption
 Denied -> InformRebuttalOption
-PartialAccept -> InformRebuttalOption: Communication to inform\non rebuttal option
+PartialAccept -> InformRebuttalOption: Communication to inform on rebuttal option
 complete --> [*]
 
 state Task.status{

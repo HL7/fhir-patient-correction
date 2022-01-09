@@ -156,9 +156,9 @@ Description: "Search Parameter extension enabling clients to search on the Patie
 Usage: #definition
 * url = "http://hl7.org/fhir/uv/patient-corrections/SearchParameter-PatientCorrectionTask-ReasonReference"
 * description = "This SearchParameter enables finding all tasks related to a Patient Request for Correction. Each task related to a particular correction request will point to the original communication in the request. There will be a task for the original request, and there may be additional tasks for any disagreements."
-* name = "PatientCorrectionReasonReference"
+* name = "PatientCorrectionTaskReasonReference"
 * status = #active
 * code = #reasonreference
-* base = #PatientCorrectionTask
+* base = #Task
 * expression = "PatientCorrectionTask.reasonReference"
 * type = #reference

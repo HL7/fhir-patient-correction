@@ -18,7 +18,7 @@ Usage: #definition
 * parameter[=].use = #in
 * parameter[=].min = 1
 * parameter[=].max = "1"
-* parameter[=].documentation = "A collection of resources representing the correction request, disagreement, or back and forth conversation.  The Bundle should follow [Patient Correction Bundle](StructureDefinition-patient-correction-bundle.html) profile"
+* parameter[=].documentation = "A collection of resources representing the correction request, disagreement, or back and forth conversation.  The Bundle should follow [Patient Correction Bundle](StructureDefinition-patient-correction-bundle.html) profile."
 * parameter[=].type = #Bundle
 
 // Output

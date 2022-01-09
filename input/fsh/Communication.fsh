@@ -79,5 +79,5 @@ Usage: #definition
 * status = #active
 * code = #about
 * base = #Communication
-* expression = "PatientCorrectionCommunication.about"
+* expression = "Communication.about"
 * type = #reference

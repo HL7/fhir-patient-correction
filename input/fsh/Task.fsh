@@ -160,5 +160,5 @@ Usage: #definition
 * status = #active
 * code = #reasonreference
 * base = #Task
-* expression = "PatientCorrectionTask.reasonReference"
+* expression = "Task.reasonReference"
 * type = #reference

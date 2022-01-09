@@ -18,7 +18,7 @@ Usage: #definition
 * parameter[=].use = #in
 * parameter[=].min = 1
 * parameter[=].max = "1"
-* parameter[=].documentation = "Collection of resources representing the correction request, disagreement, or back and forth conversation.  Bundle should follow PatientCorrectionBundle profile"
+* parameter[=].documentation = "A collection of resources representing the correction request, disagreement, or back and forth conversation.  The Bundle should follow [Patient Correction Bundle](StructureDefinition-patient-correction-bundle.html) profile"
 * parameter[=].type = #Bundle
 
 // Output
@@ -26,5 +26,5 @@ Usage: #definition
 * parameter[=].use = #out
 * parameter[=].min = 1
 * parameter[=].max = "1"
-* parameter[=].documentation = "Communication from requester associated with the request, conversation, or disagreement.  Augmented by fulfiller with newly spawned Task when appropriate."
+* parameter[=].documentation = "A [Patient Correction Communication](StructureDefinition-patient-correction-communication.html) from requester associated with the request, conversation, or disagreement.  Augmented by fulfiller with newly spawned [Patient Correction Task](StructureDefinition-patient-correction-task.html) when appropriate."
 * parameter[=].type = #Communication

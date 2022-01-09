@@ -75,9 +75,9 @@ Description: "Search Parameter extension enabling clients to search on the Patie
 Usage: #definition
 * url = "http://hl7.org/fhir/uv/patient-corrections/SearchParameter-PatientCorrectionCommunication-About"
 * description = "This SearchParameter enables finding all communications related to a Patient Request for Correction. Each communication related to a particular correction request will point to the original communication in the request."
-* name = "PatientCorrectionAbout"
+* name = "PatientCorrectionCommunicationAbout"
 * status = #active
 * code = #about
-* base = #PatientCorrectionCommunication
+* base = #Communication
 * expression = "PatientCorrectionCommunication.about"
 * type = #reference

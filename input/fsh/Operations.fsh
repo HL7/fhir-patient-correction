@@ -9,9 +9,9 @@ Usage: #definition
 * kind = #operation
 * code = #correctionrequest
 * system = false
-* type = false
-* instance = true
-* resource[0] = #PatientCorrectionCommunication
+* type = true
+* instance = false
+* resource[0] = #Communication
 
 // Parameter: CorrectionRequest
 * parameter[+].name = #CorrectionRequest

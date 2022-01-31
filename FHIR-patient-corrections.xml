@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="https://build.fhir.org/ig/HL7/fhir-patient-correction" ciUrl="https://build.fhir.org/ig/HL7/fhir-patient-correction" defaultVersion="0.4.7" defaultWorkgroup="" gitUrl="https://github.com/HL7/fhir-patient-correction" url="https://hl7.org/fhir/uv/fhir-patient-correction">
+<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="https://build.fhir.org/ig/HL7/fhir-patient-correction" ciUrl="https://build.fhir.org/ig/HL7/fhir-patient-correction" defaultVersion="0.4.8" defaultWorkgroup="" gitUrl="https://github.com/HL7/fhir-patient-correction" url="https://hl7.org/fhir/uv/fhir-patient-correction">
 <version code="current" url="https://build.fhir.org/ig/HL7/fhir-patient-correction"/>
-<version code="0.4.7" url="https://build.fhir.org/ig/HL7/fhir-patient-correction"/>
+<version code="0.4.8" url="https://build.fhir.org/ig/HL7/fhir-patient-correction"/>
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>

@@ -1,37 +1,37 @@
 @startuml
 skinparam svgDimensionStyle false
-[*] -> ready: External post of Communication resource
+[*] -> ready : External post of Communication resource
 state ready {
-  state Queued #lightblue {
+  state queued #lightblue {
   }
 }
-ready --> In_Review
-Queued : Request received but not reviewed
+ready --> in_review
+queued : Request received but not reviewed
 
-state inprogress {
-  state In_Review #lightblue{
+state in_progress {
+  state in_review #lightblue{
   }
-  state WaitingOnInformation #lightblue{
+  state waiting_for_information #lightblue{
   }
-  state Accepted #lightblue{
+  state accepted #lightblue{
   }
-  state PartialAccept #lightblue{
+  state partial_accept #lightblue{
   }
 }
-In_Review --> WaitingOnInformation
-In_Review --> Accepted
-In_Review --> PartialAccept
-In_Review --> In_Review: Inform requester on additional time needed
-WaitingOnInformation --> In_Review
-In_Review --> Denied
-PartialAccept --> AmendmentCompleted
-PartialAccept --> DisagreementLogged
-Accepted --> AmendmentCompleted
-Denied -> DisagreementLogged
-WaitingOnInformation : e.g. Additional Information Needed
-Accepted : Decision made to accept
-PartialAccept : Decision made that part of request is accepted and part is denied, disagreement can be logged
-Denied : Decision made to deny, disagreement can be logged
+in_review --> waiting_for_information
+in_review --> accepted
+in_review --> partial_accept
+in_review --> in_review: Inform requester on additional time needed
+waiting_for_information --> in_review
+in_review --> denied
+partial_accept --> amendment_completed
+partial_accept --> disagreement_logged
+accepted --> amendment_completed
+denied -> disagreement_logged
+waiting_for_information : e.g. Additional Information Needed
+accepted : Decision made to accept
+partial_accept : Decision made that part of request is accepted and part is denied, disagreement can be logged
+denied : Decision made to deny, disagreement can be logged
 
 state cancelled {
   state Nevermind #lightblue {
@@ -39,22 +39,22 @@ state cancelled {
 }
 cancelled --> [*]
 ready --> cancelled
-inprogress --> cancelled
-Nevermind : Requester decided to cancel the request for correction
+in_progress --> cancelled
+requester_cancelled : Requester decided to cancel the request for correction
 
 state complete {
- state AmendmentCompleted #lightblue{
+ state amendment_completed #lightblue{
  }
- state DisagreementLogged #lightblue{
+ state disagreement_logged #lightblue{
  }
- state Denied #lightblue{
+ state denied #lightblue{
  }
- state InformRebuttalOption #lightblue{
+ state inform_rebuttal_option #lightblue{
  }
 }
-DisagreementLogged -> InformRebuttalOption
-Denied -> InformRebuttalOption
-PartialAccept -> InformRebuttalOption: Communication to inform on rebuttal option
+disagreement_logged -> inform_rebuttal_option
+denied -> inform_rebuttal_option
+partial_accept -> inform_rebuttal_option: Communication to inform on rebuttal option
 complete --> [*]
 
 state Task.status{

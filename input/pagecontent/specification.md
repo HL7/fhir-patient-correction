@@ -44,22 +44,23 @@ The **Task.status** and **Task.businessStatus** are used to convey the the state
 
 Task.status | Task.businessStatus (Code) | Task.businessStatus (Display) | Task.businessStatus Definition
 ---|---|---|---|---
-ready | Queued | Queued | A request to correct a record or log a disagreement has been received by the fulfiller (e.g. provider) but has not yet been reviewed.
-in-progress | In_Review | In Review | Review is in progress.  
-in-progress | WaitingOnInformation | Waiting On Information | The fulfiller (e.g. provider) is waiting for additional information.
-cancelled | NeverMind | Cancelled | The request has been cancelled.
-in-progress | Accepted | Accepted | Decision was made to accept the correction request
-in-progress | PartialAccept | Partial Accept | Part of the correction request was accepted, and part was denied.  
-completed | AmendmentCompleted | Amendment Completed | The record has been amended (corrected).
-completed | Denied | Denied | The request has been denied.  
-completed | DisagreementLogged | Disagreement Logged | The fulfiller (e.g. provider) has logged the requester’s (eg patient’s) disagreement with the correction request denial.
-completed | InformRebuttalOption | Inform Rebuttal Option | The fulfiller (e.g. provider) has logged the requester’s (e.g. patient’s) disagreement with the correction request denial, and provided a formal rebuttal. 
+ready | queued | Queued | A request to correct a record or log a disagreement has been received by the fulfiller (e.g. provider) but has not yet been reviewed.
+in-progress | in-review | In Review | Review is in progress.  
+in-progress | waiting-for-information | Waiting for Information | The fulfiller (e.g. provider) is waiting for additional information.
+cancelled | requester-cancelled | Cancelled | The request has been cancelled by the requester.
+in-progress | accepted | Accepted | Decision was made to accept the correction request
+in-progress | partial-accept | Partial Accept | Part of the correction request was accepted, and part was denied.  
+completed | amendment-completed | Amendment Completed | The record has been amended (corrected).
+completed | denied | Denied | The request has been denied.  
+completed | disagreement-logged | Disagreement Logged | The fulfiller (e.g. provider) has logged the requester’s (eg patient’s) disagreement with the correction request denial.
+completed | inform-rebuttal-option | Inform Rebuttal Option | The fulfiller (e.g. provider) has logged the requester’s (e.g. patient’s) disagreement with the correction request denial, and provided a formal rebuttal. 
 {: .grid}
 
 #### Task Status state machine
 
 <div>{%include state-diagram.svg%}</div>
 
+Please note that statuses shown containing underscores in this diagram actually use hyphens instead. For example, "in_review" should be interpreted as "in-review".
 ### Must Support
 
 Must Support on any profile data element SHALL be interpreted as follows:
@@ -74,3 +75,7 @@ Must Support on any profile data element SHALL be interpreted as follows:
   
 NOTE: The above definition of Must Support is derived from HL7v2 concept “Required but may be empty - RE” described in HL7v2 V28_CH02B_Conformance.doc.
 NOTE: Readers are advised to understand FHIR Terminology requirements, FHIR RESTful API based on the HTTP protocol, along with FHIR Data Types, FHIR Search and FHIR Resource formats before implementing US Core requirements.
+
+### Security
+
+Patient Request for Corrections transactions often make use of patient-specific information which could be exploited by malicious actors resulting in exposure of patient data. For this reason, all transactions must be secured appropriately with access to limited authorized individuals, data protected in transit, and appropriate audit measures taken. Please refer to the [US Core Security requirements](https://hl7.org/fhir/us/core/STU4/security.html).

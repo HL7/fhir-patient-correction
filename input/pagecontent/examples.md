@@ -5,7 +5,7 @@ The links in the events below are to example [Patient Correction Communication](
 #### EVENT 1:
 
 A patient makes a request to fix his record – the record says he smokes but he does not smoke. He uses his patient-facing app to import his medical records from Southside Clinic. 
-Requester posts a [Communication resource](Communication-initialrequestforcorrection.html) to Fulfiller, which then spawns a [Task resource](Task-correctionrequestprocess.html) to represent the correction process and returns to Task id in Communication.about.
+Requester posts a [Communication resource](Communication-initialrequestforcorrection.html) to Fulfiller, which then spawns a [Task resource](Task-correctionrequestprocess.html) to represent the correction process and returns the Task id in Communication.about.
 
 #### EVENT 2:
 

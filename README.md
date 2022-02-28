@@ -1,6 +1,6 @@
-# Patient Corrections Implementation Guide
+# Patient Request for Corrections Implementation Guide
 
-The Patient Corrections Implementation Guide provides a method for communicating a patient's request for corrections to their patient data, as well as a way for health care organizations to respond to those requests.
+The Patient Request for Corrections Implementation Guide provides a method for communicating a patient's request for corrections to their patient data, as well as a way for health care organizations to respond to those requests.
 
 Continuous build available https://build.fhir.org/ig/HL7/fhir-patient-correction/
 

@@ -22,9 +22,9 @@ Usage: #definition
 * parameter[=].type = #Bundle
 
 // Output
-* parameter[+].name = #Response
+* parameter[+].name = #CorrectionResponse
 * parameter[=].use = #out
 * parameter[=].min = 1
 * parameter[=].max = "1"
-* parameter[=].documentation = "A [Patient Correction Communication](StructureDefinition-patient-correction-communication.html) from requester associated with the request, conversation, or disagreement.  Augmented by fulfiller with newly spawned [Patient Correction Task](StructureDefinition-patient-correction-task.html) when appropriate."
-* parameter[=].type = #Communication
+* parameter[=].documentation = "A collection of resources representing a correction request response. The Bundle should follow [Patient Correction Bundle](StructureDefinition-patient-correction-bundle.html) profile."
+* parameter[=].type = #Bundle

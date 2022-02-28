@@ -48,7 +48,7 @@ ready | queued | Queued | A request to correct a record or log a disagreement ha
 in-progress | in-review | In Review | Review is in progress.  
 in-progress | waiting-for-information | Waiting for Information | The fulfiller (e.g. provider) is waiting for additional information.
 cancelled | requester-cancelled | Cancelled | The request has been cancelled by the requester.
-in-progress | accepted | Accepted | Decision was made to accept the correction request
+in-progress | accepted | Accepted | Decision was made to accept the correction request.
 in-progress | partial-accept | Partial Accept | Part of the correction request was accepted, and part was denied.  
 completed | amendment-completed | Amendment Completed | The record has been amended (corrected).
 completed | denied | Denied | The request has been denied.  

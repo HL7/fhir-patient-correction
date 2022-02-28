@@ -27,4 +27,4 @@ Description:    "The Patient Correction Bundle contains a Patient Correction Com
 * entry[AdditionalRes].link 1..1
 * entry[AdditionalRes].fullUrl 1..1
 * entry[AdditionalRes].resource 1..1
-* entry[AdditionalRes].resource ^short = "Additional resources which provide information and context about the request."
+* entry[AdditionalRes].resource ^short = "Additional resources which provide information and context about the request or response."

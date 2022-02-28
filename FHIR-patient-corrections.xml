@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="https://build.fhir.org/ig/HL7/fhir-patient-correction" ciUrl="https://build.fhir.org/ig/HL7/fhir-patient-correction" defaultVersion="0.4.8" defaultWorkgroup="" gitUrl="https://github.com/HL7/fhir-patient-correction" url="https://hl7.org/fhir/uv/fhir-patient-correction">
+<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="https://build.fhir.org/ig/HL7/fhir-patient-correction" ciUrl="https://build.fhir.org/ig/HL7/fhir-patient-correction" defaultVersion="0.1.0" defaultWorkgroup="" gitUrl="https://github.com/HL7/fhir-patient-correction" url="https://hl7.org/fhir/uv/fhir-patient-correction">
 <version code="current" url="https://build.fhir.org/ig/HL7/fhir-patient-correction"/>
-<version code="0.4.8" url="https://build.fhir.org/ig/HL7/fhir-patient-correction"/>
+<version code="0.1.0" url="https://build.fhir.org/ig/HL7/fhir-patient-correction"/>
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
@@ -12,6 +12,7 @@
 <artifact id="Practitioner/ex-practitioner2" key="Practitioner-ex-practitioner2" name="Dummy Practitioner (PCP) example"/>
 <artifact id="Practitioner/ex-practitioner" key="Practitioner-ex-practitioner" name="Dummy Practitioner example"/>
 <artifact id="StructureDefinition/patient-correction-bundle" key="StructureDefinition-patient-correction-bundle" name="Patient Correction Bundle"/>
+<artifact id="CodeSystem/PatientCorrectionBusinessStatus" key="CodeSystem-PatientCorrectionBusinessStatus" name="Patient Correction Business Statuses"/>
 <artifact id="StructureDefinition/patient-correction-communication" key="StructureDefinition-patient-correction-communication" name="Patient Correction Communication"/>
 <artifact id="CodeSystem/PatientCorrectionCommunicationTypes" key="CodeSystem-PatientCorrectionCommunicationTypes" name="Patient Correction Communication Types"/>
 <artifact deprecated="true" id="StructureDefinition/patient-correction-disagreement" key="patient-correction-disagreement" name="Patient Correction Disagreement"/>
@@ -19,6 +20,7 @@
 <artifact deprecated="true" id="StructureDefinition/patient-correction-request" key="patient-correction-request" name="Patient Correction Request"/>
 <artifact id="StructureDefinition/patient-correction-task" key="StructureDefinition-patient-correction-task" name="Patient Correction Task"/>
 <artifact id="CodeSystem/PatientCorrectionTaskTypes" key="CodeSystem-PatientCorrectionTaskTypes" name="Patient Correction Task Types"/>
+<artifact id="ValueSet/PatientCorrectionBusinessStatusVS" key="ValueSet-PatientCorrectionBusinessStatusVS" name="PatientCorrectionBusinessStatusVS"/>
 <artifact id="ValueSet/PatientCorrectionCommunicationTypesVS" key="ValueSet-PatientCorrectionCommunicationTypesVS" name="PatientCorrectionCommunicationTypesVS"/>
 <artifact id="ValueSet/PatientCorrectionOutputTypesVS" key="ValueSet-PatientCorrectionOutputTypesVS" name="PatientCorrectionOutputTypesVS"/>
 <artifact id="ValueSet/PatientCorrectionTaskTypesVS" key="ValueSet-PatientCorrectionTaskTypesVS" name="PatientCorrectionTaskTypesVS"/>

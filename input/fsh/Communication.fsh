@@ -63,7 +63,7 @@ Description: "CodeSystem of Communication categories for use in Patient Correcti
 
 
 ValueSet: PatientCorrectionCommunicationTypesVS
-Description: "ValueSet of Communication types for use in Patient Correction Request"
+Description: "ValueSet of Communication types for patient request for corrections"
 * PatientCorrectionCommunicationTypes#medRecCxReq
 * PatientCorrectionCommunicationTypes#medRecCxDenialDisagree
 

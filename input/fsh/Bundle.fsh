@@ -4,27 +4,27 @@ Id:             patient-correction-bundle
 Title:          "Patient Correction Bundle"
 Description:    "The Patient Correction Bundle contains a Patient Correction Communication and other resources related to a patient request for correction."
 
-* type only code
 * type = #collection (exactly)
-
-* total 0..0
-
-* entry ^slicing.discriminator.type = #value
+* entry 1..* MS
+* entry ^slicing.discriminator.type = #type
 * entry ^slicing.discriminator.path = "resource"
-* entry ^slicing.rules = #openAtEnd
+* entry ^slicing.rules = #open
+* entry ^slicing.description = "Slice different resources included in the bundle"
+* entry contains PatientCommResource 1..1 MS
+* entry[PatientCommResource].resource only PatientCorrectionCommunication
 
-// Slice for Patient Correction Communication
 
-* entry contains PatientCommRes 1..1
-* entry[PatientCommRes].link 1..1
-* entry[PatientCommRes].fullUrl 1..1
-* entry[PatientCommRes].resource 1..1
-* entry[PatientCommRes].resource ^short = "A Patient Correction Communication resource (required), specifying correction request, back and forth conversation, or log of disagreement."
+Instance: BundleExample
+InstanceOf: PatientCorrectionBundle
+Description: "Example of an initial request for correction Bundle"
+Usage: #example
 
-// Slice for other resources
+* type = #collection
 
-* entry contains AdditionalRes 0..*
-* entry[AdditionalRes].link 1..1
-* entry[AdditionalRes].fullUrl 1..1
-* entry[AdditionalRes].resource 1..1
-* entry[AdditionalRes].resource ^short = "Additional resources which provide information and context about the request or response."
+//* entry[PatientCommResource].link = 
+* entry[0].fullUrl = "initialrequestforcorrection"
+* entry[0].resource = initialrequestforcorrection
+
+//* entry[AdditionalResource].link = 
+// * entry[1].fullUrl = "ex-documentreference"
+// * entry[1].resource = ex-documentreference

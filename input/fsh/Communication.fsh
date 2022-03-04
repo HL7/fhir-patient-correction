@@ -7,7 +7,7 @@ Description:    "A Communication between a patient and a fulfiller relating to a
 * about MS
 * about 0..2
 * about only Reference(PatientCorrectionTask or PatientCorrectionCommunication)
-* about ^short = "If this is the original Patient Correction Request  then Communication.about will initially be empty when posted by the Requester but populated with the Request for Correction Task reference by the Fulfiller when the Fulfiller spawn a Task to represent the Request for Correction or Logging of Disagreement process. For all subsequent Communication resources that represent conversations help between Requester and Fulfiller as part of the process,,Communication.about references the Communication resource that contains the original request. If this Communication represents the start of a Log Disagreement request, then when the Fulfiller spawns a Task to support the logging of the disagreement, Communication.about will also reference the spawned Task."
+* about ^short = "If this is the original Patient Correction Request  then Communication.about will initially be empty when posted by the Requester but populated with the Request for Correction Task reference by the Fulfiller when the Fulfiller spawn a Task to represent the Request for Correction or Logging of Disagreement process. For all subsequent Communication resources that represent conversations help between Requester and Fulfiller as part of the process, Communication.about references the Communication resource that contains the original request. If this Communication represents the start of a Log Disagreement request, then when the Fulfiller spawns a Task to support the logging of the disagreement, Communication.about will also reference the spawned Task."
 
 * inResponseTo MS
 * inResponseTo 0..1
@@ -58,6 +58,7 @@ Description:    "A Communication between a patient and a fulfiller relating to a
 CodeSystem:  PatientCorrectionCommunicationTypes
 Title: "Patient Correction Communication Types"
 Description: "CodeSystem of Communication categories for use in Patient Correction Request"
+* ^caseSensitive = false
 * #medRecCxReq "Correction request by the Patient or RelatedPerson"
 * #medRecCxDenialDisagree "Disagreement with a denial correction request by the Patient or RelatedPerson"
 

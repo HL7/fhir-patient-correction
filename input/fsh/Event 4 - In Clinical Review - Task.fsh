@@ -3,7 +3,7 @@ InstanceOf: PatientCorrectionTask
 Description: "Example of request for correction in clinical review Task"
 Usage: #example
 * authoredOn = "2021-05-19T10:00:17-00:00"
-* businessStatus.text = "Additional Info Provided"
+* businessStatus = PatientCorrectionBusinessStatus#in-review
 * code = PatientCorrectionTaskTypes#medRecCxReq
 * for = Reference(ex-patient)
 * input.type = PatientCorrectionCommunicationTypes#medRecCxReq

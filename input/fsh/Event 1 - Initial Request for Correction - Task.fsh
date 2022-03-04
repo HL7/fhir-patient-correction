@@ -3,7 +3,7 @@ InstanceOf: PatientCorrectionTask
 Description: "Example of an initial request for correction Task"
 Usage: #example
 * authoredOn = "2021-05-19T10:00:17-00:00"
-* businessStatus.text = "New Request"
+* businessStatus = PatientCorrectionBusinessStatus#queued
 * code = PatientCorrectionTaskTypes#medRecCxReq
 * for = Reference(ex-patient)
 * input.type = PatientCorrectionCommunicationTypes#medRecCxReq

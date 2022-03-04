@@ -3,7 +3,7 @@ InstanceOf: PatientCorrectionTask
 Description: "Example of request for correction ammendment completed Task"
 Usage: #example
 * authoredOn = "2021-05-19T10:00:17-00:00"
-* businessStatus.text = "Amendment Complete"
+* businessStatus = PatientCorrectionBusinessStatus#amendment-completed
 * code = PatientCorrectionTaskTypes#medRecCxReq
 * for = Reference(ex-patient)
 * input.type = PatientCorrectionCommunicationTypes#medRecCxReq

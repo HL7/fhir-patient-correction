@@ -6,19 +6,19 @@
 
 id: hl7.fhir.uv.patient-corrections
 canonical: https://hl7.org/fhir/uv/fhir-patient-correction
-version: 0.1.0
+version: 0.2.0
 name: PatientCorrectionsImplementationGuide
 title: "Patient Request for Corrections Implementation Guide"
 status: draft
 publisher:
   - name: Patient Empowerment Workgroup
-  - url: https://www.hl7.org/Special/committees/patientempowerment/
+  - url: https://www.hl7.org/Special/committees/patientempowerment
 contact:
   - name: John Keyes
     telecom:
       - system: email
         value: john@johnkeyes.com
-        url: https://www.hl7.org/Special/committees/patientempowerment/
+        url: https://www.hl7.org/Special/committees/patientempowerment
         use: work
 description: "The Patient Request for Corrections Implementation Guide provides a method for communicating a patient's request for corrections to their patient data, as well as a way for health care organizations to respond to those requests."
 license: CC0-1.0

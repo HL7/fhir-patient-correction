@@ -3,7 +3,7 @@ InstanceOf: PatientCorrectionTask
 Description: "Example of request for correction additional information needed Task"
 Usage: #example
 * authoredOn = "2021-05-19T10:00:17-00:00"
-* businessStatus.text = "Additional Info Needed"
+* businessStatus = PatientCorrectionBusinessStatus#waiting-for-information
 * code = PatientCorrectionTaskTypes#medRecCxReq
 * for = Reference(ex-patient)
 * input.type = PatientCorrectionCommunicationTypes#medRecCxReq
@@ -13,4 +13,4 @@ Usage: #example
 * meta.versionId = "2"
 * owner = Reference(ex-practitioner)
 * requester = Reference(ex-patient)
-* status = #"In Progress"
+* status = #in-progress

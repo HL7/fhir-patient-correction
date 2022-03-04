@@ -103,32 +103,39 @@ Description:    "Represents the process of reviewing the patient’s request for
 
 Invariant: task-reasonreference
 Description: "If Task.code indicates this is a Disagreement Task, this field SHALL reference the original Request for Correction Communication."
+Expression: "true"
 Severity: #error
 
 Invariant: task-note
 Description: "Task.note[i] SHALL only be updated or deleted by its initial author."
+Expression: "true"
 Severity: #error
 
 Invariant: task-input
 Description: "Task.input SHALL only be populated or updated by the CorrectionRequestor."
+Expression: "true"
 Severity: #error
 
 Invariant: task-output1
 Description: "Task.output SHALL only be populated or updated by the CorrectionFulfiller."
+Expression: "true"
 Severity: #error
 
 Invariant: task-output2
 Description: "If Task.code indicates this is a Request for Correction Task, this field SHALL contain the formal response to the request (acceptance, denial, partial acceptance/denial)."
+Expression: "true"
 Severity: #error
 
 Invariant: task-output3
 Description: "If Task.code indicates this is a Disagreement Task, this field SHALL contain the formal response to the disagreement and optionally a rebuttal."
+Expression: "true"
 Severity: #error
 
 
 CodeSystem:  PatientCorrectionTaskTypes
 Title: "Patient Correction Task Types"
 Description:  "CodeSystem of task types for patient request for corrections"
+* ^caseSensitive = false
 * #medRecCxReq "Correction request by the Patient or RelatedPerson"
 * #medRecCxDenialDisagree "Disagreement with a denial correction request by the Patient or RelatedPerson"
 
@@ -142,6 +149,7 @@ Description: "ValueSet of task types for patient requestion for corrections"
 CodeSystem:  PatientCorrectionOutputTypes
 Title: "Patient Correction Output Types"
 Description:  "CodeSystem of output types for patient request for corrections"
+* ^caseSensitive = false
 * #medRecCxReqResolution "Correction request resolution"
 
 
@@ -153,6 +161,7 @@ Description: "ValueSet of output types for patient corrections"
 CodeSystem:  PatientCorrectionBusinessStatus
 Title: "Patient Correction Business Statuses"
 Description:  "CodeSystem of business statuses for patient request for corrections"
+* ^caseSensitive = false
 * #queued "A request to correct a record or log a disagreement has been received by the fulfiller (e.g. provider) but has not yet been reviewed."
 * #in-review "Review is in progress."
 * #waiting-for-information "The fulfiller (e.g. provider) is waiting for additional information."

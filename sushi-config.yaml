@@ -5,7 +5,7 @@
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 
 id: hl7.fhir.uv.patient-corrections
-canonical: https://hl7.org/fhir/uv/fhir-patient-correction
+canonical: http://hl7.org/fhir/uv/fhir-patient-correction
 version: 0.2.0
 name: PatientCorrectionsImplementationGuide
 title: "Patient Request for Corrections Implementation Guide"

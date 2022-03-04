@@ -1,6 +1,7 @@
 {
-  "package-id": "hl7.fhir.uv.patient-corrections",
+  "package-id": "hl7.fhir.uv.fhir-patient-correction",
   "canonical": "http://hl7.org/fhir/uv/fhir-patient-correction",
+  "category": "tbd",
   "title": "Patient Request for Corrections Implementation Guide",
   "introduction": "The Patient Request for Corrections Implementation Guide provides a method for communicating a patient's request for corrections to their patient data, as well as a way for health care organizations to respond to those requests.",
   "list": [

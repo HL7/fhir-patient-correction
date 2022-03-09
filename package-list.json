@@ -1,6 +1,6 @@
 {
-  "package-id": "hl7.fhir.uv.patient-correction",
-  "canonical": "http://hl7.org/fhir/uv/patient-correction",
+  "package-id": "hl7.fhir.uv.patient-corrections",
+  "canonical": "http://hl7.org/fhir/uv/patient-corrections",
   "category": "tbd",
   "title": "Patient Request for Corrections Implementation Guide",
   "introduction": "The Patient Request for Corrections Implementation Guide provides a method for communicating a patient's request for corrections to their patient data, as well as a way for health care organizations to respond to those requests.",
@@ -16,7 +16,7 @@
       "version": "0.2.0",
       "date": "2022-03-04",
       "desc": "Initial STU ballot (May 2022 Ballot)",
-      "path": "http://hl7.org/fhir/uv/patient-correction",
+      "path": "http://hl7.org/fhir/uv/patient-corrections",
       "status": "ballot",
       "sequence": "STU 1",
       "fhirversion": "4.0.1",

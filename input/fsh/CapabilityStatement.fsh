@@ -12,7 +12,7 @@ Usage: #definition
 * fhirVersion = #4.0.1
 * format[0] = #xml
 * format[1] = #json
-* implementationGuide = "https://hl7.org/fhir/uv/fhir-patient-correction"
+* implementationGuide = "https://hl7.org/fhir/uv/fhir-patient-corrections"
 
 * rest[0].mode = #server
 * rest[0].documentation = "Description of the needed resources to be supported by the FHIR server, and the different possible interactions."

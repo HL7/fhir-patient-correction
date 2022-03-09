@@ -14,8 +14,8 @@ Validate resource against profile http://hl7.org/fhir/StructureDefinition/Practi
 Validate resource against profile http://hl7.org/fhir/StructureDefinition/Observation
 
 # profiles defined in this IG
-Validate resource against profile http://hl7.org/fhir/uv/patient-corrections/StructureDefinition/patient-correction-communication-initial
-Validate resource against profile http://hl7.org/fhir/uv/patient-corrections/StructureDefinition/patient-correction-communication-question
-Validate resource against profile http://hl7.org/fhir/uv/patient-corrections/StructureDefinition/patient-correction-communication-response
-Validate resource against profile http://hl7.org/fhir/uv/patient-corrections/StructureDefinition/patient-correction-communication-conclusion
+Validate resource against profile http://hl7.org/fhir/uv/patient-correction/StructureDefinition/patient-correction-communication-initial
+Validate resource against profile http://hl7.org/fhir/uv/patient-correction/StructureDefinition/patient-correction-communication-question
+Validate resource against profile http://hl7.org/fhir/uv/patient-correction/StructureDefinition/patient-correction-communication-response
+Validate resource against profile http://hl7.org/fhir/uv/patient-correction/StructureDefinition/patient-correction-communication-conclusion
 

@@ -188,14 +188,14 @@ Description: "ValueSet of business statuses for patient request for corrections"
 * PatientCorrectionBusinessStatus#completed
 
 
-Instance: PatientCorrectionTask-ReasonReference
+Instance: ReasonReference
 InstanceOf: SearchParameter
 Title: "Search on the PatientCorrectionTask.reasonReference element"
 Description: "Search Parameter extension enabling clients to search on the PatientCorrectionTask.reasonReference element"
 Usage: #definition
-* url = "http://hl7.org/fhir/uv/patient-corrections/SearchParameter-PatientCorrectionTask-ReasonReference"
+* url = "http://hl7.org/fhir/uv/patient-corrections/SearchParameter/ReasonReference"
 * description = "This SearchParameter enables finding all tasks related to a Patient Request for Correction. Each task related to a particular correction request will point to the original communication in the request. There will be a task for the original request, and there may be additional tasks for any disagreements."
-* name = "PatientCorrectionTaskReasonReference"
+* name = "ReasonReferenceSearchParameter"
 * status = #active
 * code = #reasonreference
 * base = #Task

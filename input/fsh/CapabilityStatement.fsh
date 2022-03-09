@@ -26,21 +26,9 @@ Usage: #definition
 * rest[0].resource[0].interaction[0].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest[0].resource[0].interaction[0].extension.valueCode = #SHALL
 
-* rest[0].resource[0].type = #Communication
-* rest[0].resource[0].documentation = "Create a Communication between a patient and a fulfiller relating to a patient correction request."
-* rest[0].resource[0].interaction[1].code = #create
+* rest[0].resource[0].interaction[1].code = #search-type
 * rest[0].resource[0].interaction[1].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest[0].resource[0].interaction[1].extension.valueCode = #SHALL
-
-* rest[0].resource[0].type = #Communication
-* rest[0].resource[0].documentation = "Update a Communication between a patient and a fulfiller relating to a patient correction request."
-* rest[0].resource[0].interaction[2].code = #update
-* rest[0].resource[0].interaction[2].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest[0].resource[0].interaction[2].extension.valueCode = #SHALL
-
-* rest[0].resource[0].interaction[3].code = #search-type
-* rest[0].resource[0].interaction[3].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest[0].resource[0].interaction[3].extension.valueCode = #SHALL
 
 * rest[0].resource[0].searchParam[0].name = "about"
 * rest[0].resource[0].searchParam[0].type = #reference
@@ -55,21 +43,9 @@ Usage: #definition
 * rest[0].resource[1].interaction[0].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest[0].resource[1].interaction[0].extension.valueCode = #SHALL
 
-* rest[0].resource[1].type = #Communication
-* rest[0].resource[1].documentation = "Create a Task relating to a patient correction request."
-* rest[0].resource[1].interaction[1].code = #create
+* rest[0].resource[1].interaction[1].code = #search-type
 * rest[0].resource[1].interaction[1].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest[0].resource[1].interaction[1].extension.valueCode = #SHALL
-
-* rest[0].resource[1].type = #Task
-* rest[0].resource[1].documentation = "Update a Task relating to a patient correction request."
-* rest[0].resource[1].interaction[2].code = #update
-* rest[0].resource[1].interaction[2].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest[0].resource[1].interaction[2].extension.valueCode = #SHALL
-
-* rest[0].resource[1].interaction[3].code = #search-type
-* rest[0].resource[1].interaction[3].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest[0].resource[1].interaction[3].extension.valueCode = #SHALL
 
 * rest[0].resource[1].searchParam[0].name = "reasonReference"
 * rest[0].resource[1].searchParam[0].type = #reference
@@ -79,13 +55,7 @@ Usage: #definition
 
 
 * rest[0].resource[2].type = #Bundle
-* rest[0].resource[2].documentation = "Create a Patient Correction Bundle which contains a Patient Correction Communication and related resources."
-* rest[0].resource[2].interaction[0].code = #create
+* rest[0].resource[2].documentation = "Read a Patient Correction Bundle which contains a Patient Correction Communication and related resources."
+* rest[0].resource[2].interaction[0].code = #read
 * rest[0].resource[2].interaction[0].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest[0].resource[2].interaction[0].extension.valueCode = #SHALL
-
-* rest[0].resource[2].type = #Bundle
-* rest[0].resource[2].documentation = "Read a Patient Correction Bundle which contains a Patient Correction Communication and related resources."
-* rest[0].resource[2].interaction[1].code = #read
-* rest[0].resource[2].interaction[1].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest[0].resource[2].interaction[1].extension.valueCode = #SHALL

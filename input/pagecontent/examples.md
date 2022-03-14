@@ -1,15 +1,15 @@
 ### Example Request for Correction Workflow with Links to Example Resources
 
-The links in the events below are to example [Patient Correction Communication](StructureDefinition-patient-correction-communication.html) or [Patient Correction Task](StructureDefinition-patient-correction-task.html) resources.
+Each event below includes links to example [Patient Correction Communication](StructureDefinition-patient-correction-communication.html) or [Patient Correction Task](StructureDefinition-patient-correction-task.html) resources.
 
 #### EVENT 1:
 
 A patient makes a request to fix his record – the record says he smokes but he does not smoke. He uses his patient-facing app to import his medical records from Southside Clinic. 
-Requester posts a [Communication resource](Communication-initialrequestforcorrection.html) to Fulfiller, which then spawns a [Task resource](Task-correctionrequestprocess.html) to represent the correction process and returns the Task id in Communication.about.
+Requester posts a [Communication resource](Communication-initialrequestforcorrection.html) to the Fulfiller, which then spawns a [Task resource](Task-correctionrequestprocess.html) to represent the correction process and returns the Task id in Communication.about.
 
 #### EVENT 2:
 
-The medical records staff person assigned to the request needs additional information – the Fulfiller posts a [Communication resource](Communication-additionalinfoneeded.html) on Fulfiller indicating the request for more information. The [Task resource](Task-correctionrequestprocess2.html) on the Fulfiller is updated to show the status of the request for correction process. The Requester gets notification of the request for additional information and the status of the overall process by polling or notifications from the Fulfiller.
+The medical records staff person assigned to the request needs additional information – the Fulfiller posts a [Communication resource](Communication-additionalinfoneeded.html) on the Fulfiller indicating the request for more information. The [Task resource](Task-correctionrequestprocess2.html) on the Fulfiller is updated to show the status of the request for correction process. The Requester gets notification of the request for additional information and the status of the overall process by polling (or notifications from) the Fulfiller.
 
 #### EVENT 3:
 

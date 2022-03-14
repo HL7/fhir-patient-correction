@@ -22,9 +22,9 @@
 As Grace Cordovano describes, today's request for patient correction process is a largely mail and phone based process that is fragmented, lengthy and burdensome for both the patient and the healthcare organization.  The purpose of this guide is to make the request for correction process easier and more automated for both the patient and the healthcare
 provider. Now that patients have the ability to download their data into FHIR applications, they are finding errors in their data. Currently, no FHIR implementation guide exists to standardize the method of electronically requesting a
 correction to errors and discrepancies to their information. This implementation guide provides a FHIR based standard
-way for the communication of a patient's request for correction.  It includes the ability to request a correction and monitor its progress through completion or rejection as well as the ability to log a disagreement. 
+way for the communication of a patient's request for corrections.  It includes the ability to request a correction and monitor its progress through completion or rejection as well as the ability to log a disagreement. 
  
-This Implementation Guide is designed to work in the Universal Realm.  Both GDPR and HIPAA processes were reviewed in depth.   HIPAA and GDPR regulations are very similar concerning patients’ rights to have their data corrected. There are minor differences in the period of time for covered entities to respond to the patient’s initial request for corrections and the preference in GDPR for a means for patient requests to be made electronically. Since HIPAA provides detailed implementation guidance, it was followed in the creation of this Implementation Guide since it includes the patient rights outlined in both regulations. Refer to References section for more information.
+This Implementation Guide is designed to work in the Universal Realm.  Both GDPR and HIPAA processes were reviewed in depth.   HIPAA and GDPR regulations are very similar concerning a patient's rights to have their data corrected. There are minor differences in the period of time for covered entities to respond to the patient's initial request for corrections and the preference in GDPR for a means for patient requests to be made electronically. Since HIPAA provides detailed implementation guidance, it was followed in the creation of this Implementation Guide since it includes the patient rights outlined in both regulations. Refer to the [References](#references) section for more information.
 
 ### Example Scenarios
 
@@ -36,7 +36,7 @@ This Implementation Guide is designed to work in the Universal Realm.  Both GDPR
 4. Bob then requests that Southside Clinic notify his insurance company (MyLifeInsurance.com) that his record has now been corrected. 
 5. Southside Clinic notifies Bob that his insurance company has been contacted and given the corrected information. 
 
-#### Patient reviews their Visit Note and notes that the doctor described him as a smoker.  However, he has never smoked.  He requests the change but the change is rejected
+#### Patient reviews their Visit Note and notes that the doctor described him as a smoker.  However, he has never smoked.  He requests the change but the change is rejected.
 
 1. Bob uses his patient-facing app to import his medical records from Southside Clinic. He notices that he is listed as an everyday smoker. However, Bob has not smoked in 20 years. Bob uses his patient app to send a message to Southside Clinic requesting that his smoking status be corrected to show he has not smoked in 20 years. 
 2. Southside Clinic receives Bob request and denies his request to modify his chart based on a conversation with Bob last year where he stated that he smoked 1 pack per day. 
@@ -45,14 +45,14 @@ This Implementation Guide is designed to work in the Universal Realm.  Both GDPR
 
 #### Request to correct multiple items. All accepted.
 
-1. Bob uses his patient-facing app to import his medical records from Southside Clinic. He notices that he is listed as an everyday smoker. He also notices his weight is listed as 275 and he has a diagnosis of Diabetes. However, Bob has not smoked in 20 years, his weight is 215, and he has never been told he has diabetes. Bob uses his patient app to send a message to Southside Clinic requesting that his smoking status, weight, and diabetes diagnosis be corrected.
+1. Bob uses his patient-facing app to import his medical records from Southside Clinic. He notices that he is listed as an everyday smoker. He also notices his weight is listed as 275 lb and he has a diagnosis of diabetes. However, Bob has not smoked in 20 years, his weight is 215 lb, and he has never been told he has diabetes. Bob uses his patient app to send a message to Southside Clinic requesting that his smoking status, weight, and diabetes diagnosis be corrected.
 2. Southside Clinic receives Bob request, corrects his chart, and notifies Bob that his records have been corrected.
 3. A few days later, Bob logs into his patient app and receives the notification that his record has been corrected.
  
 #### Request to correct multiple items. Some accepted, some denied.
 
-1. Bob uses his patient-facing app to import his medical records from Southside Clinic. He notices that he is listed as an everyday smoker. He also notices his weight is listed as 275 and he has a diagnosis of Diabetes. However, Bob has not smoked in 20 years, his weight is 215, and he has never been told he has diabetes. Bob uses his patient app to send a message to Southside Clinic requesting that his smoking status, weight, and diabetes diagnosis be corrected.
-2. Southside Clinic receives Bob request. They accept his request to modify his smoking status and diabetes diagnosis. They tell him he must come into the office to be weighed before they can change his chart because his chart indicates he weighed 275 at his appointment last year.  
+1. Bob uses his patient-facing app to import his medical records from Southside Clinic. He notices that he is listed as an everyday smoker. He also notices his weight is listed as 275 lb and he has a diagnosis of diabetes. However, Bob has not smoked in 20 years, his weight is 215 lb, and he has never been told he has diabetes. Bob uses his patient app to send a message to Southside Clinic requesting that his smoking status, weight, and diabetes diagnosis be corrected.
+2. Southside Clinic receives Bob request. They accept his request to modify his smoking status and diabetes diagnosis. They tell him he must come into the office to be weighed before they can change his chart because his chart indicates he weighed 275 lb at his appointment last year.  
 3. A few days later, Bob logs into his patient app and notices the acceptance of the smoking status and diagnosis change plus the denial of weight change from Southside Clinic. Bob sends a statement disagreeing with the denial indicating that he did not have an appointment the previous year and wants Southside Clinic to correct his chart.
 4. Southside Clinic sends a rebuttal that they did see Bob and will not modify his chart.
 
@@ -61,7 +61,7 @@ This Implementation Guide is designed to work in the Universal Realm.  Both GDPR
 1. A patient and family reporting system for perceived ambulatory note mistakes: experience at 3 U.S. healthcare centers: Fabienne C Bourgeois, Alan Fossa, Macda Gerard, Marion E Davis, Yhenneko J Taylor, Crystal D Connor, Tracela Vaden, Andrew McWilliams, Melanie D Spencer, Patricia Folcarelli, Sigall K Bell: Journal of the American Medical Informatics Association, Volume 26, Issue 12, December 2019, Pages 1566–1573, [https://doi.org/10.1093/jamia/ocz142](https://doi.org/10.1093/jamia/ocz142)
 2. Medical Record Errors and Common, Hard to Fix, Report Finds: Becker Hospital Review: [https://www.beckershospitalreview.com/ehrs/](https://www.beckershospitalreview.com/ehrs/medical-record-errors-are-common-hard-to-fix-report-finds.html)
 3. Examples of Request for Correction Forms and Directions:
-* [https://www.memorialhermann.org/uploadedFiles/_Library/Memorial_Hermann/patient-amendment-request-form.pdf](https://www.memorialhermann.org/uploadedFiles/_Library/Memorial_Hermann/patient-amendment-request-form.pdf)
+* [https://www.memorialhermann.org/-/media/memorial-hermann/org/files/patients-and-visitors/patient-services/request-amendment-of-protected-health-information.ashx?la=en](https://www.memorialhermann.org/-/media/memorial-hermann/org/files/patients-and-visitors/patient-services/request-amendment-of-protected-health-information.ashx?la=en)
 * [https://www.premierhealth.com/docs/default-source/default-document-library/amendment-request-form.pdf?sfvrsn=728d9b8b_2](https://www.premierhealth.com/docs/default-source/default-document-library/amendment-request-form.pdf?sfvrsn=728d9b8b_2)
 * [https://www.partners.org/Assets/Documents/For-Patients/Medical-Records/Medical-Record-Amendement-Instructions.pdf](https://www.partners.org/Assets/Documents/For-Patients/Medical-Records/Medical-Record-Amendement-Instructions.pdf)
 * [https://www.hipaa.cumc.columbia.edu/file/1378/download?token=gKud-5h1](https://www.hipaa.cumc.columbia.edu/file/1378/download?token=gKud-5h1)

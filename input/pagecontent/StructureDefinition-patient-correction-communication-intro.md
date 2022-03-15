@@ -1,6 +1,6 @@
 This is the profile for the Patient Correction Communication, which is used for back and forth conversation about a patient’s request for correction to their medical record.  Each Patient Correction Communication resource instance represents a message in the bidirectional conversation needed to complete a patient’s request for correction to their medical record or for logging their disagreement to a correction denial.   This profile sets minimum expectations for the Communication resource to support this workflow.  It is expected to be used in conjunction with the [Patient Correction Task](StructureDefinition-patient-correction-task.html) profile.
 
-### Mandatory and Must Support Data Elements
+### Mandatory and Must Support data elements
 
 The following data-elements must always be present ([Mandatory](https://www.hl7.org/fhir/us/core/conformance-expectations.html#mandatory-elements)) definition]) or must be supported if the data is present ([Must Support](https://www.hl7.org/fhir/us/core/conformance-expectations.html#must-support-elements)) definition). They are presented below in a simple human-readable explanation. Profile specific guidance is provided as well. The Formal Profile Definition below provides the formal summary, definitions, and terminology requirements.  Refer to the [Examples](examples.html) section of the guide for example resources provided in the context of an example workflow.
 

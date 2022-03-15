@@ -7,6 +7,7 @@
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
 <artifact id="Bundle/BundleExample" key="Bundle-BundleExample" name="BundleExample"/>
+<artifact id="Bundle/BundleExample2" key="Bundle-BundleExample2" name="BundleExample2"/>
 <artifact id="DocumentReference/ex-documentreference" key="DocumentReference-ex-documentreference" name="Dummy DocumentReference example"/>
 <artifact id="Organization/ex-organization" key="Organization-ex-organization" name="Dummy Organization example"/>
 <artifact id="Patient/ex-patient" key="Patient-ex-patient" name="Dummy Patient example"/>

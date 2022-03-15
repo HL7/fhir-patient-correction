@@ -45,7 +45,7 @@ Title: "Dummy Practitioner example"
 Description: "Dummy Practitioner example for completeness sake. No actual use of this resource other than an example target."
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * name[+].use = #official
-* name[=].family = "Schmitt"
+* name[=].family = "Smith"
 * name[=].given[+] = "John"
 
 Instance: ex-practitioner2
@@ -54,7 +54,7 @@ Title: "Dummy Practitioner (PCP) example"
 Description: "Dummy Practitioner (PCP) example for completeness sake. No actual use of this resource other than an example target."
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * name[+].use = #official
-* name[=].family = "Schmitt"
+* name[=].family = "Jones"
 * name[=].given[+] = "Alice"
 
 Instance: ex-smoking
@@ -76,5 +76,5 @@ Description: "Dummy DocumentReference example for completeness sake. No actual u
 Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * status = #current
-* content.attachment.title = "Hello World"
+* content.attachment.title = "Example Document"
 * content.attachment.contentType = #text/plain

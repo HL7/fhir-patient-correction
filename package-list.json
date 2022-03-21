@@ -16,7 +16,7 @@
       "version": "1.0.0-ballot",
       "date": "2022-03-04",
       "desc": "Initial STU ballot (May 2022 Ballot)",
-      "path": "http://hl7.org/fhir/uv/patient-corrections",
+      "path": "http://hl7.org/fhir/uv/patient-corrections/2022May",
       "status": "ballot",
       "sequence": "STU 1",
       "fhirversion": "4.0.1",

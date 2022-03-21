@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/uv/patient-corrections" ciUrl="http://build.fhir.org/ig/HL7/fhir-patient-correction" defaultVersion="1.0.0-ballot" defaultWorkgroup="pe" gitUrl="https://github.com/HL7/fhir-patient-correction" url="http://hl7.org/fhir/uv/patient-corrections">
+<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/uv/patient-corrections/2022May" ciUrl="http://build.fhir.org/ig/HL7/fhir-patient-correction" defaultVersion="1.0.0-ballot" defaultWorkgroup="pe" gitUrl="https://github.com/HL7/fhir-patient-correction" url="http://hl7.org/fhir/uv/patient-corrections">
 <version code="current" url="http://build.fhir.org/ig/HL7/fhir-patient-correction"/>
-<version code="1.0.0-ballot" url="http://hl7.org/fhir/uv/patient-corrections"/>
+<version code="1.0.0-ballot" url="http://hl7.org/fhir/uv/patient-corrections/2022May"/>
 <version code="0.2.0" deprecated="true" url="http://hl7.org/fhir/uv/patient-corrections/dev"/>
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
 <artifact id="Bundle/BundleExample" key="Bundle-BundleExample" name="BundleExample"/>
-<artifact id="Bundle/BundleExample2" key="Bundle-BundleExample2" name="BundleExample2"/>
 <artifact id="DocumentReference/ex-documentreference" key="DocumentReference-ex-documentreference" name="Dummy DocumentReference example"/>
 <artifact id="Organization/ex-organization" key="Organization-ex-organization" name="Dummy Organization example"/>
 <artifact id="Patient/ex-patient" key="Patient-ex-patient" name="Dummy Patient example"/>

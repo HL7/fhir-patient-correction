@@ -9,7 +9,7 @@ Reference policy: `resolves`
 Profile interaction summary:
 
 * **SHALL** support `$correction-request`
-* **SHOULD** support `read`
+* **SHALL** support `read`
 * **MAY** support `vread`, `history-instance`, `search-type`
 
 Fetch and search criteria:

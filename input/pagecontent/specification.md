@@ -16,15 +16,17 @@ The Communication **recipient** and **sender** fields are used to track whether 
 
 Certain fields in Task and Communication provide important linkage information.
 
-The **about** field of the Communication will be empty for the initial Communication, but will be populated with a reference to the Task when the Task for the request is spawned.
+Communication **about** will be empty for the initial Communication when the $correction-request operation is made to the server.  Communication **about** for the initial Communication will then be populated with a reference to the correction Task when the Task for the request is spawned as result of the operation.
 
-All subsequent Communications will point to the initial Communication for the correction request in their Communication **about** fields. 
+All subsequent Communication resources will point to the initial Communication resource for the correction request in their Communication **about** fields.
 
 The Communication **recipient** and **sender** fields are used to track whether each Communication is from the patient to the fulfiller, or vice versa.
 
 Task **input** points to the Communication that contains the initial request details, and Task **output** points to the Communication that contains the final results (amendment or denial details).
 
 The Task **reasonReference** field is used to link a Log Disagreement Task to the related Correction Request Task.
+
+The following diagrams show the Communication and Task linkages.
 
 #### Amendment requested and accepted
 

@@ -26,6 +26,7 @@ fhirVersion: 4.0.1
 parameters:
   apply-publisher: true
   apply-contact: true
+  apply-version: true
   show-inherited-invariants: false
 copyrightYear: 2020+
 releaseLabel: ci-build

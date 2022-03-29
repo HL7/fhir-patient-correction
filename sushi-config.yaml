@@ -11,7 +11,7 @@ name: PatientCorrectionsImplementationGuide
 title: "Patient Request for Corrections Implementation Guide"
 status: draft
 publisher:
-  - name: Patient Empowerment Workgroup
+  - name: HL7 International - Patient Empowerment Workgroup
   - url: https://www.hl7.org/Special/committees/patientempowerment
 contact:
   - name: John Keyes
@@ -29,7 +29,7 @@ parameters:
   apply-version: true
   show-inherited-invariants: false
 copyrightYear: 2020+
-releaseLabel: ci-build
+releaseLabel: STU 1 Ballot
 jurisdiction: http://unstats.un.org/unsd/methods/m49/m49.htm#001 "World"
 
 pages:

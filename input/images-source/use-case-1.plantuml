@@ -17,5 +17,4 @@ RequestFulfiller->RequestFulfiller : Decide to make correction
 RequestFulfiller->CorrectionRequester : Change accepted
 Deactivate RequestFulfiller
 
-note left: smile
 @enduml

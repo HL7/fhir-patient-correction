@@ -16,5 +16,4 @@ RequestFulfiller->RequestFulfiller: Record Rebuttal
 RequestFulfiller->CorrectionRequester: Change remains Denied [with Rebuttal]
 Deactivate RequestFulfiller
 
-note left: frown
 @enduml

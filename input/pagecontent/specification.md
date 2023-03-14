@@ -55,7 +55,8 @@ in-progress | partial-accept | Partial Accept | Part of the correction request w
 completed | amendment-completed | Amendment Completed | The record has been amended (corrected).
 completed | denied | Denied | The request has been denied.  
 completed | disagreement-logged | Disagreement Logged | The fulfiller (e.g. provider) has logged the requester’s (e.g. patient’s) disagreement with the correction request denial.
-completed | inform-rebuttal-option | Inform Rebuttal Option | The fulfiller (e.g. provider) has logged the requester’s (e.g. patient’s) disagreement with the correction request denial, and provided a formal rebuttal. 
+completed | inform-rebuttal-option | Inform Rebuttal Option | The fulfiller (e.g. provider) has logged the requester’s (e.g. patient’s) disagreement with the correction request denial, and provided a formal rebuttal.
+completed |  partial-amendment-completed | Partial Amendment Completed |  The record has been partially amended (corrected).
 {: .grid}
 
 #### Task Status state machine

@@ -97,3 +97,18 @@ This use case is a continuation from Use Case 3.
 |---------------------------------------------------|
 |Note, in the case of multiple corrections requested, the flow may follow Use Case 3 and/or 4 for each individual correction submitted.|
  {:.grid .bg-info}
+
+ #### Use Case 6: Patient Requests a Correction to Their Medical Record and the Record is Partially Updated
+1. A patient reviews the records received from a provider. 
+1. The patient determines that it contains one or more errors or discrepancies. 
+1. The patient enters a correction request using their application. 
+1. The application (CorrectionRequester) sends the correction request to the appropriate provider system (RequestFulfiller). 
+4. The provider (most likely a medical records professional but possibly a clinician) reviews the request on the provider system (EHR). 
+4. If needed, the provider reaches out to the patient to further clarify the request and consults as needed with clinicians to determine if a correction is appropriate. 
+5. **Portions of the request for correction are accepted, others rejected**. The appropriate personnel corrects the chart (or charts if the error involves multiple charts) and creates formal amendments to the electronic health record. 
+1. The correction request is updated with: 
+    1. the reason for the rejection of the portions rejected, an explanation that the patient has the right to log a disagreement, 
+    1. a statement that the individual may request that the covered entity provide the individual's request for amendment and the denial with any future disclosures of the protected health information that is the subject of the amendment, 
+    1. a description of how the individual may complain to the covered entity. 
+1. Their application sends an updated correction request to the provider system. 
+1. The provider system updates the correction request accordingly and continues processing it.

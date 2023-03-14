@@ -40,5 +40,5 @@ CorrectionRequester -> CorrectionRequester: process and react
 end
 
 Deactivate RequestFulfiller
-note left of CorrectionRequester: smile
+
 @enduml

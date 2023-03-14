@@ -49,5 +49,4 @@ end
 
 Deactivate RequestFulfiller
 note left of CorrectionRequester: loop discovers Conclusion Communication
-note left of CorrectionRequester: smile
 @enduml

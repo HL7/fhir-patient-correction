@@ -16,6 +16,5 @@ end note
 RequestFulfiller->CorrectionRequester : Record Not Changed
 Deactivate RequestFulfiller
 
-note left: frown
 
 @enduml

@@ -32,7 +32,7 @@ the Task status is updated and
 a new concluding Communication is created.
 end note
 RequestFulfiller->RequestFulfiller: update Task status and create new Communication with denial or accept/amend
-CorrectionRequester -> RequestFulfiller: query for concluding Task and Communication.
+CorrectionRequester -> RequestFulfiller: poll (query) for any changes to Task status and for concluding Communication.
 
 
 Deactivate RequestFulfiller

@@ -14,19 +14,19 @@
 <artifact id="Practitioner/ex-practitioner2" key="Practitioner-ex-practitioner2" name="Dummy Practitioner (PCP) example"/>
 <artifact id="Practitioner/ex-practitioner" key="Practitioner-ex-practitioner" name="Dummy Practitioner example"/>
 <artifact id="StructureDefinition/patient-correction-bundle" key="StructureDefinition-patient-correction-bundle" name="Patient Correction Bundle"/>
+<artifact id="ValueSet/PatientCorrectionBusinessStatusVS" key="ValueSet-PatientCorrectionBusinessStatusVS" name="Patient Correction Business Status"/>
 <artifact id="CodeSystem/PatientCorrectionBusinessStatus" key="CodeSystem-PatientCorrectionBusinessStatus" name="Patient Correction Business Statuses"/>
 <artifact id="StructureDefinition/patient-correction-communication" key="StructureDefinition-patient-correction-communication" name="Patient Correction Communication"/>
 <artifact id="CodeSystem/PatientCorrectionCommunicationTypes" key="CodeSystem-PatientCorrectionCommunicationTypes" name="Patient Correction Communication Types"/>
+<artifact id="ValueSet/PatientCorrectionCommunicationTypesVS" key="ValueSet-PatientCorrectionCommunicationTypesVS" name="Patient Correction Communication Types Value Set"/>
 <artifact deprecated="true" id="StructureDefinition/patient-correction-disagreement" key="patient-correction-disagreement" name="Patient Correction Disagreement"/>
 <artifact id="CodeSystem/PatientCorrectionOutputTypes" key="CodeSystem-PatientCorrectionOutputTypes" name="Patient Correction Output Types"/>
+<artifact id="ValueSet/PatientCorrectionOutputTypesVS" key="ValueSet-PatientCorrectionOutputTypesVS" name="Patient Correction Output Types Value Set"/>
 <artifact deprecated="true" id="StructureDefinition/patient-correction-request" key="patient-correction-request" name="Patient Correction Request"/>
 <artifact id="StructureDefinition/patient-correction-task" key="StructureDefinition-patient-correction-task" name="Patient Correction Task"/>
 <artifact id="CodeSystem/PatientCorrectionTaskTypes" key="CodeSystem-PatientCorrectionTaskTypes" name="Patient Correction Task Types"/>
+<artifact id="ValueSet/PatientCorrectionTaskTypesVS" key="ValueSet-PatientCorrectionTaskTypesVS" name="Patient Correction Task Types Values Set"/>
 <artifact id="CapabilityStatement/PatientCorrectionCapability" key="CapabilityStatement-PatientCorrectionCapability" name="Patient Request for Corrections Capability Statement"/>
-<artifact id="ValueSet/PatientCorrectionBusinessStatusVS" key="ValueSet-PatientCorrectionBusinessStatusVS" name="PatientCorrectionBusinessStatusVS"/>
-<artifact id="ValueSet/PatientCorrectionCommunicationTypesVS" key="ValueSet-PatientCorrectionCommunicationTypesVS" name="PatientCorrectionCommunicationTypesVS"/>
-<artifact id="ValueSet/PatientCorrectionOutputTypesVS" key="ValueSet-PatientCorrectionOutputTypesVS" name="PatientCorrectionOutputTypesVS"/>
-<artifact id="ValueSet/PatientCorrectionTaskTypesVS" key="ValueSet-PatientCorrectionTaskTypesVS" name="PatientCorrectionTaskTypesVS"/>
 <artifact id="SearchParameter/About" key="SearchParameter-About" name="Search on the PatientCorrectionCommunication.about element"/>
 <artifact id="SearchParameter/ReasonReference" key="SearchParameter-ReasonReference" name="Search on the PatientCorrectionTask.reasonReference element"/>
 <artifact id="Communication/additionalinfoneeded" key="Communication-additionalinfoneeded" name="additionalinfoneeded"/>
@@ -50,4 +50,5 @@
 <page deprecated="true" key="home" name="IG Home" url="index"/>
 <page key="specification" name="Specification" url="specification"/>
 <page key="toc" name="Table of Contents" url="toc"/>
+<page key="techanalysis" name="Technical Analysis"/>
 </specification>

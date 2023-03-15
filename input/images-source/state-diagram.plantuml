@@ -1,12 +1,13 @@
 @startuml
 skinparam svgDimensionStyle false
+hide empty description 
 [*] -> ready : External post of Communication resource
 state ready {
   state queued #lightblue {
   }
 }
 ready --> in_review
-queued : Request received but not reviewed
+queued : Request received\nbut not reviewed
 
 state in_progress {
   state in_review #lightblue{
@@ -21,17 +22,15 @@ state in_progress {
 in_review --> waiting_for_information
 in_review --> accepted
 in_review --> partial_accept
-in_review --> in_review: Inform requester on additional time needed
+in_review --> in_review: Inform requester on\nadditional time needed
 waiting_for_information --> in_review
 in_review --> denied
-partial_accept --> amendment_completed
-partial_accept --> disagreement_logged
 accepted --> amendment_completed
-denied -> disagreement_logged
+denied -down-> disagreement_logged
 waiting_for_information : e.g. Additional Information Needed
 accepted : Decision made to accept
-partial_accept : Decision made that part of request is accepted and part is denied, disagreement can be logged
-denied : Decision made to deny, disagreement can be logged
+partial_accept : Decision made that\npart of request is accepted\nand part is denied,\ndisagreement can be logged
+denied : Decision made to deny,\ndisagreement can be logged
 
 state cancelled {
   state requester_cancelled #lightblue {
@@ -40,22 +39,32 @@ state cancelled {
 cancelled --> [*]
 ready --> cancelled
 in_progress --> cancelled
-requester_cancelled : Requester decided to cancel the request for correction
+requester_cancelled : Requester decided to cancel\nthe request for correction
 
 state complete {
  state amendment_completed #lightblue{
  }
- state disagreement_logged #lightblue{
- }
+ 
  state denied #lightblue{
  }
- state inform_rebuttal_option #lightblue{
+ 
+ state partial_amendment_completed #lightblue{
+  }
+}
+partial_accept --> partial_amendment_completed
+denied -down-> inform_rebuttal_option
+partial_accept --> inform_rebuttal_option: Communication to inform\non rebuttal option
+complete --> [*]
+logging --> [*]
+
+state logging {
+  state disagreement_logged #lightblue{
+ }
+  state inform_rebuttal_option #lightblue{
  }
 }
-disagreement_logged -> inform_rebuttal_option
-denied -> inform_rebuttal_option
-partial_accept -> inform_rebuttal_option: Communication to inform on rebuttal option
-complete --> [*]
+disagreement_logged -right-> inform_rebuttal_option
+
 
 state Task.status{
 }

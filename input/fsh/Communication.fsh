@@ -55,26 +55,13 @@ Description:    "A Communication between a patient and a fulfiller relating to a
 * partOf 0..0
 
 
-CodeSystem:  PatientCorrectionCommunicationTypes
-Title: "Patient Correction Communication Types"
-Description: "CodeSystem of Communication categories for use in Patient Correction Request"
-* ^caseSensitive = false
-* #medRecCxReq "Correction request by the Patient or RelatedPerson"
-* #medRecCxDenialDisagree "Disagreement with a denial correction request by the Patient or RelatedPerson"
-
-
-ValueSet: PatientCorrectionCommunicationTypesVS
-Description: "ValueSet of Communication types for patient request for corrections"
-* PatientCorrectionCommunicationTypes#medRecCxReq
-* PatientCorrectionCommunicationTypes#medRecCxDenialDisagree
-
 
 Instance: About
 InstanceOf: SearchParameter
 Title: "Search on the PatientCorrectionCommunication.about element"
 Description: "Search Parameter extension enabling clients to search on the PatientCorrectionCommunication.about element"
 Usage: #definition
-* url = "http://hl7.org/fhir/uv/patient-correction/SearchParameter/About"
+* url = "http://hl7.org/fhir/uv/patient-corrections/SearchParameter/About"
 * description = "This SearchParameter enables finding all communications related to a Patient Request for Correction. Each communication related to a particular correction request will point to the original communication in the request."
 * name = "AboutSearchParameter"
 * status = #active

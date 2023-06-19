@@ -8,6 +8,7 @@ Description:    "Represents the process of reviewing the patient’s request for
 * identifier 0..*
 * identifier ^short = "A business identifier for the correction process."
 
+* status obeys task-status-allowed
 * status MS
 * status 1..1
 * status ^short = "The current status of the Correction Request or Log Disagreement process.  The status, in conjunction with the business status, can be used to determine the state of the process."
@@ -131,6 +132,30 @@ Description: "If Task.code indicates this is a Disagreement Task, this field SHA
 Expression: "true"
 Severity: #error
 
+Invariant:  task-status-allowed
+Description: "The status of the Task SHALL be one of the following: ready, in-progress, cancelled, completed."
+Expression: "$this in ('ready' | 'in-progress' | 'cancelled' | 'completed')"
+Severity:   #error
+
+Invariant:  task-status-ready-business-status
+Description: "If the status of the Task is ready, the allowed businessStatus is queued."
+Expression: "status = 'ready' implies businessStatus.where(coding.system = 'http://hl7.org/fhir/uv/patient-corrections/CodeSystem/PatientCorrectionBusinessStatus' and coding.code = 'queued')"
+Severity:   #error
+
+Invariant:  task-status-in-progress-business-status
+Description: "If the status of the Task is in-progress, the allowed businessStatus values are in-review, waiting-for-information, accepted, or partial-accept."
+Expression: "status = 'ready' implies businessStatus.where(coding.system = 'http://hl7.org/fhir/uv/patient-corrections/CodeSystem/PatientCorrectionBusinessStatus' and coding.code in 'in-review' | 'waiting-for-information' | 'accepted' | 'partial-accept')"
+Severity:   #error
+
+Invariant:  task-status-cancelled-business-status
+Description: "If the status of the Task is cancelled, the allowed businessStatus is requester-cancelled."
+Expression: "status = 'cancelled' implies businessStatus.where(coding.system = 'http://hl7.org/fhir/uv/patient-corrections/CodeSystem/PatientCorrectionBusinessStatus' and coding.code = 'requester-cancelled')"
+Severity:   #error
+
+Invariant:  task-status-completed-business-status
+Description: "If the status of the Task is completed, the allowed businessStatus values are amendment-completed, denied, disagreement-logged, inform-rebuttal-option, or partial-amendment-completed."
+Expression: "status = 'completed' implies businessStatus.where(coding.system = 'http://hl7.org/fhir/uv/patient-corrections/CodeSystem/PatientCorrectionBusinessStatus' and coding.code = 'amendment-completed' | 'denied' | 'disagreement-logged' | 'inform-rebuttal-option' | 'partial-amendment-completed)"
+Severity:   #error
 
 
 Instance: ReasonReference

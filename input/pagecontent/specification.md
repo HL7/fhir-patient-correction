@@ -63,7 +63,9 @@ completed |  partial-amendment-completed | Partial Amendment Completed |  The re
 
 <div>{%include state-diagram.svg%}</div>
 
-Please note that statuses shown containing underscores in this diagram actually use hyphens instead. For example, "in_review" should be interpreted as "in-review".
+Please note that statuses shown containing underscores in these diagrams actually use hyphens instead. For example, "in_review" should be interpreted as "in-review".
+<div>{%include state-diagram2.svg%}</div>
+
 ### Must Support
 
 Must Support on any profile data element **SHALL** be interpreted as follows:

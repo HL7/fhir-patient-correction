@@ -26,10 +26,9 @@ RequestFulfiller | The RequestFulfiller represents a provider system – usually
 
 
 #### Use Case 2: Patient Requests a Correction to Their Medical Record Which is Accepted and Corrected.
+
 |---------------------------------------------------| 
-| Note that use case 2 includes all the steps of use case 1 |
-| but then continues beyond a simple receipt of the request |
-| (shown as step 4).|
+|Note that use case 2 includes all the steps of use case 1 but then continues beyond a simple receipt of the request (shown as step 4).| 
 {:.grid .bg-info}
 
 1. A patient reviews the records received from a provider (most likely this review is of the electronic health information accessed on their personal health record application). 
@@ -118,8 +117,9 @@ RequestFulfiller | The RequestFulfiller represents a provider system – usually
 {:.grid .bg-info}
 
 #### Use Case 6: Patient Requests a Correction to Their Medical Record and the Record is Partially Updated
+
 |---------------------------------------------------| 
-| Note that use case 6 would also include the ability for dialog (status, clarifications) as in the other use cases.  This is left out of this description for simplicity. |
+|Note that use case 6 would also include the ability for dialog (status, clarifications) as in the other use cases.  This is left out of this description for simplicity.|
 {:.grid .bg-info}
 
 1. A patient reviews the records received from a provider (most likely this review is of the electronic health information accessed on their personal health record application). 

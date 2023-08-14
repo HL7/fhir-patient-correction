@@ -1,0 +1,17 @@
+@startuml
+title Abstract Model - Request For Correction Partially Accepted
+
+note left of CorrectionRequester
+Notice a problem
+end note
+CorrectionRequester->RequestFulfiller : 4. Request a Change
+Activate RequestFulfiller
+RequestFulfiller->RequestFulfiller : Check records
+
+RequestFulfiller->RequestFulfiller : Decide to accept part of request\nand deny other part of request
+
+RequestFulfiller->CorrectionRequester : 6. Change partially accepted
+RequestFulfiller->CorrectionRequester : 7. Accepted part of request completed
+Deactivate RequestFulfiller
+
+@enduml

@@ -6,14 +6,17 @@ Previously had a Change Denied
 end note
 
 
-CorrectionRequester->RequestFulfiller : Send a Disagreement
+CorrectionRequester->RequestFulfiller : 3. Send a Disagreement
 Activate RequestFulfiller
 RequestFulfiller->RequestFulfiller : Record Disagreement
+note right: Based on the arguments and data\ndecide to to continue to reject changing the record
+loop Check Status
+CorrectionRequester->RequestFulfiller : 6. Check status
+end
 
 
-note right: Based on the arguments and data decide to to continue to reject changing the record
 RequestFulfiller->RequestFulfiller: Record Rebuttal
-RequestFulfiller->CorrectionRequester: Change remains Denied [with Rebuttal]
+RequestFulfiller->CorrectionRequester: 5. Change remains Denied [with Rebuttal]
 Deactivate RequestFulfiller
 
 @enduml

@@ -2,19 +2,20 @@
 title Abstract Model - Request For Correction accepted
 
 note left of CorrectionRequester
-Notice a problem
+1. Notice a problem
 end note
-CorrectionRequester->RequestFulfiller : Request a Change
+CorrectionRequester->RequestFulfiller : 4. Request a Change
 Activate RequestFulfiller
 RequestFulfiller->RequestFulfiller : Check records
 
-loop Dialog (status, clarifications, etc.)
-   RequestFulfiller->CorrectionRequester : Please clarify
-   CorrectionRequester->RequestFulfiller : Here is the clarification
+loop Dialog (9. status, clarifications, etc.)
+   RequestFulfiller->CorrectionRequester : 6a. Please clarify
+   CorrectionRequester->RequestFulfiller : 6b. Here is the clarification
 end
 
 RequestFulfiller->RequestFulfiller : Decide to make correction
-RequestFulfiller->CorrectionRequester : Change accepted
+RequestFulfiller->CorrectionRequester : 7. Change accepted
+RequestFulfiller->CorrectionRequester : 8. Correction Completed
 Deactivate RequestFulfiller
 
 @enduml

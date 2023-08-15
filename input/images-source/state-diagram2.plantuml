@@ -1,4 +1,4 @@
-@startuml State with Rebuttal
+@startuml 
 skinparam svgDimensionStyle false
 hide empty description 
 [*] -> ready : External post of Communication resource

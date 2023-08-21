@@ -2,7 +2,8 @@ Instance: additionalinfoprovided
 InstanceOf: PatientCorrectionCommunication
 Description: "Example of request for correction additional information provided Communication"
 Usage: #example
-* about = Reference(initialrequestforcorrection)
+* about = Reference(correctionrequestprocess)
+* partOf = Reference(initialrequestforcorrection)
 * category = PatientCorrectionCommunicationTypes#medRecCxReq
 * inResponseTo = Reference(additionalinfoneeded)
 * meta.versionId = "1"
@@ -13,3 +14,4 @@ Usage: #example
 * status = #completed
 * subject = Reference(ex-patient)
 * topic.text = "Question About Amendment Request"
+* inResponseTo = Reference(additionalinfoneeded)

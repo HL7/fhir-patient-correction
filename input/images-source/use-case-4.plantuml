@@ -5,7 +5,7 @@ note left of CorrectionRequester
 Notice a problem
 end note
 
-CorrectionRequester->RequestFulfiller : Request a Change
+CorrectionRequester->RequestFulfiller : 4. Request a Change
 Activate RequestFulfiller
 RequestFulfiller->RequestFulfiller : Check records
 
@@ -13,7 +13,7 @@ RequestFulfiller->RequestFulfiller : Check records
 note left of CorrectionRequester
 Realize more information is needed
 end note
-CorrectionRequester->RequestFulfiller : Update the Change Request
+CorrectionRequester->RequestFulfiller : 6. Update the Change Request
 RequestFulfiller->RequestFulfiller : Check records
 
 == Further processing ==

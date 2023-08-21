@@ -1,4 +1,4 @@
-@startuml
+@startuml 
 skinparam svgDimensionStyle false
 hide empty description 
 [*] -> ready : External post of Communication resource
@@ -9,53 +9,48 @@ state ready {
 
 state in_progress {
   state in_review #lightblue{
+  }  
+  state waiting_for_information #lightblue{  
   }
-  state waiting_for_information #lightblue{
-  }
-  state accepted #lightblue{
-  }
-  state partial_accept #lightblue{
+  state partial_accept #lightblue{  
   }
 }
-
-
-state cancelled {
-  state requester_cancelled #lightblue {
-  }
-}
-
 
 state complete {
-  state amendment_completed #lightblue{
-  }
   state denied #lightblue{
   }
   state partial_amendment_completed #lightblue{
   }
 }
-ready --> in_review
-queued : Request received\nbut not reviewed
-in_review --> waiting_for_information
-in_review --> accepted
-in_review --> partial_accept
-in_review --> in_review: Inform requester on\nadditional time needed
-waiting_for_information --> in_review
-in_review --> denied
-accepted --> amendment_completed
-waiting_for_information : e.g. Additional Information Needed
-accepted : Decision made to accept
-partial_accept : Decision made that\npart of request is accepted\nand part is denied,\ndisagreement can be logged
-denied : Decision made to deny,\ndisagreement can be logged
-cancelled --> [*]
-ready --> cancelled
-in_progress --> cancelled
-requester_cancelled : Requester decided to cancel\nthe request for correction
-partial_accept --> partial_amendment_completed: Communication to inform\non rebuttal option
-denied --> [*]
-complete --> [*]
+
+state logging {
+  state disagreement_logged #lightblue{
+ }
+  state inform_rebuttal_option #lightblue{
+ }
+}
 
 state Task.status{
 }
+
 state Task.businessStatus #lightblue {
 }
+ready --> in_review
+queued : Request received\nbut not reviewed
+in_review --> waiting_for_information
+waiting_for_information --> in_review
+in_review --> partial_accept
+in_review --> in_review: Inform requester on\nadditional time needed
+in_review --> denied
+denied --> disagreement_logged
+disagreement_logged --> in_review
+waiting_for_information : e.g. Additional Information Needed
+partial_accept : Decision made that\npart of request is accepted\nand part is denied,\ndisagreement can be logged
+denied : Decision made to deny,\ndisagreement can be logged
+partial_accept --> partial_amendment_completed
+partial_accept --> disagreement_logged: Communication to inform\non rebuttal option
+complete --> [*]
+logging --> [*]
+disagreement_logged --> inform_rebuttal_option
+
 @enduml

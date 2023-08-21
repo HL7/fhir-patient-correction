@@ -4,17 +4,17 @@ title Abstract Model - Request For Correction Denied
 note left of CorrectionRequester
 Notice a problem
 end note
-CorrectionRequester->RequestFulfiller : Request a Change
+CorrectionRequester->RequestFulfiller : 4. Request a Change
 Activate RequestFulfiller
 RequestFulfiller->RequestFulfiller : Check records
 
-loop Dialog (status, clarifications, etc.)
-   RequestFulfiller->CorrectionRequester : Please clarify
-   CorrectionRequester->RequestFulfiller : Here is the clarification
+loop 8. Dialog (status, clarifications, etc.)
+   RequestFulfiller->CorrectionRequester : 6a. Please clarify
+   CorrectionRequester->RequestFulfiller : 6b. Here is the clarification
 end
 
 RequestFulfiller->RequestFulfiller : Decide to deny the correction
-RequestFulfiller->CorrectionRequester : Change denied
+RequestFulfiller->CorrectionRequester : 7. Change denied
 Deactivate RequestFulfiller
 
 @enduml

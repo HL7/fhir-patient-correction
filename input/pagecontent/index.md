@@ -60,6 +60,11 @@ Finally, this guide is not trying to standardize the requester application or th
 4. HIPAA Amendment of Protected Health Information: [https://www.govinfo.gov/content/pkg/CFR-2003-title45-vol1/xml/CFR-2003-title45-vol1-sec164-526.xml](https://www.govinfo.gov/content/pkg/CFR-2003-title45-vol1/xml/CFR-2003-title45-vol1-sec164-526.xml)
 5. General Data Protection Regulation: [https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32016R0679&from=EN#d1e2589-1-1](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32016R0679&from=EN#d1e2589-1-1)
 
+### Known Issues
+|--------------------------------------------|
+    |Some implementers believe that a more streamlined approach without communication should be considered for the next release.|
+{:.grid .bg-info}
+
 ### Legal Statements
  While this implementation guide and the underlying FHIR are licensed as public domain under the FHIR license. The license page also describes rules for the use of the FHIR name and logo.
 

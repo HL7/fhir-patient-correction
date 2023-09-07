@@ -40,7 +40,7 @@ Description:    "Represents the process of reviewing the patient's request for c
 * for 1..1
 * for only Reference(Patient)
 * for ^short = "Patient this correction or disagreement relates to."
-* for ^short = "The patient whose record this correction or disagreement references. If this task was created in response to a request received through a Communication resource, this value SHALL be populated with the value of `Communication.subject` from the original request."
+* for ^comment = "The patient whose record this correction or disagreement references. If this task was created in response to a request received through a Communication resource, this value SHALL be populated with the value of `Communication.subject` from the original request."
 
 * executionPeriod 0..1
 * executionPeriod ^short = "When the request is completed by the Fulfiller."
@@ -48,7 +48,7 @@ Description:    "Represents the process of reviewing the patient's request for c
 * authoredOn MS
 * authoredOn 1..1
 * authoredOn ^short = "When this Task was created."
-* authoredOn ^short = "The date/time that the original request was received by the Fulfiller, kicking off the request for correction or log disagreement process. If the request was received within the payload of a Communication resource, it SHOULD match `Communication.sent` from the original request Communication resource."
+* authoredOn ^comment = "The date/time that the original request was received by the Fulfiller, kicking off the request for correction or log disagreement process. If the request was received within the payload of a Communication resource, it SHOULD match `Communication.sent` from the original request Communication resource."
 
 * lastModified MS
 * lastModified 0..1
@@ -71,7 +71,7 @@ Description:    "Represents the process of reviewing the patient's request for c
 * reasonReference 0..1
 * reasonReference only Reference(PatientCorrectionTask)
 * reasonReference ^short = "Log Disagreement Task to point to the original Request for Correction Task."
-* reasonReference ^short = "Used on Log Disagreement Task to point to the original Request for Correction Task."
+* reasonReference ^comment = "Used on Log Disagreement Task to point to the original Request for Correction Task."
 * reasonReference obeys task-reasonreference
 
 * note ^short   = "Non-actionable notes about this communication."
@@ -95,7 +95,8 @@ Description:    "Represents the process of reviewing the patient's request for c
 
 * output 0..*
 * output ^short = "Formal Response from Fulfiller to the Correction Request or to the Disagreement to Correction Denial."
-* output obeys task-output1 and task-output2 and task-output3
+* output obeys task-output2
+// * output obeys task-output1 and task-output2 and task-output3
 
 * output.id 0..0
 * output.extension 0..0
@@ -113,34 +114,34 @@ Description:    "Represents the process of reviewing the patient's request for c
 
 
 Invariant: task-reasonreference
-Description: "If Task.code indicates this is a Disagreement Task, this field SHALL reference the original Request for Correction Communication."
-Expression: "true"
+Description: "If this is a Disagreement Task, there SHALL be a reference to the original Request for Correction Communication."
+Expression: "Task.coding.exists(code = 'medRecCxDenialDisagree' and system = 'http://hl7.org/fhir/uv/patient-corrections/CodeSystem/PatientCorrectionTaskTypes') implies reasonReference.exists()"
 Severity: #error
 
-Invariant: task-note
-Description: "Task.note[i] SHALL only be updated or deleted by its initial author."
-Expression: "true"
-Severity: #error
+// Invariant: task-note
+// Description: "Task.note[i] SHALL only be updated or deleted by its initial author."
+// Expression: "true"
+// Severity: #error
 
-Invariant: task-input
-Description: "Task.input SHALL only be populated or updated by the CorrectionRequestor."
-Expression: "true"
-Severity: #error
+// Invariant: task-input
+// Description: "Task.input SHALL only be populated or updated by the CorrectionRequestor."
+// Expression: "true"
+// Severity: #error
 
-Invariant: task-output1
-Description: "Task.output SHALL only be populated or updated by the CorrectionFulfiller."
-Expression: "true"
-Severity: #error
+// Invariant: task-output1
+// Description: "Task.output SHALL only be populated or updated by the CorrectionFulfiller."
+// Expression: "true"
+// Severity: #error
 
 Invariant: task-output2
-Description: "If Task.code indicates this is a Request for Correction Task, this field SHALL contain the formal response to the request (acceptance, denial, partial acceptance/denial)."
-Expression: "true"
+Description: "If this is a completed Request for Correction Task, there SHALL be a formal response to the request (acceptance, denial, partial acceptance/denial)."
+Expression: "(Task.coding.exists(code = 'medRecCxReq' and system = 'http://hl7.org/fhir/uv/patient-corrections/CodeSystem/PatientCorrectionTaskTypes') and Task.status = 'completed') implies type.coding.exists(code = 'medRecCxReqResolution' and system = 'http://hl7.org/fhir/uv/patient-corrections/CodeSystem/PatientCorrectionOutputTypes')"
 Severity: #error
 
-Invariant: task-output3
-Description: "If Task.code indicates this is a Disagreement Task, this field SHALL contain the formal response to the disagreement and optionally a rebuttal."
-Expression: "true"
-Severity: #error
+// Invariant: task-output3
+// Description: "If Task.code indicates this is a Disagreement Task, this field SHALL contain the formal response to the disagreement and optionally a rebuttal."
+// Expression: "true"
+// Severity: #error
 
 Invariant:  task-status-allowed
 Description: "The status of the Task SHALL be one of the following: ready, in-progress, cancelled, completed."

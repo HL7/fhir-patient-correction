@@ -91,7 +91,7 @@ Description:    "Represents the process of reviewing the patient's request for c
 
 * input.value[x] 1..1
 * input.value[x] only string or Attachment or Reference(PatientCorrectionCommunication)
-* input obeys task-input
+// * input obeys task-input
 
 * output 0..*
 * output ^short = "Formal Response from Fulfiller to the Correction Request or to the Disagreement to Correction Denial."

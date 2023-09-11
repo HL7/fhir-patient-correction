@@ -38,6 +38,8 @@ Description:    "Represents the process of reviewing the patient's request for c
 * code ^short      = "Correction Task type."
 * code ^definition = "Either a patient correction or a disagreement."
 * code from PatientCorrectionTaskTypesVS
+* code ^condition = task-output2
+* code ^condition = task-reasonreference
 
 * for MS
 * for 1..1
@@ -75,6 +77,7 @@ Description:    "Represents the process of reviewing the patient's request for c
 * reasonReference only Reference(PatientCorrectionTask)
 * reasonReference ^short = "Log Disagreement Task to point to the original Request for Correction Task."
 * reasonReference ^comment = "Used on Log Disagreement Task to point to the original Request for Correction Task."
+* reasonReference ^condition = task-reasonreference
 // * reasonReference obeys task-reasonreference
 
 * note ^short   = "Non-actionable notes about this communication."
@@ -98,6 +101,7 @@ Description:    "Represents the process of reviewing the patient's request for c
 
 * output 0..*
 * output ^short = "Formal Response from Fulfiller to the Correction Request or to the Disagreement to Correction Denial."
+* output ^condition = task-output2
 // * output obeys task-output2
 // * output obeys task-output1 and task-output2 and task-output3
 

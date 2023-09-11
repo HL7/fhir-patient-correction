@@ -4,6 +4,9 @@ Id:             patient-correction-task
 Title:          "Patient Correction Task"
 Description:    "Represents the process of reviewing the patient's request for correction or the patient's request to log a disagreement to a prior request for correction decision.  This Task is spawned by the Fulfiller as a result of a post of a Communication resource that indicates a new request for correction or a new logging of a disagreement."
 
+* obeys task-reasonreference
+* obeys task-output2
+
 * identifier MS
 * identifier 0..*
 * identifier ^short = "A business identifier for the correction process."
@@ -72,7 +75,7 @@ Description:    "Represents the process of reviewing the patient's request for c
 * reasonReference only Reference(PatientCorrectionTask)
 * reasonReference ^short = "Log Disagreement Task to point to the original Request for Correction Task."
 * reasonReference ^comment = "Used on Log Disagreement Task to point to the original Request for Correction Task."
-* reasonReference obeys task-reasonreference
+// * reasonReference obeys task-reasonreference
 
 * note ^short   = "Non-actionable notes about this communication."
 * note ^comment = "Notes from Requestors SHOULD be placed into additional communications instead of notes, so that Fulfillers review them. This element SHALL NOT contain actionable requests from either Requestors or Fulfillers."
@@ -95,7 +98,7 @@ Description:    "Represents the process of reviewing the patient's request for c
 
 * output 0..*
 * output ^short = "Formal Response from Fulfiller to the Correction Request or to the Disagreement to Correction Denial."
-* output obeys task-output2
+// * output obeys task-output2
 // * output obeys task-output1 and task-output2 and task-output3
 
 * output.id 0..0
@@ -115,7 +118,7 @@ Description:    "Represents the process of reviewing the patient's request for c
 
 Invariant: task-reasonreference
 Description: "If this is a Disagreement Task, there SHALL be a reference to the original Request for Correction Communication."
-Expression: "Task.coding.exists(code = 'medRecCxDenialDisagree' and system = 'http://hl7.org/fhir/uv/patient-corrections/CodeSystem/PatientCorrectionTaskTypes') implies reasonReference.exists()"
+Expression: "Task.code.coding.exists(code = 'medRecCxDenialDisagree' and system = 'http://hl7.org/fhir/uv/patient-corrections/CodeSystem/PatientCorrectionTaskTypes') implies Task.reasonReference.exists()"
 Severity: #error
 
 // Invariant: task-note
@@ -135,7 +138,7 @@ Severity: #error
 
 Invariant: task-output2
 Description: "If this is a completed Request for Correction Task, there SHALL be a formal response to the request (acceptance, denial, partial acceptance/denial)."
-Expression: "(Task.coding.exists(code = 'medRecCxReq' and system = 'http://hl7.org/fhir/uv/patient-corrections/CodeSystem/PatientCorrectionTaskTypes') and Task.status = 'completed') implies type.coding.exists(code = 'medRecCxReqResolution' and system = 'http://hl7.org/fhir/uv/patient-corrections/CodeSystem/PatientCorrectionOutputTypes')"
+Expression: "(Task.code.coding.exists(code = 'medRecCxReq' and system = 'http://hl7.org/fhir/uv/patient-corrections/CodeSystem/PatientCorrectionTaskTypes') and Task.status = 'completed') implies Task.output.type.coding.exists(code = 'medRecCxReqResolution' and system = 'http://hl7.org/fhir/uv/patient-corrections/CodeSystem/PatientCorrectionOutputTypes')"
 Severity: #error
 
 // Invariant: task-output3

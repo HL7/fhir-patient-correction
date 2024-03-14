@@ -41,9 +41,12 @@ activate F
     F->F: Create Communication resource\nwith current status for requester
     R->F: Poll (query) for any new Communication resources related to the initial request
     F-->R: Communication resource: response with denial status information
-    R->F: (Optional): Communication resource: disagreement with denial
-    F-->R: OK
   else Disagreement
+    F->F: Create Communication resource\nwith current status for requester
+    R->F: Poll (query) for any new Communication resources related to the initial request
+    F-->R: Communication resource: response with denial status information
+    R->F: Communication resource: disagreement with denial
+    F-->R: OK
     
   end
 

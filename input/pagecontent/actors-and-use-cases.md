@@ -1,54 +1,130 @@
 ### Actors
 
-Actor | Description
----|---
-CorrectionRequester | The CorrectionRequester represents a patient’s application, such as a personal health record. A patient or their caregiver uses the application to request a correction to their medical record.
-RequestFulfiller | The RequestFulfiller represents a provider system – usually an EHR. A Medical Records professional or a clinician uses the provider system to review and process the correction request. The RequestFulfiller may also represent a payer system.
-{:.grid .table-striped}
+Patient requests for corrections involve the following actors.  In this documentation:
 
-#### General Actor Sequence
- 
+#### Requester
+
+**Requester** refers to a FHIR application that is acting on behalf of a patient, their caregiver, or their representative. The **Requester** can be the same application a person uses to review the medical record, or it can be a separate application.
+
+#### Fulfiller
+
+**Fulfiller** refers to a FHIR application that is acting on behalf of a patient record custodian, such as en EHR in a clinical provider setting. The **Fulfiller** can be the same application a person uses to review and modify the medical record, or it can be a separate application.
+
+
+#### Workflow Overview
+
+While the interactions between the **Requester** and the **Fulfiller** can be complex, the following diagram provides a high-level overview of the workflow. The CorrectionRequester initiates the request for a correction, and the RequestFulfiller processes the request. The RequestFulfiller may accept or deny the request, and the CorrectionRequester may log a disagreement with the decision. The RequestFulfiller may also provide a rebuttal to the disagreement. The workflow may also include the CorrectionRequester updating the correction request.
+
 <figure>
-{%include overall-sequence.svg%}
+  {% include actor-sequence.svg %}
+  <figcaption>Sequence diagram of a complete request for corrections workflow</figcaption>
 </figure>
+
+The general workflow includes the following steps:
+* The **Requester** making a request to correct a medical record.
+* The **Fulfiller** either rejecting or processing the request.
+  * Optionally, additional information being requested by the **Fulfiller** and provided by the **Requester**.
+* The **Fulfiller** completing the request.
+  * This could be by making the correction, making a partial correction, or denying the request.
+* Optionally, the **Requester** submitting a disagreement with the correction.
+  * The **Fulfiller** processing any submitted disagreements.
+
 
 ### Use Cases
 
-|---------------------------------------------------|
- | NOTE: The following list of use cases represent common use cases but is not an exhaustive list. |
- {:.grid .bg-info}
+Following are some common use cases for patient requests for corrections. The diagrams are not intended to be exhaustive, but rather to provide a examples of the interactions between the actors.
 
-#### Use Case 1: Patient Requests a Correction which is Received by the Provider system.
-1. A Patient reviews the records received from a provider (most likely this review is of the electronic health information accessed on their personal health record application).
-1. The patient determines that it contains one or more errors or discrepancies.
-1. The patient enters a correction request using their application. The request can be a simple unstructured request,but can also contain additional structured information to provide context or to pinpoint the error and the fix.
-1. The application (CorrectionRequester) sends the correction request to the appropriate provider system (RequestFulfiller) and gets an acknowledgement that the request has been received.
+#### Use Case 1: A correction request that needs no additional information is applied.
 
+In this use case, a patient requests a correction to their medical record. The request is received by the provider system and is applied with no additional information needed.
 
-#### Use Case 2: Patient Requests a Correction to Their Medical Record Which is Accepted and Corrected.
+##### User Story
 
-|---------------------------------------------------| 
-|Note that use case 2 includes all the steps of use case 1 but then continues beyond a simple receipt of the request (shown as step 4).| 
-{:.grid .bg-info}
+Bob uses his patient-facing app to import his medical records from Northside Clinic. He notices that he is listed as an everyday smoker. However, Bob has not smoked in 20 years. Bob uses his patient app to send a message to Northside Clinic requesting that his smoking status be corrected to show he has not smoked in 20 years.
 
-1. A patient reviews the records received from a provider (most likely this review is of the electronic health information accessed on their personal health record application). 
-2. The patient determines that it contains one or more errors or discrepancies.
-3. The patient enters a correction request using their application. The request can be a simple unstructured request,but can also contain additional structured information to provide context or to pinpoint the error and the fix.
-3. The application (CorrectionRequester) sends the correction request to the appropriate provider system (RequestFulfiller) and gets an acknowledgement that the request has been received.
-4. The provider (most likely a medical records professional but possibly a clinician) reviews the request on the provider system (EHR).
-6. If needed, the provider reaches out to the patient to further clarify the request and consults as needed with clinicians to determine if a correction is appropriate.
-7. **The request for correction is accepted.** The appropriate personnel corrects the chart (or charts if the error involves multiple charts) and creates formal amendments to the electronic health record. 
-8. The correction request is marked complete.
-9. Throughout the process, the patient has been able to use their application to check for the status of their correction request and is able to determine that it was being reviewed, then was accepted, and later completed.
+Northside Clinic receives Bob's request.  Bob's general practitioner, that has been seeing Bob for several decades, can verify the request.  Northside Clinic corrects his chart and notifies Bob that his records have been corrected.
+
+A few days later, Bob logs into his patient app and sees the notification that his record has been corrected.
+
+##### Use Case Details
 
 <figure>
-{%include use-case-1.svg%}
-<figcaption>Use Case 1 flow</figcaption>
+  {% include use-case-1.svg %}
+  <figcaption>Sequence diagram of a simple use case</figcaption>
+</figure>
+
+* Preconditions: 
+  * The patient has access to their medical record and has identified an error or discrepancy.  Most likely this review is of the electronic health information accessed on their personal health record application.
+  * The patient enters a correction request using their application. The request can be a simple unstructured request, but can also contain additional structured information to provide context or to pinpoint the error and the fix.
+* Process:
+  1. The **Requester** sends the correction request to the appropriate **Fulfiller**.
+  1. The **Fulfiller** reviews the request and the patient's records, consulting with providers as needed to determine if the requested correction is appropriate.
+  1. The **Fulfiller** finds the request is appropriate and does not need further information.
+  1. The **Fulfiller** applies the correction to the patient's record.
+  1. The **Fulfiller** notifies the **Requester** that the correction is complete.
+* Postconditions:
+  * The patient's record at **Fulfiller** has been corrected.
+  * The patient has been notified that the correction is complete.
+
+
+#### Use Case 2: A correction request that needs additional information is applied.
+
+In this use case, a patient requests a correction to their medical record. The request is received by the provider system, but the provider needs additional information.  Two rounds of dialog occur between the provider and the patient before the correction is applied.
+
+##### User Story
+
+Alice uses her patient-facing app to import her medical records from Eastside Clinic. She notices that she is listed as an everyday smoker, though she has never smoked. Alice uses her patient app to send a message to Eastside Clinic requesting that her smoking status be corrected to show she is not a smoker.
+
+Eastside Clinic receives Alice's request, but cannot verify her claim - Alice is a new patient and her smoking status was not discussed during her initial visit.
+
+Eastside Clinic asks Alice for some supporting documentation.  Alice provides a screenshot of her record from her previous provider, which lists her as a non-smoker.
+
+Eastside Clinic receives the additional information, but it only contains a portal view of a non-smoker and cannot tell if it is Alice's record.  Eastside Clinic asks Alice to provide a copy of her previous record in its entirety.
+
+Alice sees the request the next time she logs into her patient app and provides a full copy of her record from her previous provider.  Eastside Clinic reviews the information and finds that Alice is correct and her record should be updated.
+
+Eastside Clinic corrects her chart and notifies Alice that her records have been corrected.
+
+##### Use Case Details
+
+##### User Story
+
+##### Use Case Details
+
+<figure>
+  {% include use-case-2.svg %}
+  <figcaption>Sequence diagram of a simple use case</figcaption>
 </figure>
 
 
+* Preconditions: 
+  * The patient has access to their medical record and has identified an error or discrepancy.  Most likely this review is of the electronic health information accessed on their personal health record application.
+  * The patient enters a correction request using their application. The request can be a simple unstructured request, but can also contain additional structured information to provide context or to pinpoint the error and the fix.
+* Process:
+  1. The **Requester** sends the correction request to the appropriate **Fulfiller**.
+  1. The **Fulfiller** reviews the request and the patient's records, consulting with providers as needed to determine if the requested correction is appropriate.
+  1. The **Fulfiller** finds the request is appropriate but needs additional information and asks for it.
+  1. The **Requester** provides the additional information.
+  1. The **Fulfiller** reviews the additional information but needs further clarification - they need the full documents instead of just the provided excerpt.
+  1. The **Requester** provides the full documentation.
+  1. The **Fulfiller** finds the request is appropriate and does not need further information.
+  1. The **Fulfiller** applies the correction to the patient's record.
+  1. The **Fulfiller** notifies the **Requester** that the correction is complete.
+* Postconditions:
+  * The patient's record at **Fulfiller** has been corrected.
+  * The patient has been notified that the correction is complete.
 
-#### Use Case 3: Patient Requests a Correction to Their Medical Record Which is Denied.
+
+
+
+#### Use Case 3: A correction request is denied.
+
+In this use case, a patient requests a correction to their medical record. The request is received by the provider system, but the provider needs additional information.  Two rounds of dialog occur between the provider and the patient before the correction is applied.
+
+##### User Story
+
+
+##### Use Case Details
 
 1. A patient reviews the records received from a provider (most likely this review is of the electronic health information accessed on their personal health record application). 
 2. The patient determines that it contains one or more errors or discrepancies.

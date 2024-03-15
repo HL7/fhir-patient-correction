@@ -1,0 +1,94 @@
+@startuml
+' skinparam NoteTextAlignment center
+skinparam DefaultTextAlignment center
+skinparam Padding 2
+skinparam ParticipantPadding 60
+skinparam LifelineStrategy solid
+' skinparam ConditionStyle inside
+' skinparam ConditionEndStyle hline
+skinparam ActorStyle awesome
+' autonumber
+
+participant R [
+  **Requester**
+  ----
+  //FHIR Application//
+]
+participant F [
+  **Fulfiller**
+  ----
+  //FHIR Server//
+]
+
+group Request a Correction
+  note over R 
+    Patient or representative
+    finds issue in record
+  end note
+  R->F: Submit request for correction
+  |||
+else Reject Correction Request
+  F-->R: Reject request, with a //reason//\ne.g., not a valid request, not authorized, etc.
+  |||
+else Accept Correction Request
+  F-->R: Accepted request
+  F->F: Process correction request
+
+  group Additional Information Needed [May happen zero or multiple times]
+    ' note left of F
+    '   If Fulfiller needs additional information, request it.
+    '   May happen zero or multiple times.
+    ' end note
+    F->R: Request additional information
+    R-->F: Provide information
+    |||
+  end
+
+  F->R: Request completed\n//Amended, partially amended, or denied//
+  |||
+else Requester Agrees with Final Correction
+  R->R: Review correction
+  |||
+else Requester Disagrees with Final Correction
+  R->F: Submit disagreement
+  F->F: Process disagreement
+  note left of F
+    Fulfiller may request additional information...
+  end note
+  F->R: Complete\n//logged, rebuttal, amended, etc.//
+  |||
+end
+
+
+' |Requester|
+'   :Patient or representative
+'   finds issue in record;
+'   :Submit request for correction;
+
+' |Fulfiller|
+'   :Process correction request;
+'   if (Additional information needed) is (yes) then
+'     :Request additional information;
+'     |Requester|
+'       :Provide information;
+'   else (no)
+'   endif
+
+' |Fulfiller|
+'   :Complete request;
+
+' |Requester|
+'   :Review  correction;
+'   if (Requester disagrees\nwith final correction) is (no) then
+'     :Done;
+'     detach
+'   else (yes)
+'     :Submit disagreement;
+'   endif
+
+' |Fulfiller|
+'   :Process disagreement;
+'   :Done;
+' detach
+
+@enduml

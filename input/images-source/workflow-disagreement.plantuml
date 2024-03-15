@@ -1,0 +1,49 @@
+@startuml
+' skinparam NoteTextAlignment center
+skinparam DefaultTextAlignment center
+skinparam Padding 2
+skinparam ParticipantPadding 50
+skinparam LifelineStrategy solid
+
+:Patient or representative
+disagrees with correction outcome;
+
+:**Requester** submits a //disagreement//
+Communication to **Fulfiller**;
+
+repeat :**Fulfiller** disagreement processing
+  fork
+    :**Logged**; <<task>>
+    :Communication
+    Status update
+    **Fulfiller** to **Requester**;
+  fork again 
+    :**Amended**; <<task>>
+    :Communication
+    Status update
+    **Fulfiller** to **Requester**;
+  fork again
+    :**Partially Amended**; <<task>>
+    :Communication
+    Status update
+    **Fulfiller** to **Requester**;
+  fork again
+    :**Denied**; <<task>>
+    :Communication
+    Status update
+    **Fulfiller** to **Requester**;
+  end fork
+
+  if (Disagreement is //complete//) is (yes) then
+    :Done;
+    detach
+  else (no)
+    -[bold]->Continue Processing;
+  endif
+-[bold]->Continue Processing;
+repeat while
+-[hidden]->
+detach
+
+
+@enduml

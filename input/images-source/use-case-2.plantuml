@@ -1,20 +1,40 @@
 @startuml
-title Abstract Model - Request For Correction Denied
+skinparam DefaultTextAlignment center
+skinparam SequenceMessageAlignment direction
+skinparam Padding 2
+skinparam ParticipantPadding 60
+skinparam LifelineStrategy solid
+autonumber "<b>[###]</b>"
 
-note left of CorrectionRequester
-Notice a problem
-end note
-CorrectionRequester->RequestFulfiller : 4. Request a Change
-Activate RequestFulfiller
-RequestFulfiller->RequestFulfiller : Check records
+participant R [
+  **Requester**
+  ----
+  //FHIR Application//
+]
+participant F [
+  **Fulfiller**
+  ----
+  //FHIR Server//
+]
 
-loop 8. Dialog (status, clarifications, etc.)
-   RequestFulfiller->CorrectionRequester : 6a. Please clarify
-   CorrectionRequester->RequestFulfiller : 6b. Here is the clarification
-end
+R->F : Request a Change
 
-RequestFulfiller->RequestFulfiller : Decide to deny the correction
-RequestFulfiller->CorrectionRequester : 7. Change denied
-Deactivate RequestFulfiller
+Activate F
+  F->F : Check records
+
+  group Information Needed
+    F->R : Please provide documentation
+    R->F : Here is the documentation
+  end
+
+  group Clarification Needed
+    F->R : Need the full documents
+    R->F : Here are the //full// documents
+  end
+
+  F->F : Decide to make correction
+  F->F : Change accepted
+  F->R : Request is complete
+Deactivate F
 
 @enduml

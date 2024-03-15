@@ -1,20 +1,29 @@
 @startuml
-title Abstract Model - Disagreement on a Denied Correction
+skinparam DefaultTextAlignment center
+skinparam SequenceMessageAlignment direction
+skinparam Padding 2
+skinparam ParticipantPadding 60
+skinparam LifelineStrategy solid
+autonumber "<b>[###]</b>"
 
-note left of CorrectionRequester
-Previously had a Change Denied
-end note
+participant R [
+  **Requester**
+  ----
+  //FHIR Application//
+]
+participant F [
+  **Fulfiller**
+  ----
+  //FHIR Server//
+]
 
-CorrectionRequester->RequestFulfiller : Send a Disagreement
-Activate RequestFulfiller
-RequestFulfiller->RequestFulfiller : Record Disagreement
+R->F : Request a Change
 
-note right of RequestFulfiller
-Based on the arguments and data
-decide not to change the record
-end note
-RequestFulfiller->CorrectionRequester : Record Not Changed
-Deactivate RequestFulfiller
-
+Activate F
+  F->F : Check records
+  F->F : Correction request is\nnot appropriate
+  F->F : Change denied
+  F->R : Request is complete
+Deactivate F
 
 @enduml

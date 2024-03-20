@@ -37,8 +37,8 @@ dependencies:
 pages:
   index.md:
     title: Home
-  actors-and-use-cases.md:
-    title: Actors and Use Cases
+  actors-and-workflow.md:
+    title: Actors and Workflow
   specification.md:
     title: Specification
   examples.md:
@@ -56,7 +56,7 @@ pages:
 menu:
   Home: index.html
   Table of Contents: toc.html
-  Actors and Use Cases: actors-and-use-cases.html
+  Actors and Workflow: actors-and-workflow.html
   Specification: specification.html
   Examples: examples.html
   Artifacts: artifacts.html

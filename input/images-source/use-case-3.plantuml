@@ -17,13 +17,19 @@ participant F [
   //FHIR Server//
 ]
 
-R->F : Request a Change
+group Request a Correction
+  R->F : Request a Change
+else Accept Correction Request
+  Activate F
+    F->R : Request Accepted
+    F->F : Check records
+    F->F : Decide correction is\nnot appropriate
+    F->R : Request is complete
+  Deactivate F
+else Requester Agrees with Final Correction
+  R->R : Review correction
+end
 
-Activate F
-  F->F : Check records
-  F->F : Correction request is\nnot appropriate
-  F->F : Change denied
-  F->R : Request is complete
-Deactivate F
+
 
 @enduml

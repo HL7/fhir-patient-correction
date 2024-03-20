@@ -17,24 +17,31 @@ participant F [
   //FHIR Server//
 ]
 
-R->F : Request a Change
+group Request a Correction
+  R->F : Request a Change
+else Accept Correction Request
+  Activate F
+    F->R : Request Accepted
+    F->F : Check records
 
-Activate F
-  F->F : Check records
-
-  group Information Needed
+  group Additional Information Needed
     F->R : Please provide documentation
     R->F : Here is the documentation
   end
 
-  group Clarification Needed
+  group Additional Information Needed
     F->R : Need the full documents
     R->F : Here are the //full// documents
   end
 
-  F->F : Decide to make correction
-  F->F : Change accepted
-  F->R : Request is complete
-Deactivate F
+    F->F : Decide to make correction
+    F->F : Change accepted
+    F->R : Request is complete
+  Deactivate F
+else Requester Agrees with Final Correction
+  R->R : Review correction
+end
+
+
 
 @enduml

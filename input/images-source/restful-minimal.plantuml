@@ -49,7 +49,5 @@ activate F
     F-->R: OK
     
   end
-
-
 Deactivate F
 @enduml

@@ -1,17 +1,33 @@
 @startuml
 title Abstract Model - Request For Correction Partially Accepted
+skinparam DefaultTextAlignment center
+skinparam SequenceMessageAlignment direction
+skinparam Padding 2
+skinparam ParticipantPadding 60
+skinparam LifelineStrategy solid
+autonumber 4 "<b>[###]</b>"
 
-note left of CorrectionRequester
-Notice a problem
-end note
-CorrectionRequester->RequestFulfiller : 4. Request a Change
+participant CorrectionRequester [
+  **Requester**
+  ----
+  //FHIR Application//
+]
+participant RequestFulfiller [
+  **Fulfiller**
+  ----
+  //FHIR Server//
+]
+
+group Request a Correction
+
+CorrectionRequester->RequestFulfiller : Request a Change
 Activate RequestFulfiller
 RequestFulfiller->RequestFulfiller : Check records
 
 RequestFulfiller->RequestFulfiller : Decide to accept part of request\nand deny other part of request
 
-RequestFulfiller->CorrectionRequester : 6. Change partially accepted
-RequestFulfiller->CorrectionRequester : 7. Accepted part of request completed
+RequestFulfiller->CorrectionRequester : Change partially accepted
+RequestFulfiller->CorrectionRequester : Accepted part of request completed
 Deactivate RequestFulfiller
-
+end 
 @enduml

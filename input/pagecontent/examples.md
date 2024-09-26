@@ -193,7 +193,8 @@ Westside receives the disagreement, but does not change their stance. Westside l
 1. The patient enters a correction request using their application. 
 1. The application (CorrectionRequester) sends the correction request to the appropriate provider system (RequestFulfiller) and gets an acknowledgement that the request has been received.
 1. The provider (most likely a medical records professional but possibly a clinician) reviews the request on the provider system (EHR).
-1. **Portions of the request are accepted** and portions are denied. The request is therefore partially accepted.  The patient is notified of partial acceptance and how to disagree with the denied portion.
+1. **Portions of the request are accepted** and portions are denied. The request is therefore partially accepted.  
+1. The patient is notified of partial acceptance and how to disagree with the denied portion.
 1. The portion of the request accepted is corrected in the chart and the correction request is marked complete.
 <figure>
 {%include use-case-6.svg%}

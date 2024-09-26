@@ -11,7 +11,7 @@ name: PatientCorrectionsImplementationGuide
 title: "Patient Request for Corrections Implementation Guide"
 status: draft
 publisher:
-  - name: HL7 International - Patient Empowerment
+  - name: HL7 International / Patient Empowerment
   - url: https://www.hl7.org/Special/committees/patientempowerment
 contact:
   - name: Virginia Lorenzi

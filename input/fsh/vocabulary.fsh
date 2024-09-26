@@ -1,8 +1,9 @@
-CodeSystem:  PatientCorrectionCommunicationTypes
+`CodeSystem:  PatientCorrectionCommunicationTypes
 Title: "Patient Correction Communication Types"
 Description: "CodeSystem of Communication categories for use in Patient Correction Request"
 * ^caseSensitive = false
 * ^experimental = false
+* ^status = #active
 * #medRecCxReq "Correction request by the Patient or RelatedPerson"
 * #medRecCxDenialDisagree "Disagreement with a denial correction request by the Patient or RelatedPerson"
 
@@ -20,6 +21,7 @@ Title: "Patient Correction Task Types"
 Description:  "CodeSystem of task types for patient request for corrections"
 * ^caseSensitive = false
 * ^experimental = false
+* ^status = #active
 * #medRecCxReq "Correction request by the Patient or RelatedPerson"
 * #medRecCxDenialDisagree "Disagreement by the Patient or RelatedPerson regarding a denied requested correction."
 
@@ -38,6 +40,7 @@ Title: "Patient Correction Output Types"
 Description:  "CodeSystem of output types for patient request for corrections"
 * ^caseSensitive = false
 * ^experimental = false
+* ^status = #active
 * #medRecCxReqResolution "Correction request resolution"
 
 
@@ -54,6 +57,7 @@ Title: "Patient Correction Business Statuses"
 Description:  "CodeSystem of business statuses for patient request for corrections"
 * ^caseSensitive = false
 * ^experimental = false
+* ^status = #active
 * #queued "A request to correct a record or log a disagreement has been received by the fulfiller (e.g. provider) but has not yet been reviewed."
 * #in-review "Review is in progress."
 * #waiting-for-information "The fulfiller (e.g. provider) is waiting for additional information."

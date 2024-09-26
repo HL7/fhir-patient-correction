@@ -29,7 +29,7 @@ Usage: #example
 * type = #collection
 
 //* entry[PatientCommResource].link = 
-* entry[0].fullUrl = "initialrequestforcorrection"
+* entry[0].fullUrl = "http://hl7.org/fhir/uv/patient-corrections/Task/initialrequestforcorrection"
 * entry[0].resource = initialrequestforcorrection
 
 //* entry[AdditionalResource].link = 

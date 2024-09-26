@@ -24,6 +24,7 @@
 <artifact id="CodeSystem/PatientCorrectionOutputTypes" key="CodeSystem-PatientCorrectionOutputTypes" name="Patient Correction Output Types"/>
 <artifact id="ValueSet/PatientCorrectionOutputTypesVS" key="ValueSet-PatientCorrectionOutputTypesVS" name="Patient Correction Output Types Value Set"/>
 <artifact deprecated="true" id="StructureDefinition/patient-correction-request" key="patient-correction-request" name="Patient Correction Request"/>
+<artifact id="OperationDefinition/correction-request" key="OperationDefinition-correction-request" name="Patient Correction Request Operation"/>
 <artifact id="StructureDefinition/patient-correction-task" key="StructureDefinition-patient-correction-task" name="Patient Correction Task"/>
 <artifact id="CodeSystem/PatientCorrectionTaskTypes" key="CodeSystem-PatientCorrectionTaskTypes" name="Patient Correction Task Types"/>
 <artifact id="ValueSet/PatientCorrectionTaskTypesVS" key="ValueSet-PatientCorrectionTaskTypesVS" name="Patient Correction Task Types Values Set"/>
@@ -32,7 +33,6 @@
 <artifact id="SearchParameter/ReasonReference" key="SearchParameter-ReasonReference" name="Search on the PatientCorrectionTask.reasonReference element"/>
 <artifact id="Communication/additionalinfoneeded" key="Communication-additionalinfoneeded" name="additionalinfoneeded"/>
 <artifact id="Communication/additionalinfoprovided" key="Communication-additionalinfoprovided" name="additionalinfoprovided"/>
-<artifact id="OperationDefinition/correction-request" key="OperationDefinition-correction-request" name="correction-request"/>
 <artifact id="Task/correctionrequestprocess" key="Task-correctionrequestprocess" name="correctionrequestprocess"/>
 <artifact id="Task/correctionrequestprocess2" key="Task-correctionrequestprocess2" name="correctionrequestprocess2"/>
 <artifact id="Task/correctionrequestprocess3" key="Task-correctionrequestprocess3" name="correctionrequestprocess3"/>

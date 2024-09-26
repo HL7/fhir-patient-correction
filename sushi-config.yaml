@@ -33,7 +33,9 @@ releaseLabel: STU 1 Ballot
 jurisdiction: http://unstats.un.org/unsd/methods/m49/m49.htm#001 "World"
 dependencies:
     hl7.fhir.uv.tools: current
-
+extension:
+  - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg
+    valueCode: pe
 pages:
   index.md:
     title: Home

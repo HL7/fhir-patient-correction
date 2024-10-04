@@ -164,13 +164,15 @@ Westside receives the disagreement, but does not change their stance. Westside l
 
 #### Use Case 5: Patient Requests a Correction to Their Medical Record and Later Sends an Update to Their Correction Request.
 
-1. A patient reviews the records received from a provider (most likely this review is of the electronic health information accessed on their personal health record application). 
-1. The patient determines that it contains one or more errors or discrepancies.
-1. The patient enters a correction request using their application. The request can be a simple unstructured request,but can also contain additional structured information to provide context or to pinpoint the error and the fix.
-1. The application (CorrectionRequester) sends the correction request to the appropriate provider system (RequestFulfiller) and gets an acknowledgement that the request has been received.
-1. The patient later determines the Correction Request is incorrect or incomplete. For example, the patient may have entered the wrong information, or may want to add a supporting attachment, or a list of contacts to notify upon correction completion.
-1. Their application (CorrectionRequestor) sends an updated correction request to the provider system (RequestFulfiller).
-1. The provider system updates the correction request accordingly and continues processing it.
+#### User Story
+
+Barbara reviews her records received from a provider on their personal health record application and notices that it contains a few discrepancies.  Using her PHR, she enters a correction request containing an unstructured request and some additional structured information to provide context to help pinpoint the error and the fix.
+
+THe PHR sends the correction request to her provider system and gets an acknowledgement that the request has been received.
+
+She later determines the Correction Request is incorrect as she has entered some wrong information, and also wants to add a list of contacts to notify upon correction completion.
+
+THe PHR sends an updated correction request to the provider system  and the provider system updates the correction request accordingly and continues processing it.
 
 <figure>
 {%include use-case-4.svg%}
@@ -188,25 +190,14 @@ Westside receives the disagreement, but does not change their stance. Westside l
 |Note that use case 6 would also include the ability for dialog (status, clarifications) as in the other use cases.  This is left out of this description for simplicity.|
 {:.grid .bg-info}
 
-1. A patient reviews the records received from a provider (most likely this review is of the electronic health information accessed on their personal health record application). 
-1. The patient determines that it contains one or more errors or discrepancies.
-1. The patient enters a correction request using their application. 
-1. The application (CorrectionRequester) sends the correction request to the appropriate provider system (RequestFulfiller) and gets an acknowledgement that the request has been received.
-1. The provider (most likely a medical records professional but possibly a clinician) reviews the request on the provider system (EHR).
-1. **Portions of the request are accepted** and portions are denied. The request is therefore partially accepted.  
-1. The patient is notified of partial acceptance and how to disagree with the denied portion.
-1. The portion of the request accepted is corrected in the chart and the correction request is marked complete.
+Sam reviews his records received from his provider on their PHR portal and determines that it contains errors or discrepancies. He enters a correction request through the portal.  The PHR sends the correction request to the provider system and gets an acknowledgement that the request has been received.
+
+The provider reviews the request on the provider system (EHR). **Portions of the request are accepted** and portions are denied. The request is therefore partially accepted.  
+Sam is notified of partial acceptance and how to disagree with the denied portion. While the portion of the request that is accepted is corrected in the chart and the correction request is marked complete.
 <figure>
 {%include use-case-6.svg%}
 <figcaption>Use Case 6 flow</figcaption>
 </figure>
-
-
-
-
-
-
-
 
 
 Each event below includes links to example [Patient Correction Bundle](StructureDefinition-patient-correction-bundle.html), [Patient Correction Communication](StructureDefinition-patient-correction-communication.html), or [Patient Correction Task](StructureDefinition-patient-correction-task.html) resources.

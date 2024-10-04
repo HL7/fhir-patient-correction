@@ -1,4 +1,4 @@
-`CodeSystem:  PatientCorrectionCommunicationTypes
+CodeSystem:  PatientCorrectionCommunicationTypes
 Title: "Patient Correction Communication Types"
 Description: "CodeSystem of Communication categories for use in Patient Correction Request"
 * ^caseSensitive = false

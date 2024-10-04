@@ -1,1 +1,4 @@
 == Suppressed Messages ==
+
+# Will move to THO when 
+%Most code systems defined in HL7 IGs will need to move to THO later during the process%

@@ -118,7 +118,7 @@ Claire logs into her patient app, sees the notification that her record has not 
 
 
 
-#### Example 4: Patient Disagrees with Correction Request Denial.
+### Example 4: Patient Disagrees with Correction Request Denial.
 
 In this use case, a patient requests a correct to their medical record. The request is received by the provider system, but the provider needs information that the patient cannot provide and thus does not agree that the record can be changed.  The patient disagrees with the justification for no change and logs a formal disagreement.
 
@@ -162,18 +162,18 @@ Westside receives the disagreement, but does not change their stance. Westside l
 ----
 
 
-#### Use Case 5: Patient Requests a Correction to Their Medical Record and Later Sends an Update to Their Correction Request.
+### Example 5: Patient Requests a Correction to Their Medical Record and Later Sends an Update to Their Correction Request.
 
 #### User Story
 
-Barbara reviews her records received from a provider on their personal health record application and notices that it contains a few discrepancies.  Using her PHR, she enters a correction request containing an unstructured request and some additional structured information to provide context to help pinpoint the error and the fix.
+David reviews her records received from Westside on their personal health record application and notices that it contains a few discrepancies.  Using his PHR, he enters a correction request containing an unstructured request and some additional structured information to provide context to help pinpoint the error and the fix.
 
-THe PHR sends the correction request to her provider system and gets an acknowledgement that the request has been received.
+THe PHR sends the correction request to his provider system and gets an acknowledgement that the request has been received.
 
-She later determines the Correction Request is incorrect as she has entered some wrong information, and also wants to add a list of contacts to notify upon correction completion.
+He later determines the Correction Request is incorrect as he has entered some wrong information, and also wants to add a list of contacts to notify upon correction completion.
 
 THe PHR sends an updated correction request to the provider system  and the provider system updates the correction request accordingly and continues processing it.
-
+#### Workflow Details
 <figure>
 {%include use-case-4.svg%}
 <figcaption>Use Case 5 flow</figcaption>
@@ -184,16 +184,17 @@ THe PHR sends an updated correction request to the provider system  and the prov
 |Note, in the case of multiple corrections requested, the flow may follow Use Case 3 and/or 4 for each individual correction submitted.|
 {:.grid .bg-info}
 
-#### Use Case 6: Patient Requests a Correction to Their Medical Record and the Record is Partially Updated
+### Example 6: Patient Requests a Correction to Their Medical Record and the Record is Partially Updated
 
 |---------------------------------------------------| 
 |Note that use case 6 would also include the ability for dialog (status, clarifications) as in the other use cases.  This is left out of this description for simplicity.|
 {:.grid .bg-info}
+#### User Story
+David reviews his records received from Westside on their PHR portal and determines that it contains errors or discrepancies. He enters a correction request through the portal.  The PHR sends the correction request to the provider system and gets an acknowledgement that the request has been received.
 
-Sam reviews his records received from his provider on their PHR portal and determines that it contains errors or discrepancies. He enters a correction request through the portal.  The PHR sends the correction request to the provider system and gets an acknowledgement that the request has been received.
-
-The provider reviews the request on the provider system (EHR). **Portions of the request are accepted** and portions are denied. The request is therefore partially accepted.  
-Sam is notified of partial acceptance and how to disagree with the denied portion. While the portion of the request that is accepted is corrected in the chart and the correction request is marked complete.
+The provider reviews the request on the Westside system (EHR). **Portions of the request are accepted** and portions are denied. The request is therefore partially accepted.  
+David is notified of partial acceptance and how to disagree with the denied portion. While the portion of the request that is accepted is corrected in the chart and the correction request is marked complete.
+#### Workflow Details
 <figure>
 {%include use-case-6.svg%}
 <figcaption>Use Case 6 flow</figcaption>
@@ -207,16 +208,16 @@ Preconditions:
 * The patient enters a correction request using their application. The request can be a simple unstructured request, but can also contain additional structured information to provide context or to pinpoint the error and the fix.
 
 Process:
-1. The Requester (David) sends the correction request to the appropriate Fulfiller (Westside).
-1. The Fulfiller (Westside) receives the request and determines it is valid and something that could be corrected there.
-1. The Fulfiller (Westside) reviews the request and the patient’s records, consulting with providers as needed to determine if the requested correction is appropriate.
-1. The Requester (David) sends the correction request to the Fulfiller (Westside) and gets an acknowledgement that the request has been received.
-1. The Fulfiller (Westside) reviews the request on the provider system (EHR).
+1. The **Requester** (David) sends the correction request to the appropriate **Fulfiller** (Westside).
+1. The **Fulfiller** (Westside) receives the request and determines it is valid and something that could be corrected there.
+1. The **Fulfiller** (Westside) reviews the request and the patient’s records, consulting with providers as needed to determine if the requested correction is appropriate.
+1. The **Requester** (David) sends the correction request to the **Fulfiller** (Westside) and gets an acknowledgement that the request has been received.
+1. The **Fulfiller** (Westside) reviews the request on the provider system (EHR).
 1. **Portions of the request are accepted** and portions are denied. The request is therefore partially accepted.  
-1. The Requester (David) is notified of partial acceptance and how to disagree with the denied portion.
+1. The **Requester** (David) is notified of partial acceptance and how to disagree with the denied portion.
 1. The portion of the request accepted is corrected in the chart and the correction request is marked complete.
 
 Postconditions:
-* The patient’s (David’s) record at Fulfiller (Westside) has been updated.
+* The patient’s (David’s) record at **Fulfiller** (Westside) has been updated.
 * The patient (David) has been notified that some of the requested changes were made.
-* The patient’s (David’s) record at Fulfiller (Westside) has been marked with his request for a change and that it has been partially accepted.
+* The patient’s (David’s) record at **Fulfiller** (Westside) has been marked with his request for a change and that it has been partially accepted.

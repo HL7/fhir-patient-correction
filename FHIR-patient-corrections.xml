@@ -44,7 +44,6 @@
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>
 <page deprecated="true" key="actors-and-use-cases" name="Actors and Use Cases" url="actors-and-use-cases"/>
-<page key="actors-and-workflow" name="Actors and Workflow"/>
 <page key="artifacts" name="Artifacts"/>
 <page key="downloads" name="Downloads"/>
 <page key="examples" name="Examples"/>

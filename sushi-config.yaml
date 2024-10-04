@@ -4,7 +4,7 @@
 # │  https://fshschool.org/docs/sushi/configuration/#full-configuration                            │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 
-id: hl7.fhir.uv.patient-corrections
+id: hl7.fhir.us.patient-corrections
 canonical: http://hl7.org/fhir/uv/patient-corrections
 version: 1.0.0
 name: PatientCorrectionsImplementationGuide

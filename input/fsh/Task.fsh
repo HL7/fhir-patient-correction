@@ -2,8 +2,8 @@ Profile:        PatientCorrectionTask
 Parent:         Task
 Id:             patient-correction-task
 Title:          "Patient Correction Task"
-Description:    "Represents the process of reviewing the patient's request for correction or the patient's request to log a disagreement to a prior request for correction decision.  This Task is spawned by the Fulfiller as a result of a post of a Communication resource that indicates a new request for correction or a new logging of a disagreement."
-
+Description:    "Represents the process of reviewing the patient&apos;s request for correction or the patient's request to log a disagreement to a prior request for correction decision.  This Task is spawned by the Fulfiller as a result of a post of a Communication resource that indicates a new request for correction or a new logging of a disagreement."
+ 
 * obeys task-reasonreference
 * obeys task-output2
 

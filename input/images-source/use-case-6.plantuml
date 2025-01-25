@@ -5,7 +5,7 @@ skinparam SequenceMessageAlignment direction
 skinparam Padding 2
 skinparam ParticipantPadding 60
 skinparam LifelineStrategy solid
-autonumber 4 "<b>[###]</b>"
+autonumber 1 "<b>[###]</b>"
 
 participant CorrectionRequester [
   **Requester**

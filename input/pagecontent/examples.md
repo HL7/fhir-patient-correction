@@ -1,5 +1,5 @@
 
-Following are some common use cases for patient requests for corrections. The diagrams are not intended to be exhaustive, but rather to provide a examples of the interactions between the actors.
+Following are some common use cases for patient requests for corrections. The diagrams are not intended to be exhaustive, but rather to provide examples of the interactions between the actors.
 
 ### Example 1: A correction request that needs no additional information is applied.
 
@@ -7,7 +7,7 @@ In this use case, a patient requests a correction to their medical record. The r
 
 #### User Story
 
-Alice uses her patient-facing app to import his medical records from Northside Clinic. She notices that she is listed as an everyday smoker. However, Alice has not smoked in 20 years. Alice uses her patient app to send a message to Northside Clinic requesting that her smoking status be corrected to show she has not smoked in 20 years.
+Alice uses her patient-facing app to import her medical records from Northside Clinic. She notices that she is listed as an everyday smoker. However, Alice has not smoked in 20 years. Alice uses her patient app to send a message to Northside Clinic requesting that her smoking status be corrected to show she has not smoked in 20 years.
 
 Northside Clinic receives Alice's request.  Alice's general practitioner, that has been seeing Alice for several decades, can verify the request.  Northside Clinic corrects her chart and notifies Alice that her records have been corrected.
 
@@ -30,7 +30,7 @@ A few days later, Alice logs into her patient app and sees the notification that
   1. The **Fulfiller** (Northside) finds the request is appropriate and does not need further information.
   1. The **Fulfiller** (Northside) applies the correction to the patient's record.
   1. The **Fulfiller** (Northside) notifies the **Requester** (Alice) that the correction is complete.
-  1. The **Requester** (Alice) logs into his patient app, sees the notification that his record has been corrected, and agrees with the change made.
+  1. The **Requester** (Alice) logs into her patient app, sees the notification that her record has been corrected, and agrees with the change made.
 * Postconditions:
   * The patient's (Alice's) record at **Fulfiller** (Northside) has been corrected.
   * The patient (Alice) has been notified that the correction is complete.
@@ -42,11 +42,11 @@ In this use case, a patient requests a correction to their medical record. The r
 
 #### User Story
 
-Bob uses his patient-facing app to import his medical records from Eastside Clinic. He notices that he is listed as an everyday smoker, even though she has never smoked. Bob uses his patient app to send a message to Eastside Clinic requesting that his smoking status be corrected to show he is not a smoker.
+Bob uses his patient-facing app to import his medical records from Eastside Clinic. He notices that he is listed as an everyday smoker, even though he has never smoked. Bob uses his patient app to send a message to Eastside Clinic requesting that his smoking status be corrected to show he is not a smoker.
 
 Eastside Clinic receives Bob's request, but cannot verify his claim - Bob is a new patient and his smoking status was not discussed during her initial visit.
 
-Eastside Clinic asks Bob for some supporting documentation.  Bob provides a screenshot of his record from her previous provider, which lists him as a non-smoker.
+Eastside Clinic asks Bob for some supporting documentation.  Bob provides a screenshot of his record from his previous provider, which lists him as a non-smoker.
 
 Eastside Clinic receives the additional information, but it only contains a portal view of a non-smoker and cannot tell if it is Bob's record.  Eastside Clinic asks Bob to provide a copy of his previous record in its entirety.
 
@@ -106,9 +106,8 @@ Claire logs into her patient app, sees the notification that her record has not 
   * The patient enters a correction request using their application. The request can be a simple unstructured request, but can also contain additional structured information to provide context or to pinpoint the error and the fix.
 * Process:
   1. The **Requester** (Claire) sends the correction request to the appropriate **Fulfiller** (Southside).
-  1. The **Fulfiller** (Southside) receives the request and determines it is valid and something that could be corrected there.
   1. The **Fulfiller** (Southside) reviews the request and the patient's records, consulting with providers as needed to determine if the requested correction is appropriate.
-  1. The **Fulfiller** (Southside) believes the request is not appropriate.
+  1. The **Fulfiller** (Southside) believes the request is not appropriate (Request is Denied).
   1. The **Fulfiller** (Southside) notifies the **Requester** (Claire) that the correction will not be made, with justification.
   1. The **Requester** (Claire) logs into her patient app, sees the notification that her record has not been changed, but agrees with the justification.
 * Postconditions:
@@ -126,7 +125,7 @@ In this use case, a patient requests a correct to their medical record. The requ
 
 David uses his patient-facing app to import his medical records from Westside Clinic. He notices that his latest record shows a medication that he has never taken. David uses his patient app to send a message to Westside Clinic requesting that the medication be removed from his record.
 
-Westside reviews the request and the patient's records, consulting with providers as needed to determine if the requested correction is appropriate. Westside asks David for additional information, but David cannot proof that he has never taken the medication. Westside does not feel comfortable removing the medication from his record.  Westside notifies David that the correction will not be made, explaining that the medication was prescribed but never taken.  David logs into his patient app and sees the notification that his record has not been changed, but disagrees with the justification for no change.  David uses his patient app to log a formal disagreement with the provider.
+Westside reviews the request and the patient's records, consulting with providers as needed to determine if the requested correction is appropriate. Westside asks David for additional information, but David cannot prove that he has never taken the medication. Westside does not feel comfortable removing the medication from his record.  Westside notifies David that the correction will not be made, explaining that the medication was prescribed but never taken.  David logs into his patient app and sees the notification that his record has not been changed, but disagrees with the justification for no change.  David uses his patient app to log a formal disagreement with the provider.
 
 Westside receives the disagreement, but does not change their stance. Westside logs the disagreement and notifies David that the disagreement has been logged.
 
@@ -149,7 +148,7 @@ Westside receives the disagreement, but does not change their stance. Westside l
   1. The **Requester** (David) has no information to provide.
   1. The **Fulfiller** (Westside) believes the change is not appropriate.
   1. The **Fulfiller** (Westside) notifies the **Requester** (David) that the correction will not be made, with justification.
-  1. The **Requester** (David) logs into her patient app, sees the notification that her record has not been changed, disagrees with the justification, and submits a disagreement.
+  1. The **Requester** (David) logs into his patient app, sees the notification that his record has not been changed, disagrees with the justification, and submits a disagreement.
   1. The **Fulfiller** (Westside) receives the disagreement and processes it, deciding there is no further action to be taken.
   1. The **Fulfiller** (Westside) notifies the **Requester** (David) that the disagreement has been logged.
 * Postconditions:
@@ -193,7 +192,7 @@ THe PHR sends an updated correction request to the provider system  and the prov
 David reviews his records received from Westside on their PHR portal and determines that it contains errors or discrepancies. He enters a correction request through the portal.  The PHR sends the correction request to the provider system and gets an acknowledgement that the request has been received.
 
 The provider reviews the request on the Westside system (EHR). **Portions of the request are accepted** and portions are denied. The request is therefore partially accepted.  
-David is notified of partial acceptance and how to disagree with the denied portion. While the portion of the request that is accepted is corrected in the chart and the correction request is marked complete.
+David is notified of partial acceptance and how to disagree with the denied portion. The portion of the request that is accepted is corrected in the chart and the correction request is marked complete.
 #### Workflow Details
 <figure>
 {%include use-case-6.svg%}
@@ -208,10 +207,8 @@ Preconditions:
 * The patient enters a correction request using their application. The request can be a simple unstructured request, but can also contain additional structured information to provide context or to pinpoint the error and the fix.
 
 Process:
-1. The **Requester** (David) sends the correction request to the appropriate **Fulfiller** (Westside).
-1. The **Fulfiller** (Westside) receives the request and determines it is valid and something that could be corrected there.
-1. The **Fulfiller** (Westside) reviews the request and the patient’s records, consulting with providers as needed to determine if the requested correction is appropriate.
-1. The **Requester** (David) sends the correction request to the **Fulfiller** (Westside) and gets an acknowledgement that the request has been received.
+
+1. The **Requester** (David) sends the correction request to the Fulfiller (Westside).
 1. The **Fulfiller** (Westside) reviews the request on the provider system (EHR).
 1. **Portions of the request are accepted** and portions are denied. The request is therefore partially accepted.  
 1. The **Requester** (David) is notified of partial acceptance and how to disagree with the denied portion.

@@ -1,0 +1,31 @@
+@startuml
+title Abstract Model - Updated Correction Request
+skinparam DefaultTextAlignment center
+skinparam SequenceMessageAlignment direction
+skinparam Padding 2
+skinparam ParticipantPadding 60
+skinparam LifelineStrategy solid
+autonumber 1 "<b>[###]</b>"
+
+participant CorrectionRequester [
+  **Requester**
+  ----
+  //FHIR Application//
+]
+participant RequestFulfiller [
+  **Fulfiller**
+  ----
+  //FHIR Server//
+]
+
+group Request a Correction
+
+CorrectionRequester->RequestFulfiller : Request a Change
+Activate RequestFulfiller
+RequestFulfiller->RequestFulfiller : Check records
+CorrectionRequester->RequestFulfiller : Update Change Request
+RequestFulfiller->CorrectionRequester : Request update accepted
+RequestFulfiller->RequestFulfiller : Request processing continues
+Deactivate RequestFulfiller
+end 
+@enduml

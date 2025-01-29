@@ -44,7 +44,7 @@ In this use case, a patient requests a correction to their medical record. The r
 
 Bob uses his patient-facing app to import his medical records from Eastside Clinic. He notices that he is listed as an everyday smoker, even though he has never smoked. Bob uses his patient app to send a message to Eastside Clinic requesting that his smoking status be corrected to show he is not a smoker.
 
-Eastside Clinic receives Bob's request, but cannot verify his claim - Bob is a new patient and his smoking status was not discussed during her initial visit.
+Eastside Clinic receives Bob's request, but cannot verify his claim - Bob is a new patient and his smoking status was not discussed during his initial visit.
 
 Eastside Clinic asks Bob for some supporting documentation.  Bob provides a screenshot of his record from his previous provider, which lists him as a non-smoker.
 
@@ -177,6 +177,20 @@ THe PHR sends an updated correction request to the provider system  and the prov
 {%include use-case-4.svg%}
 <figcaption>Use Case 5 flow</figcaption>
 </figure>
+Preconditions:
+* The patient has access to their medical record and has identified an error or discrepancy. Most likely this review is of the electronic health information accessed on their personal health record application.
+* The patient enters a correction request using their application. The request can be a simple unstructured request, but can also contain additional structured information to provide context or to pinpoint the error and the fix.
+
+Process:
+1. The **Requester** (David) sends the correction request to the appropriate **Fulfiller** (Westside).
+1. The **Fulfiller** (Westside) receives the request and determines it is valid and something that could be corrected there.
+1. The **Fulfiller** (Westside) reviews the request and the patient’s records, consulting with providers as needed to determine if the requested correction is appropriate.
+1. The **Requester** (David) sends a correction request update to the **Fulfiller** (Westside) and gets an acknowledgement that the request has been received.
+1. The **Fulfiller** (Westside) reviews the request on the provider system (EHR).
+1. The **Fulfiller** (Westside) continues processing the request
+
+Postconditions:
+* The patient’s (David’s) correction request at **Fulfiller** (Westside) has been filed and updated.
 
 
 |---------------------------------------------------| 

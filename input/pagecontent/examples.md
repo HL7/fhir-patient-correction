@@ -174,7 +174,7 @@ He later determines the Correction Request is incorrect as he has entered some w
 THe PHR sends an updated correction request to the provider system  and the provider system updates the correction request accordingly and continues processing it.
 #### Workflow Details
 <figure>
-{%include use-case-4.svg%}
+{%include use-case-5.svg%}
 <figcaption>Use Case 5 flow</figcaption>
 </figure>
 Preconditions:

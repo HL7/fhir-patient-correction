@@ -1,8 +1,10 @@
 ### Actors
+
 |Actor |Description|
 |----|----|
-|CorrectionRequester 	|The CorrectionRequester represents a patient’s application, such as a personal health record. A patient or their caregiver uses the application to request a correction to their medical record.|
-|RequestFulfiller 	|The RequestFulfiller represents a provider system – usually an EHR. A Medical Records professional or a clinician uses the provider system to review and process the correction request. The RequestFulfiller may also represent a payer system.|
+|CorrectionRequester 	| The CorrectionRequester represents a patient’s application, such as a personal health record. A patient or their caregiver uses the application to request a correction to their medical record. |
+|RequestFulfiller | The RequestFulfiller represents a provider system – usually an EHR. A Medical Records professional or a clinician uses the provider system to review and process the correction request. The RequestFulfiller may also represent a payer system. |
+
 #### General Actor Sequence
 
 <figure>

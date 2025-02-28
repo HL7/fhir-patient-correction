@@ -39,12 +39,12 @@ extension:
 pages:
   index.md:
     title: Home
-#  actors-and-workflow.md:
-#    title: Actors and Workflow
+  AUC.md:
+    title: Actors and Use Cases
   specification.md:
     title: Specification
-  examples.md:
-    title: Examples
+ # examples.md:
+ #   title: Examples
   artifacts.html:
     title: Artifacts
   downloads.md:
@@ -60,7 +60,7 @@ menu:
   Table of Contents: toc.html
 #  Actors and Workflow: actors-and-workflow.html
   Specification: specification.html
-  Examples: examples.html
+  Actors and Use Cases: AUC.html
   Artifacts: artifacts.html
   Downloads: downloads.html
   Other Resources: 

@@ -7,7 +7,7 @@ A patient request for correction is initiated by the CorrectionRequester by invo
 
 All Communications related to the correction request can be located by searching the **about** field for the original Communication.
 
-### RESTful interactions
+#### RESTful interactions
 
 <figure>
   {% include restful-minimal.svg %}
@@ -21,9 +21,9 @@ A patient request for correction is initiated by invoking the [$correction-reque
 
 All Communications related to the correction request can be located by searching the **about** field for the original Communication.
 
-The Communication **recipient** and **sender** fields are used to track whether each Communication is from the patient to the fulfiller, or vice versa.
+The Communication **recipient** and **sender** fields are used to track whether each Communication is from the requestor to the fulfiller, or vice versa.
 
-### RESTful interactions
+#### RESTful interactions
 
 <div>
 {%include restful-minimal.svg%}
@@ -37,7 +37,7 @@ Communication **about** will be empty for the initial Communication when the $co
 
 All subsequent Communication resources will point to the initial Communication resource for the correction request in their Communication **about** fields.
 
-The Communication **recipient** and **sender** fields are used to track whether each Communication is from the patient to the fulfiller, or vice versa.
+The Communication **recipient** and **sender** fields are used to track whether each Communication is from the requestor to the fulfiller, or vice versa.
 
 Task **input** points to the Communication that contains the initial request details, and Task **output** points to the Communication that contains the final results (amendment or denial details).
 
@@ -100,7 +100,7 @@ NOTE: Readers are advised to understand FHIR Terminology requirements, FHIR REST
 
 ### Security
 
-The Patient Request for Corrections workflow is a bidirectional communication between a patient (or their proxy) and a fulfiller.  Proper authentication is critical so that the communication is not exploited by malicious actors resulting in exposure of patient data. All transactions in the Patient Request for Corrections workflow must be secured appropriately with access to limited authorized individuals, data protected in transit, and appropriate audit measures taken.
+The Patient Request for Corrections workflow is a bidirectional communication between a requestor (or their proxy) and a fulfiller.  Proper authentication is critical so that the communication is not exploited by malicious actors resulting in exposure of patient data. All transactions in the Patient Request for Corrections workflow must be secured appropriately with access to limited authorized individuals, data protected in transit, and appropriate audit measures taken.
 
 * Implementers **SHALL** be aware of and conform to [security guidance](http://hl7.org/fhir/R4/security.html) associated with FHIR transactions.  
 * Systems **SHOULD** establish a risk analysis and management regime.   

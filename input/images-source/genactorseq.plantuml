@@ -1,0 +1,6 @@
+@startuml
+participant CorrectionRequester as CR 
+participant RequestFulfiller as RF 
+
+CR -> RF :Request a Change
+@enduml

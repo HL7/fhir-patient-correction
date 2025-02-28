@@ -23,7 +23,7 @@ Description:  "CodeSystem of task types for patient request for corrections"
 * ^experimental = false
 * ^status = #active
 * #medRecCxReq "Correction request by the Patient or RelatedPerson"
-* #medRecCxDenialDisagree "Disagreement by the Patient or RelatedPerson regarding a denied requested correction."
+* #medRecCxDenialDisagree "Disagreement by the Patient or RelatedPerson regarding the denied requested correction."
 
 
 ValueSet: PatientCorrectionTaskTypesVS

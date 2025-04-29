@@ -2,3 +2,6 @@
 
 # Will move to THO when 
 %Most code systems defined in HL7 IGs will need to move to THO later during the process%
+
+# They all do
+%HL7 Defined CodeSystems should ensure that every concept has a definition%

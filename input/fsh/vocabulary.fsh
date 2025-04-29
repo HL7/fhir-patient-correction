@@ -28,7 +28,7 @@ Description:  "CodeSystem of task types for patient request for corrections"
 
 ValueSet: PatientCorrectionTaskTypesVS
 Title: "Patient Correction Task Types Values Set"
-Description: "ValueSet of task types for patient requestion for corrections"
+Description: "ValueSet of task types for patient requests for corrections"
 * ^experimental = false
 
 * PatientCorrectionTaskTypes#medRecCxReq

@@ -5,14 +5,14 @@ Description: "Describes the capabilities for a FHIR server to support patient re
 Usage: #definition
 
 * name = "PatientCorrectionCapability"
-* status = #draft
+* status = #active
 * date = "2022-03-04"
 * kind = #requirements
 * description = "Describes the capabilities for a FHIR server to support patient requests for corrections."
 * fhirVersion = #4.0.1
 * format[0] = #xml
 * format[1] = #json
-* implementationGuide = "https://hl7.org/fhir/uv/fhir-patient-corrections"
+* implementationGuide = "http://hl7.org/fhir/uv/patient-corrections"
 
 * rest[0].mode = #server
 * rest[0].documentation = "Description of the needed resources to be supported by the FHIR server, and the different possible interactions."

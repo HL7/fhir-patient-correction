@@ -23,7 +23,7 @@ way for the communication of a patient's request for corrections.  It includes t
  
 This Implementation Guide (IG) is designed to work in the Universal Realm.  Both GDPR and HIPAA processes were reviewed in depth.   HIPAA and GDPR regulations are very similar concerning a patient's rights to have their data corrected. There are minor differences in the period of time for covered entities to respond to the patient's initial request for corrections and the preference in GDPR for a means for patient requests to be made electronically. Since HIPAA provides detailed implementation guidance, it was followed in the creation of this Implementation Guide since it includes the patient rights outlined in both regulations. Refer to the [References](#references) section for more information.
 
-This IG allows for several scenarios from a simple correction (such as changing the patient's smoking status) to more complex scenarios that may be accepted or rejected by the data holder.  In addition, the IG handles flows from simple acknowledgement of submission to completion of review and acceptance/rejection.  Use cases are found on the [Examples](examples.html) page.
+This IG allows for several scenarios from a simple correction (such as changing the patient's smoking status) to more complex scenarios that may be accepted or rejected by the data holder.  In addition, the IG handles flows from simple acknowledgement of submission to completion of review and acceptance/rejection.  Use cases are found on the [Actors and Use Cases](AUC.html) page.
 
 ### Scope
 

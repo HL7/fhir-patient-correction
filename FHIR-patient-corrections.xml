@@ -43,10 +43,10 @@
 <artifact id="Communication/recordamended" key="Communication-recordamended" name="recordamended"/>
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>
-<page deprecated="true" key="actors-and-use-cases" name="Actors and Use Cases" url="actors-and-use-cases"/>
+<page key="actors-and-use-cases" name="Actors and Use Cases" url="actors-and-use-cases"/>
 <page key="artifacts" name="Artifacts"/>
 <page key="downloads" name="Downloads"/>
-<page key="examples" name="Examples"/>
+<page deprecated="true" key="examples" name="Examples"/>
 <page key="index" name="Home"/>
 <page deprecated="true" key="home" name="IG Home" url="index"/>
 <page key="specification" name="Specification" url="specification"/>

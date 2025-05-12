@@ -5,7 +5,7 @@ Usage: #definition
 
 * name = "PatientCorrectionRequestOperation"
 * title = "Patient Correction Request Operation"
-* status = #draft
+* status = #active
 * kind = #operation
 * code = #correctionrequest
 * system = false

@@ -54,11 +54,11 @@ In this use case, a patient requests a correction to their medical record. The r
 
 #### User Story
 
-Bob uses his patient-facing app to import his medical records from Eastside Clinic. He notices that he is listed as an everyday smoker, even though she has never smoked. Bob uses his patient app to send a message to Eastside Clinic requesting that his smoking status be corrected to show he is not a smoker.
+Bob uses his patient-facing app to import his medical records from Eastside Clinic. He notices that he is listed as an everyday smoker, even though he has never smoked. Bob uses his patient app to send a message to Eastside Clinic requesting that his smoking status be corrected to show he is not a smoker.
 
 Eastside Clinic receives Bob's request, but cannot verify his claim - Bob is a new patient and his smoking status was not discussed during her initial visit.
 
-Eastside Clinic asks Bob for some supporting documentation.  Bob provides a screenshot of his record from her previous provider, which lists him as a non-smoker.
+Eastside Clinic asks Bob for some supporting documentation.  Bob provides a screenshot of his record from his previous provider, which lists him as a non-smoker.
 
 Eastside Clinic receives the additional information, but it only contains a portal view of a non-smoker and cannot tell if it is Bob's record.  Eastside Clinic asks Bob to provide a copy of his previous record in its entirety.
 
@@ -178,7 +178,7 @@ Westside receives the disagreement, but does not change their stance. Westside l
 
 #### User Story
 
-David reviews her records received from Westside on their personal health record application and notices that it contains a few discrepancies.  Using his PHR, he enters a correction request containing an unstructured request and some additional structured information to provide context to help pinpoint the error and the fix.
+David reviews his records received from Westside on their personal health record application and notices that it contains a few discrepancies.  Using his PHR, he enters a correction request containing an unstructured request and some additional structured information to provide context to help pinpoint the error and the fix.
 
 THe PHR sends the correction request to his provider system and gets an acknowledgement that the request has been received.
 

@@ -1,16 +1,23 @@
-There is an ongoing discussion about the minimum requirements for proper support of corrections.  Specifically, the infrastructure around `Task` provides tracking and state information to users that is useful though may not align with facility processes for applying corrections.  Implementer feedback is requested.
-{.stu-note}
 
-### Communication
+<blockquote class="stu-note">
+There is an ongoing discussion about the minimum requirements for proper support of corrections.  Specifically, the infrastructure around `Task` provides tracking and state information to users that is useful though may not align with facility processes for applying corrections.  Implementer feedback is requested.<br />
+Some implementers believe that a more streamlined approach without communication should be considered for the next release.</blockquote>
+
+### Communication with Task
 
 A patient request for correction is initiated by the CorrectionRequester by invoking the [$correction-request](OperationDefinition-correction-request.html) operation on the RequestFulfiller. The input for the operation is a [Patient Correction Bundle](StructureDefinition-patient-correction-bundle.html) which includes a  [Patient Correction Communication](StructureDefinition-patient-correction-communication.html) resource that describes the specific request. The invocation of the operation on the RequestFulfiller MAY result in the creation of a [Patient Correction Task](StructureDefinition-patient-correction-task.html) resource which can be used to track the status of the request. 
 
 All Communications related to the correction request can be located by searching the **about** field for the original Communication.
 
+The Communication recipient and sender fields are used to track whether each Communication is from the patient to the fulfiller, or vice versa.
+
+Some implementations might choose not to create a Task.  In that case, there is no explicit status tracking, only messaging back and forth between requester and fulfiller using the Communication resource.
+
+
 #### RESTful interactions
 
 <figure>
-  {% include restful-minimal.svg %}
+  {% include task-comm-request.svg %}
   <figcaption>Sequence diagram showing the workflow of a corrections request</figcaption>
 </figure>
 

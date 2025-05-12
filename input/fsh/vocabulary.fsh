@@ -5,7 +5,7 @@ Description: "CodeSystem of Communication categories for use in Patient Correcti
 * ^experimental = false
 * ^status = #active
 * #medRecCxReq "Correction request by the Patient or RelatedPerson"
-* #medRecCxDenialDisagree "Disagreement with a denial correction request by the Patient or RelatedPerson"
+* #medRecCxDenialDisagree "Disagreement by the Patient or RelatedPerson regarding the denied correction request"
 
 
 ValueSet: PatientCorrectionCommunicationTypesVS

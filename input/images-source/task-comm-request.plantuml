@@ -1,0 +1,39 @@
+@startuml
+skinparam svgDimensionStyle false
+title Restful Correction Request Process
+
+note left of CorrectionRequester
+Send a new Correction Request
+end note
+CorrectionRequester->RequestFulfiller: Invoke $correction-request operation (Bundle) with a new Communication
+activate RequestFulfiller
+RequestFulfiller->RequestFulfiller: Create Task using internal processing
+RequestFulfiller-->CorrectionRequester: return Bundle with created Communication resource\nwith pointer to new Task in Communication.about
+
+alt
+note right of RequestFulfiller
+When more information is needed
+then the Task status is updated and 
+a new Communication is created that asks for the additional information
+end note
+RequestFulfiller->RequestFulfiller: update Task status and create new Communication
+end
+CorrectionRequester -> RequestFulfiller: poll (query) for any changes to Task status and for\nany new Communication.
+alt
+note left of CorrectionRequester
+Correspond with Fulfiller to respond to request
+end note
+CorrectionRequester->RequestFulfiller: Invoke $correction-request operation (Bundle)
+end
+note right of RequestFulfiller
+When the request is fulfilled
+(agreed or rejected) then 
+the Task status is updated and
+a new concluding Communication is created.
+end note
+RequestFulfiller->RequestFulfiller: update Task status and create new Communication with denial or accept/amend
+CorrectionRequester -> RequestFulfiller: poll (query) for any changes to Task status and for concluding Communication.
+
+
+Deactivate RequestFulfiller
+@enduml

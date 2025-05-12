@@ -36,7 +36,7 @@ The scope of this IG is limited to the communication standards between a patient
 * communicate about the outcome of the request fulfillment, and
 * support communication of a disagreement statement from the patient if the request is denied.
 
-For this version of the guide, Process status and new communications from the fulfiller will be detected by the requester via polling. In future versions of the guide, we hope to add support for subscription based notifications.
+For this version of the guide, Task status changes and new Communication resources from the Fulfiller will be detected by the Requester via polling. In future versions of the guide, we hope to add support for subscription based notifications.
 
 It is assumed that the fulfiller is able to process the correction request through to resolution. In most cases, this would be the organization which has the authority to directly correct the error, such as a provider that is the custodian of the record with the error. However, if an intermediary takes responsibility for shepherding the handling of a patient request with the custodial organization, that intermediatory could serve as a fulfiller (for example, a patient advocacy service). It is assumed that in most cases, an HIE or a payer would not serve as fulfillers of requests to correct information unless the error originated from their records, or they wanted to take on the responsibility of mediating.
 

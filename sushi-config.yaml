@@ -25,7 +25,7 @@ parameters:
   apply-version: true
   show-inherited-invariants: false
 copyrightYear: 2020+
-releaseLabel: STU 1 Ballot
+releaseLabel: STU 1
 jurisdiction: http://unstats.un.org/unsd/methods/m49/m49.htm#001 "World"
 #dependencies:
 #    hl7.fhir.uv.tools:current

@@ -1,0 +1,63 @@
+@startuml
+skinparam NoteTextAlignment left
+skinparam Padding 2
+skinparam ParticipantPadding 50
+skinparam LifelineStrategy solid
+autonumber
+
+participant CorrectionRequester as R
+participant RequestFulfiller as F
+
+group Request for Correction
+  R->F: Request for correction
+end
+
+group Process Request
+else Accepted Request
+  F-->R: Initial response
+else Processing Request
+  R->F: Check for updates
+else Need additional information
+  F->R: Communicate request for additional information
+  R-->F: Respond with additional information
+else Accepted Change
+  F->R: Change accepted
+else Partially Accepted Change
+  F->R: Part of request accepted
+  opt
+    R->F: Disagreement on denial
+  end
+else Rejected Change
+end
+
+
+alt
+
+  F->R: Communicate with Requester as
+
+end
+
+opt
+  F->R: Create Communication asking for additional information
+  R-->F: Respond with additional information
+end
+
+R -> F: poll (query) for any changes to Task status and for\nany new Communication.
+alt
+  note left of R
+    Correspond with Fulfiller to respond to request
+  end note
+  R->F: Invoke $correction-request operation (Bundle)
+end
+
+note right of F
+  When the request is fulfilled
+  (agreed or rejected) then 
+  the Task status is updated and
+  a new concluding Communication is created.
+end note
+
+F->F: update Task status and create new Communication with denial or accept/amend
+R -> F: poll (query) for any changes to Task status and for concluding Communication.
+
+@enduml

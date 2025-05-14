@@ -1,20 +1,43 @@
 @startuml
-title Abstract Model - Update to a Request For Correction
+skinparam DefaultTextAlignment center
+skinparam SequenceMessageAlignment direction
+skinparam Padding 2
+skinparam ParticipantPadding 60
+skinparam LifelineStrategy solid
+autonumber "<b>[###]</b>"
 
-note left of CorrectionRequester
-Notice a problem
-end note
+participant R [
+  **Requester**
+  ----
+  //FHIR Application//
+]
+participant F [
+  **Fulfiller**
+  ----
+  //FHIR Server//
+]
 
-CorrectionRequester->RequestFulfiller : 4. Request a Change
-Activate RequestFulfiller
-RequestFulfiller->RequestFulfiller : Check records
+group Request a Correction
+  R->F : Request a Change
+else Accept Correction Request
+  Activate F
+    F->R : Request Accepted
+    F->F : Check records
 
-== Time goes by ==
-note left of CorrectionRequester
-Realize more information is needed
-end note
-CorrectionRequester->RequestFulfiller : 6. Update the Change Request
-RequestFulfiller->RequestFulfiller : Check records
+  group Additional Information Needed
+    F->R : Please provide documentation
+    R->F : Do not have documentation
+  end
 
-== Further processing ==
+    F->F : Decide correction is\nnot appropriate
+    F->R : Request is complete
+  Deactivate F
+else Requester Disagrees with Final Correction
+  R->F : Submit disagreement
+  F->F : Process disagreement
+  F->R : Complete, disagreement logged
+end
+
+
+
 @enduml

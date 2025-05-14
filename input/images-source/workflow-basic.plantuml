@@ -1,0 +1,123 @@
+@startuml
+' skinparam NoteTextAlignment center
+skinparam DefaultTextAlignment center
+skinparam Padding 2
+' skinparam ParticipantPadding 50
+skinparam LifelineStrategy solid
+' skinparam ConditionStyle InsideDiamond
+' skinparam ConditionEndStyle hline
+
+:Patient or representative
+finds issue in record;
+
+:""CorrectionRequest"" Communication
+from **Requester** to **Fulfiller**;
+
+repeat :**Fulfiller** request processing;
+  fork
+    :**Received**; <<task>>
+    if (Request is valid) is (yes) then
+      :Accept request;
+      ://Optional// Communication
+      Status update
+      **Fulfiller** to **Requester**;
+    else (no)
+      :Reject request;
+      detach
+    endif
+  fork again
+    :**Need additional information**; <<task>>
+    :Communication
+    Request information
+    **Fulfiller** to **Requester**;
+    ://Wait// for Communication
+    from **Requester**;
+  fork again
+    :**Accepted**; <<task>>
+    :Communication
+    Status update
+    **Fulfiller** to **Requester**;
+  fork again
+    :**Partially Accepted**; <<task>>
+    :Communication
+    Status update
+    **Fulfiller** to **Requester**;
+  fork again 
+    :**Denied**; <<task>>
+    :Communication
+    Status update
+    **Fulfiller** to **Requester**;
+  end fork
+
+  if (Request is //complete//) is (yes) then
+    :Done;
+    detach
+  else (no)
+    -[bold]->Continue Processing;
+  endif
+-[bold]->Continue Processing;
+repeat while
+-[hidden]->
+detach
+
+' repeat :**Fulfiller** request processing;
+'     fork
+'       ->Received;
+'       ://Optional// Communication
+'       Status update
+'       **Fulfiller** to **Requester**;
+'     fork again
+'       ->Needs additional information;
+'       :Communication
+'       Request information
+'       **Fulfiller** to **Requester**;
+'       ://Wait// for Communication
+'       from **Requester**;
+'     fork again
+'       ->Accepted;
+'       :Communication
+'       Status update
+'       **Fulfiller** to **Requester**;
+'     fork again
+'       ->Partially Accepted;
+'       :Communication
+'       Status update
+'       **Fulfiller** to **Requester**;
+'     fork again 
+'       ->Denied;
+'       :Communication
+'       Status update
+'       **Fulfiller** to **Requester**;
+'     end fork
+' repeat while (Request is not //completed//)
+
+
+' repeat :**Fulfiller** request processing;
+'     switch (**Fulfiller** state)
+'         case (Received)
+'             ://Optional// Communication
+'             Status update
+'             **Fulfiller** to **Requester**;
+'         case (Needs additional information)
+'             :Communication
+'             Request information
+'             **Fulfiller** to **Requester**;
+'             ://Wait// for Communication
+'             from **Requester**;
+'         case (Accepted) 
+'             :Communication
+'             Status update
+'             **Fulfiller** to **Requester**;
+'         case (Partially Accepted) 
+'             :Communication
+'             Status update
+'             **Fulfiller** to **Requester**;
+'         case (Denied)
+'             :Communication
+'             Status update
+'             **Fulfiller** to **Requester**;
+'     endswitch
+' repeat while (Request is not //completed//)
+' :Done;
+
+@enduml

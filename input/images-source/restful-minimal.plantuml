@@ -1,0 +1,53 @@
+@startuml
+skinparam NoteTextAlignment left
+skinparam Padding 2
+skinparam ParticipantPadding 50
+skinparam LifelineStrategy solid
+autonumber
+
+participant CorrectionRequester as R
+participant RequestFulfiller as F
+
+' note over R
+'   Send a new Correction Request
+' end note
+
+R->F: Invoke $correction-request operation with a Patient Correction Bundle
+activate F
+  F-->R: return updated Patient Correction Bundle
+
+  group Process correction request
+  else Optional: Status Communication
+    F->F: Create Communication resource\nwith current status for requester
+    R->F: Poll (query) for any new Communication resources related to the initial request
+    F-->R: Communication resource: current status
+  else More information needed
+    F->F: Create Communication resource\nwith request for additional information
+    R->F: Poll (query) for any new Communication resources related to the initial request
+    F-->R: Communication resource: request additional information
+    R->F: Communication resource: response with additional information
+    F-->R: OK
+  else Accepted
+    F->F: Create Communication resource\nwith current status for requester
+    R->F: Poll (query) for any new Communication resources related to the initial request
+    F-->R: Communication resource: response with accepted status information
+  else Partially Accepted
+    F->F: Create Communication resource\nwith current status for requester
+    R->F: Poll (query) for any new Communication resources related to the initial request
+    F-->R: Communication resource: response with partial acceptance status information
+    R->F: (Optional): Communication resource: disagreement with partial acceptance
+    F-->R: OK
+  else Denied
+    F->F: Create Communication resource\nwith current status for requester
+    R->F: Poll (query) for any new Communication resources related to the initial request
+    F-->R: Communication resource: response with denial status information
+  else Disagreement
+    F->F: Create Communication resource\nwith current status for requester
+    R->F: Poll (query) for any new Communication resources related to the initial request
+    F-->R: Communication resource: response with denial status information
+    R->F: Communication resource: disagreement with denial
+    F-->R: OK
+    
+  end
+Deactivate F
+@enduml

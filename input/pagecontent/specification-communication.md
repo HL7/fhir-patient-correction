@@ -1,26 +1,33 @@
+There is an ongoing discussion about the minimum requirements for proper support of corrections.  Specifically, the infrastructure around `Task` provides tracking and state information to users that is useful though may not align with facility processes for applying corrections.  Implementer feedback is requested.
+{.stu-note}
 
-<blockquote class="stu-note">
-There is an ongoing discussion about the minimum requirements for proper support of corrections.  Specifically, the infrastructure around `Task` provides tracking and state information to users that is useful though may not align with facility processes for applying corrections.  Implementer feedback is requested.<br />
-Some implementers believe that a more streamlined approach without communication should be considered for the next release.</blockquote>
-
-### Communication with Task
+### Communication
 
 A patient request for correction is initiated by the CorrectionRequester by invoking the [$correction-request](OperationDefinition-correction-request.html) operation on the RequestFulfiller. The input for the operation is a [Patient Correction Bundle](StructureDefinition-patient-correction-bundle.html) which includes a  [Patient Correction Communication](StructureDefinition-patient-correction-communication.html) resource that describes the specific request. The invocation of the operation on the RequestFulfiller MAY result in the creation of a [Patient Correction Task](StructureDefinition-patient-correction-task.html) resource which can be used to track the status of the request. 
 
 All Communications related to the correction request can be located by searching the **about** field for the original Communication.
 
-The Communication recipient and sender fields are used to track whether each Communication is from the patient to the fulfiller, or vice versa.
-
-Some implementations might choose not to create a Task.  In that case, there is no explicit status tracking, only messaging back and forth between requester and fulfiller using the Communication resource.
-
-
-#### RESTful interactions
+### RESTful interactions
 
 <figure>
-  {% include task-comm-request.svg %}
+  {% include restful-minimal.svg %}
   <figcaption>Sequence diagram showing the workflow of a corrections request</figcaption>
 </figure>
 
+
+### Communication with Task
+
+A patient request for correction is initiated by invoking the [$correction-request](OperationDefinition-correction-request.html) operation. The input for the operation is a [Patient Correction Bundle](StructureDefinition-patient-correction-bundle.html) which includes a  [Patient Correction Communication](StructureDefinition-patient-correction-communication.html) resource that describes the specific request. The invocation of the operation on the fulfiller results in the posting of the [Patient Correction Communication](StructureDefinition-patient-correction-communication.html) resource on the fulfiller.  It is also expected to result in the creation of a [Patient Correction Task](StructureDefinition-patient-correction-task.html) resource which can be used to track the status of the request. 
+
+All Communications related to the correction request can be located by searching the **about** field for the original Communication.
+
+The Communication **recipient** and **sender** fields are used to track whether each Communication is from the patient to the fulfiller, or vice versa.
+
+### RESTful interactions
+
+<div>
+{%include restful-minimal.svg%}
+</div>
 
 ### Linkages between resources
 
@@ -30,7 +37,7 @@ Communication **about** will be empty for the initial Communication when the $co
 
 All subsequent Communication resources will point to the initial Communication resource for the correction request in their Communication **about** fields.
 
-The Communication **recipient** and **sender** fields are used to track whether each Communication is from the requestor to the fulfiller, or vice versa.
+The Communication **recipient** and **sender** fields are used to track whether each Communication is from the patient to the fulfiller, or vice versa.
 
 Task **input** points to the Communication that contains the initial request details, and Task **output** points to the Communication that contains the final results (amendment or denial details).
 
@@ -93,12 +100,12 @@ NOTE: Readers are advised to understand FHIR Terminology requirements, FHIR REST
 
 ### Security
 
-The Patient Request for Corrections workflow is a bidirectional communication between a requestor (or their proxy) and a fulfiller.  Proper authentication is critical so that the communication is not exploited by malicious actors resulting in exposure of patient data. All transactions in the Patient Request for Corrections workflow must be secured appropriately with access to limited authorized individuals, data protected in transit, and appropriate audit measures taken.
+The Patient Request for Corrections workflow is a bidirectional communication between a patient (or their proxy) and a fulfiller.  Proper authentication is critical so that the communication is not exploited by malicious actors resulting in exposure of patient data. All transactions in the Patient Request for Corrections workflow must be secured appropriately with access to limited authorized individuals, data protected in transit, and appropriate audit measures taken.
 
 * Implementers **SHALL** be aware of and conform to [security guidance](http://hl7.org/fhir/R4/security.html) associated with FHIR transactions.  
 * Systems **SHOULD** establish a risk analysis and management regime.   
 * Systems **SHALL** reference a single time source to establish a common time base for security auditing, as well as clinical data records, among computing systems.
 * Systems **SHALL** keep audit logs of the various transactions.
 * Systems **SHALL** use TLS version 1.2 or higher for all transmissions not taking place over a secure network connection. (Using TLS even within a secured network environment is still encouraged to provide defense in depth.) 
-* For Authentication and Authorization, systems **SHOULD** support the [SMART App Launch Framework](http://www.hl7.org/fhir/smart-app-launch/history.html) for client <-> server interactions. NOTE: The SMART on FHIR specifications include the required OAuth 2.0 scopes for enabling security decisions.  In lieu of SMART on FHIR, an alternative framework for authentication and authorization **SHOULD** be followed (for example, [HL7 <i>FAST</i> UDAP Security for Scalable Registration, Authentication, and Authorization](http://hl7.org/fhir/us/udap-security/b2b.html)).
+* For Authentication and Authorization, systems **SHOULD** support the [SMART App Launch Framework](http://www.hl7.org/fhir/smart-app-launch/history.html) for client <-> server interactions. NOTE: The SMART on FHIR specifications include the required OAuth 2.0 scopes for enabling security decisions.  In lieu of SMART on FHIR, an alternative framework for authentication and authorization **SHOULD** be followed (example, [Security for Scalable Registration, Authentication, and Authorization](http://hl7.org/fhir/us/udap-security/2021Sep/b2b.html) which uses UDAP).
 * Systems **MAY** protect the confidentiality of data at rest via encryption and associated access controls. The policies and methods used are outside the scope of this specification.

@@ -1,1 +1,13 @@
 == Suppressed Messages ==
+
+# Will move to THO when anyone else is interested in our codes
+%Most code systems defined in HL7 IGs will need to move to THO later during the process%
+
+# They all do
+%HL7 Defined CodeSystems should ensure that every concept has a definition%
+
+# it actually does
+WARNING: CapabilityStatement/PatientCorrectionCapability: CapabilityStatement.implementationGuide[0]: Canonical URL 'https://hl7.org/fhir/uv/patient-corrections' does not resolve
+
+# not our error
+INFORMATION: StructureDefinition/patient-correction-bundle: StructureDefinition.snapshot.element[4].binding.extension[0]: The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.2.0 is deprecated

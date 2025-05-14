@@ -1,21 +1,34 @@
 @startuml
-title Abstract Model - Request For Correction accepted
+skinparam DefaultTextAlignment center
+skinparam SequenceMessageAlignment direction
+skinparam Padding 2
+skinparam ParticipantPadding 60
+skinparam LifelineStrategy solid
+autonumber "<b>[###]</b>"
 
-note left of CorrectionRequester
-1. Notice a problem
-end note
-CorrectionRequester->RequestFulfiller : 4. Request a Change
-Activate RequestFulfiller
-RequestFulfiller->RequestFulfiller : Check records
+participant R [
+  **Requester**
+  ----
+  //FHIR Application//
+]
+participant F [
+  **Fulfiller**
+  ----
+  //FHIR Server//
+]
 
-loop Dialog (9. status, clarifications, etc.)
-   RequestFulfiller->CorrectionRequester : 6a. Please clarify
-   CorrectionRequester->RequestFulfiller : 6b. Here is the clarification
+group Request a Correction
+  R->F : Request a Change
+else Accept Correction Request
+  Activate F
+    F->R : Request Accepted
+    F->F : Check records
+    F->F : Decide to make correction
+    F->F : Change accepted
+    F->R : Request is complete
+  Deactivate F
+else Requester Agrees with Final Correction
+  R->R : Review correction
 end
-
-RequestFulfiller->RequestFulfiller : Decide to make correction
-RequestFulfiller->CorrectionRequester : 7. Change accepted
-RequestFulfiller->CorrectionRequester : 8. Correction Completed
-Deactivate RequestFulfiller
 
 @enduml

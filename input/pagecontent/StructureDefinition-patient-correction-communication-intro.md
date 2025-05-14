@@ -2,7 +2,7 @@ This is the profile for the Patient Correction Communication, which is used for 
 
 ### Mandatory and Must Support data elements
 
-The following data-elements must always be present ([Mandatory](https://www.hl7.org/fhir/us/core/conformance-expectations.html#mandatory-elements)) definition]) or must be supported if the data is present ([Must Support](https://www.hl7.org/fhir/us/core/conformance-expectations.html#must-support-elements)) definition). They are presented below in a simple human-readable explanation. Profile specific guidance is provided as well. The Formal Profile Definition below provides the formal summary, definitions, and terminology requirements.  Refer to the [Examples](examples.html) section of the guide for example resources provided in the context of an example workflow.
+The following data-elements must always be present ([Mandatory](https://www.hl7.org/fhir/us/core/conformance-expectations.html#mandatory-elements)) definition or must be supported if the data is present ([Must Support](https://www.hl7.org/fhir/us/core/conformance-expectations.html#must-support-elements)) definition. They are presented below in a simple human-readable explanation. Profile specific guidance is provided as well. The Formal Profile Definition below provides the formal summary, definitions, and terminology requirements.  Refer to the [Actors and Use Cases](AUC.html) section of the guide for example resources provided in the context of an example workflow.
 
 **Each implementation of PatientCorrectionCommunication must provide:**
 

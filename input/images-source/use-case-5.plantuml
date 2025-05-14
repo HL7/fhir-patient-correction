@@ -1,5 +1,5 @@
 @startuml
-title Abstract Model - Request For Correction Partially Accepted
+title Abstract Model - Updated Correction Request
 skinparam DefaultTextAlignment center
 skinparam SequenceMessageAlignment direction
 skinparam Padding 2
@@ -23,11 +23,9 @@ group Request a Correction
 CorrectionRequester->RequestFulfiller : Request a Change
 Activate RequestFulfiller
 RequestFulfiller->RequestFulfiller : Check records
-
-RequestFulfiller->RequestFulfiller : Decide to accept part of request\nand deny other part of request
-
-RequestFulfiller->CorrectionRequester : Change partially accepted
-RequestFulfiller->CorrectionRequester : Accepted part of request completed
+CorrectionRequester->RequestFulfiller : Update Change Request
+RequestFulfiller->CorrectionRequester : Request update accepted
+RequestFulfiller->RequestFulfiller : Request processing continues
 Deactivate RequestFulfiller
 end 
 @enduml

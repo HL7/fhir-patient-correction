@@ -23,7 +23,7 @@ way for the communication of a patient's request for corrections.  It includes t
  
 This Implementation Guide (IG) is designed to work in the Universal Realm.  Both GDPR and HIPAA processes were reviewed in depth.   HIPAA and GDPR regulations are very similar concerning a patient's rights to have their data corrected. There are minor differences in the period of time for covered entities to respond to the patient's initial request for corrections and the preference in GDPR for a means for patient requests to be made electronically. Since HIPAA provides detailed implementation guidance, it was followed in the creation of this Implementation Guide since it includes the patient rights outlined in both regulations. Refer to the [References](#references) section for more information.
 
-This IG allows for several scenarios from a simple correction (such as changing the patient's smoking status) to more complex scenarios that may be accepted or rejected by the data holder.  In addition, the IG handles flows from simple acknowledgement of submission to completion of review and acceptance/rejection.  Use cases are found on the [Actors and Use Case](actors-and-use-cases.html) page.
+This IG allows for several scenarios from a simple correction (such as changing the patient's smoking status) to more complex scenarios that may be accepted or rejected by the data holder.  In addition, the IG handles flows from simple acknowledgement of submission to completion of review and acceptance/rejection.  Use cases are found on the [Actors and Use Cases](AUC.html) page.
 
 ### Scope
 
@@ -36,7 +36,7 @@ The scope of this IG is limited to the communication standards between a patient
 * communicate about the outcome of the request fulfillment, and
 * support communication of a disagreement statement from the patient if the request is denied.
 
-In this version of this guide, Process status and new communications from the fulfiller will be detected by the requester via polling. In future versions of the guide, we hope to add support for subscription-based notifications.
+For this version of the guide, Task status changes and new Communication resources from the Fulfiller will be detected by the Requester via polling. In future versions of the guide, we hope to add support for subscription based notifications.
 
 It is assumed that the fulfiller is able to process the correction request through to resolution. In most cases, this would be the organization which has the authority to directly correct the error, such as a provider that is the custodian of the record with the error. However, if an intermediary takes responsibility for shepherding the handling of a patient request with the custodial organization, that intermediatory could serve as a fulfiller (for example, a patient advocacy service). It is assumed that in most cases, an HIE or a payer would not serve as fulfillers of requests to correct information unless the error originated from their records, or they wanted to take on the responsibility of mediating.
 

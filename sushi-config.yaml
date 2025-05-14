@@ -1,25 +1,21 @@
-# ╭─────────────────────────────────ImplementationGuide-fish.json──────────────────────────────────╮
-# │  The properties below are used to create the ImplementationGuide resource. For a list of       │
-# │  supported properties, see:                                                                    │
-# │  https://fshschool.org/docs/sushi/configuration/#full-configuration                            │
-# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-
 id: hl7.fhir.uv.patient-corrections
 canonical: http://hl7.org/fhir/uv/patient-corrections
 version: 1.0.0
 name: PatientCorrectionsImplementationGuide
 title: "Patient Request for Corrections Implementation Guide"
-status: draft
+status: active
 publisher:
-  - name: HL7 International - Patient Empowerment Workgroup
-  - url: https://www.hl7.org/Special/committees/patientempowerment
+  - name: HL7 International / Patient Empowerment
+  - url: http://www.hl7.org/Special/committees/patientempowerment
 contact:
   - name: Virginia Lorenzi
     telecom:
       - system: email
         value: vlorenzi@nyp.org
-#        url: https://www.hl7.org/Special/committees/patientempowerment
-        use: work
+  - name: David Pyke
+    telecom:
+      - system: email
+        value: david@pyke.ca
 description: "The Patient Request for Corrections Implementation Guide provides a method for communicating a patient's request for corrections to their patient data, as well as a way for health care organizations to respond to those requests."
 license: CC0-1.0
 fhirVersion: 4.0.1
@@ -31,18 +27,22 @@ parameters:
 copyrightYear: 2020+
 releaseLabel: STU 1 Ballot
 jurisdiction: http://unstats.un.org/unsd/methods/m49/m49.htm#001 "World"
-dependencies:
-    hl7.fhir.uv.tools: current
-
+#dependencies:
+#    hl7.fhir.uv.tools:current
+extension:
+  - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg
+    valueCode: pe
+  - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+    valueCode: trial-use
+  - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm
+    valueInteger: 1
 pages:
   index.md:
     title: Home
-  actors-and-use-cases.md:
+  AUC.md:
     title: Actors and Use Cases
   specification.md:
     title: Specification
-  examples.md:
-    title: Examples
   artifacts.html:
     title: Artifacts
   downloads.md:
@@ -56,9 +56,8 @@ pages:
 menu:
   Home: index.html
   Table of Contents: toc.html
-  Actors and Use Cases: actors-and-use-cases.html
   Specification: specification.html
-  Examples: examples.html
+  Actors and Use Cases: AUC.html
   Artifacts: artifacts.html
   Downloads: downloads.html
   Other Resources: 

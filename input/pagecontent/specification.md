@@ -22,20 +22,6 @@ Some implementations might choose not to create a Task.  In that case, there is 
 </figure>
 
 
-### Communication with Task
-
-A patient request for correction is initiated by invoking the [$correction-request](OperationDefinition-correction-request.html) operation. The input for the operation is a [Patient Correction Bundle](StructureDefinition-patient-correction-bundle.html) which includes a  [Patient Correction Communication](StructureDefinition-patient-correction-communication.html) resource that describes the specific request. The invocation of the operation on the fulfiller results in the posting of the [Patient Correction Communication](StructureDefinition-patient-correction-communication.html) resource on the fulfiller.  It is also expected to result in the creation of a [Patient Correction Task](StructureDefinition-patient-correction-task.html) resource which can be used to track the status of the request. 
-
-All Communications related to the correction request can be located by searching the **about** field for the original Communication.
-
-The Communication **recipient** and **sender** fields are used to track whether each Communication is from the requestor to the fulfiller, or vice versa.
-
-#### RESTful interactions
-
-<div>
-{%include restful-minimal.svg%}
-</div>
-
 ### Linkages between resources
 
 Certain fields in Task and Communication provide important linkage information.

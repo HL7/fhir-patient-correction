@@ -1,3 +1,7 @@
+<blockquote class="stu-note">
+There is an ongoing discussion about the minimum requirements for proper support of corrections. Specifically, the infrastructure around the Task resource  provides tracking and state information to users that is useful (and necessary for enabling and supporting automation and for managing more complex cases) though may not align with legacy, paper documentation-based, facility processes for applying corrections. Implementer feedback is requested.<br />
+Some implementers believe that a more streamlined approach that starts directly with the creation of a Task and without requiring a Communication resource should be considered for the next release.</blockquote>
+
 ### Actors
 
 |Actor |Description|

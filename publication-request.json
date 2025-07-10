@@ -1,7 +1,7 @@
 {
     "package-id" : "hl7.fhir.uv.patient-corrections",
     "version" : "1.0.0",
-    "path" : "http://hl7.org/fhir/us/patient-corrections/STU1",
+    "path" : "http://hl7.org/fhir/uv/patient-corrections/STU1",
     "mode" : "milestone",
     "first": false,
     "milestone" : true,
